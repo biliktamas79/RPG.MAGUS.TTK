@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPG.Domain", "RPG.Domain\RPG.Domain.csproj", "{36DD6FEF-2AF6-40AD-83AA-DBDB70ED23FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAGUS.TTK.Domain", "MAGUS.TTK.Domain\MAGUS.TTK.Domain.csproj", "{3C1D81CD-319A-45A7-8C08-5D831F182C85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGUS.TTK.Domain", "MAGUS.TTK.Domain\MAGUS.TTK.Domain.csproj", "{3C1D81CD-319A-45A7-8C08-5D831F182C85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAGUS.TTK.Domain.Test.Unit", "MAGUS.TTK.Domain.Test.Unit\MAGUS.TTK.Domain.Test.Unit.csproj", "{845D9641-7814-44E8-BCBA-5275A7325876}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F770FE12-2BA5-43C1-84AE-291210AB79B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{3C1D81CD-319A-45A7-8C08-5D831F182C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C1D81CD-319A-45A7-8C08-5D831F182C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C1D81CD-319A-45A7-8C08-5D831F182C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{845D9641-7814-44E8-BCBA-5275A7325876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{845D9641-7814-44E8-BCBA-5275A7325876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{845D9641-7814-44E8-BCBA-5275A7325876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{845D9641-7814-44E8-BCBA-5275A7325876}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{845D9641-7814-44E8-BCBA-5275A7325876} = {F770FE12-2BA5-43C1-84AE-291210AB79B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9F14DFCD-1180-4335-B84B-623AC3C28A07}

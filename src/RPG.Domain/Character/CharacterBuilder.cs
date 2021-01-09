@@ -13,6 +13,6 @@ namespace RPG.Domain.Character
             this.ruleSet = ruleSet ?? throw new ArgumentNullException(nameof(ruleSet));
         }
 
-        public Build
+        //TODO public Build
     }
 }

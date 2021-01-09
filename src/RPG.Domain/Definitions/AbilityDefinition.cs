@@ -13,7 +13,7 @@ namespace RPG.Domain.Definitions
         /// <summary>
         /// Ability unique code, like STR, WILL, ...
         /// </summary>
-        public string Code { get; private set; }
+        public string Code { get; /*private*/ set; }
         public int MinValue;
         public int MaxValue;
     }

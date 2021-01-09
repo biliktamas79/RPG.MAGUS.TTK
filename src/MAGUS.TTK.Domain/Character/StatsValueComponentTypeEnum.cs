@@ -12,6 +12,7 @@ namespace MAGUS.TTK.Domain.Character
         Race = 1,
         Class = 2,
         LevelUp = 4,
-        BoughtFromSP = 5,
+        BoughtFromSP = 8,
+        Ability = 16
     }
 }
