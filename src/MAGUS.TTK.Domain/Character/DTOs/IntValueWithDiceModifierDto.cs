@@ -17,6 +17,6 @@ namespace MAGUS.TTK.Domain.Character
         /// <summary>
         /// A dobás módosító
         /// </summary>
-        public int DiceModifier { get; set; }
+        public int? DiceModifier { get; set; }
     }
 }

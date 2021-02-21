@@ -1,6 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MAGUS.TTK.Domain.Character;
 using RPG.Domain.Character;
+using MAGUS.TTK.Domain.Character.DTOs;
+using MAGUS.TTK.Domain.Character.DTOs.Serializer;
 
 namespace MAGUS.TTK.Domain.Test.Unit
 {
@@ -48,24 +50,26 @@ namespace MAGUS.TTK.Domain.Test.Unit
                 //Skills = 
                 Stats = new MagusTtkCharacterStatsDto()
                 {
-                    KE = new StatsValue(),
-                    TE = new StatsValue(),
-                    VE = new StatsValue(),
-                    CE = new StatsValue(),
+                    KE = new StatsValue() { Value = 43 },
+                    TE = new StatsValue() { Value = 42 },
+                    VE = new StatsValue() { Value = 117 },
+                    CE = new StatsValue() { Value = 60 },
 
-                    Ep = new StatsValue(),
-                    Fp = new StatsValue(),
+                    Ep = new StatsValue() { Value = 11 },
+                    Fp = new StatsValue() { Value = 28 },
 
-                    Pp = new StatsValue(),
-                    Mp = new StatsValue(),
-                    Kp = new StatsValue(),
+                    Pp = new StatsValue() { Value = 14 },
+                    Mp = new StatsValue() { Value = 25 },
+                    Kp = new StatsValue() { Value = 0 },
 
-                    Sp = new StatsValue(),
-                    Lp = new StatsValue(),
+                    Sp = new StatsValue() { Value = 1 },
+                    Lp = new StatsValue() { Value = 4 },
                 },
                 //Talents = 
                 //Upbringing = new Background<RPG.Domain.Definitions.AbilityDefinition>
             };
+
+            var jsonString = Utils.SerializeToJsonString(c);
 
             //c.Stats.KE.Value
         }

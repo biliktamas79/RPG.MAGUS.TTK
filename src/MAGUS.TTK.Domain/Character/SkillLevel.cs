@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 using RPG.Domain.Definitions;
 
 namespace MAGUS.TTK.Domain.Character
@@ -13,6 +14,7 @@ namespace MAGUS.TTK.Domain.Character
         /// <summary>
         /// Képzettség definíció
         /// </summary>
+        [JsonIgnoreAttribute]
         public StatDefinition Definition { get; private set; }
 
         /// <summary>

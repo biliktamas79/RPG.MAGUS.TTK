@@ -13,7 +13,7 @@ namespace RPG.Domain.Definitions
         /// <summary>
         /// Skill category unique code, like Fight, Magic, Misc, ...
         /// </summary>
-        public string Code { get; private set; }
+        public string Code { get; set; }
         public string Name;
     }
 }

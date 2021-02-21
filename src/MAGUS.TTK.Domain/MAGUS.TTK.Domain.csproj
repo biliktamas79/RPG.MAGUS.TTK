@@ -5,6 +5,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Character\DTOs\Details\**" />
+    <EmbeddedResource Remove="Character\DTOs\Details\**" />
+    <None Remove="Character\DTOs\Details\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Definitions\abilities.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Definitions\abilities.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\RPG.Domain\RPG.Domain.csproj" />
   </ItemGroup>
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 using RPG.Domain.Definitions;
 
 namespace MAGUS.TTK.Domain.Character
@@ -10,6 +11,7 @@ namespace MAGUS.TTK.Domain.Character
     /// </summary>
     public class AbilityValueComponent
     {
+        [JsonIgnoreAttribute]
         public readonly AbilityDefinition Definition;
         public readonly AbilityValueComponentTypeEnum Type;
         public int Value;

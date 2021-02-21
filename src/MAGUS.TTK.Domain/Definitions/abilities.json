@@ -1,0 +1,55 @@
+﻿{
+  "Version": "0.8.4",
+  "CharacterAbilities": {
+    "Strength": {
+      "Code": "Erő",
+      "MinValue": 6,
+      "MaxValue": 20
+    },
+    "Quickness": {
+      "Code": "Gyo",
+      "MinValue": 6,
+      "MaxValue": 20
+    },
+    "Dexterity": {
+      "Code": "Ügy",
+      "MinValue": 6,
+      "MaxValue": 20
+    },
+    "Stamina": {
+      "Code": "Áll",
+      "MinValue": 6,
+      "MaxValue": 20
+    },
+    "Health": {
+      "Code": "Egé",
+      "MinValue": 6,
+      "MaxValue": 20
+    },
+    "Charisma": {
+      "Code": "Kar",
+      "MinValue": 6,
+      "MaxValue": 20
+    },
+    "Intelligence": {
+      "Code": "Int",
+      "MinValue": 6,
+      "MaxValue": 20
+    },
+    "Will": {
+      "Code": "Aka",
+      "MinValue": 6,
+      "MaxValue": 20
+    },
+    "Astral": {
+      "Code": "Asz",
+      "MinValue": 6,
+      "MaxValue": 20
+    },
+    "Perception": {
+      "Code": "Érz",
+      "MinValue": 6,
+      "MaxValue": 20
+    }
+  }
+}
