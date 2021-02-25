@@ -10,7 +10,7 @@ namespace RPG.Domain.Definitions
     /// </summary>
     public class TraitDefinition : IHasUniqueCode
     {
-        public string Code { get; private set; }
+        public string Code { get; set; }
         public int MinValue;
         public int MaxValue;
     }

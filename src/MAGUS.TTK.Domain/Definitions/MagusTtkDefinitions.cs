@@ -1,4 +1,5 @@
 ﻿using MAGUS.TTK.Domain.Character;
+using RPG.Domain.Character;
 using RPG.Domain.Definitions;
 using System;
 using System.Collections.Generic;
@@ -33,8 +34,37 @@ namespace MAGUS.TTK.Domain.Definitions
             { MagusTtkSkillCategoryEnum.Tudomanyos, new SkillCategory() { Code = "TUDOMANYOS", Name = "Tudományos" } },
             { MagusTtkSkillCategoryEnum.Szocialis, new SkillCategory() { Code = "SZOCIALIS", Name = "Szociális" } },
             { MagusTtkSkillCategoryEnum.Vilagi, new SkillCategory() { Code = "VILAGI", Name = "Világi" } },
-            { MagusTtkSkillCategoryEnum.Alvilagi, new SkillCategory() { Code = "ALVILAGI", Name = "Alcilági" } },
+            { MagusTtkSkillCategoryEnum.Alvilagi, new SkillCategory() { Code = "ALVILAGI", Name = "Alvilági" } },
             { MagusTtkSkillCategoryEnum.Magikus, new SkillCategory() { Code = "MAGIKUS", Name = "Mágikus" } },
+        };
+
+        public readonly Dictionary<string, WeaponCategory> WeaponCategoryDefinitions = new Dictionary<string, WeaponCategory>()
+        {
+            { "RP", new WeaponCategory() { Code = "RP", Name = "Rövid penge" } },
+            { "HP", new WeaponCategory() { Code = "HP", Name = "Hosszú penge" } },
+            { "ÓP", new WeaponCategory() { Code = "ÓP", Name = "Óriás penge" } },
+            { "HAS", new WeaponCategory() { Code = "HAS", Name = "Hasító" } },
+            { "ZÚZ", new WeaponCategory() { Code = "ZÚZ", Name = "Zúzó" } },
+            { "SZÁ", new WeaponCategory() { Code = "SZÁ", Name = "Szálfegyver" } },
+            { "LOV", new WeaponCategory() { Code = "LOV", Name = "Lovas" } },
+            { "NYD", new WeaponCategory() { Code = "NYD", Name = "Nyársaló dobó" } },
+            { "PD", new WeaponCategory() { Code = "PD", Name = "Pergő dobó" } },
+            { "ÍJ", new WeaponCategory() { Code = "ÍJ", Name = "Íj" } },
+            { "SZÍ", new WeaponCategory() { Code = "SZÍ", Name = "Számszeríj" } },
+            { "EGY", new WeaponCategory() { Code = "EGY", Name = "Egyedi" } },
+            { "HM", new WeaponCategory() { Code = "HM", Name = "Harcművész" } },
+        };
+
+        public readonly Dictionary<string, TraitDefinition> TraitDefinitions = new Dictionary<string, TraitDefinition>()
+        {
+            { "barátságos", new TraitDefinition() { Code = "barátságos", MinValue = 0, MaxValue = 5 } },
+            { "befolyásolható", new TraitDefinition() { Code = "befolyásolható", MinValue = 0, MaxValue = 5 } },
+        };
+
+        public readonly Dictionary<string, Background<CodeOnlyAttribute>> Origins = new Dictionary<string, Background<CodeOnlyAttribute>>()
+        {
+            { "alidari", new Background<CodeOnlyAttribute>() { Code = "alidari", Name = "alidari", Advantages = new CodeOnlyAttribute[] { new CodeOnlyAttribute("Álcázás/álruha"), new CodeOnlyAttribute("Boszorkánymágia"), new CodeOnlyAttribute("Lélektan") }, Disadvantages = new CodeOnlyAttribute[] { new CodeOnlyAttribute("Lovaglás"), new CodeOnlyAttribute("Pusztítás"), new CodeOnlyAttribute("Vértviselet") } } },
+            { "amazon", new Background<CodeOnlyAttribute>() { Code = "amazon", Name = "amazon", Advantages = new CodeOnlyAttribute[] { new CodeOnlyAttribute("Lélektan"), new CodeOnlyAttribute("Trükk"), new CodeOnlyAttribute("Túlélés") }, Disadvantages = new CodeOnlyAttribute[] { new CodeOnlyAttribute("Alkímia"), new CodeOnlyAttribute("Heraldika"), new CodeOnlyAttribute("Pusztítás") } } },
         };
     }
 }

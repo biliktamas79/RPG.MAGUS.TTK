@@ -9,7 +9,7 @@ namespace MAGUS.TTK.Domain.Character
     /// </summary>
     public class Background<T>
     {
-        public string Code { get; private set; }
+        public string Code { get; set; }
         public string Name { get; set; }
         public T[] Advantages { get; set; }
         public T[] Disadvantages { get; set; }

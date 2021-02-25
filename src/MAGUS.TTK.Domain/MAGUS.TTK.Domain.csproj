@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,9 +13,13 @@
 
   <ItemGroup>
     <None Remove="Definitions\abilities.json" />
+    <None Remove="Definitions\origins.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Definitions\origins.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Definitions\abilities.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

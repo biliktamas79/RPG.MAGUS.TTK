@@ -1,0 +1,184 @@
+﻿{
+  "alidari": {
+    "Code": "alidari",
+    "Name": "alidari",
+    "Advantages": [
+      "Álcázás/álruha",
+      "Boszorkánymágia",
+      "Lélektan"
+    ],
+    "Disadvantages": [
+      "Lovaglás",
+      "Pusztítás",
+      "Vértviselet"
+    ]
+  },
+  "amazon": {
+    "Code": "amazon",
+    "Name": "amazon",
+    "Advantages": [
+      "Lélektan",
+      "Trükk",
+      "Túlélés"
+    ],
+    "Disadvantages": [
+      "Alkímia",
+      "Heraldika",
+      "Pusztítás"
+    ]
+  },
+  "aszisz": {
+    "Code": "aszisz",
+    "Name": "aszisz",
+    "Advantages": [
+      "Közös harcmodor",
+      "Méregkeverés/semlegesítés",
+      "Szakma (Hajózás)"
+    ],
+    "Disadvantages": [
+      "Hangutánzás",
+      "Nyomolvasás/eltűntetés",
+      "Túlélés"
+    ]
+  },
+  "dwoon": {
+    "Code": "dwoon",
+    "Name": "dwoon",
+    "Advantages": [
+      "Heraldika",
+      "Történelemismeret",
+      "Vallásismeret"
+    ],
+    "Disadvantages": [
+      "Boszorkánymágia",
+      "Boszorkánymesteri mágia",
+      "Méregkeverés/semlegesítés"
+    ]
+  },
+  "dzsad (törzsi)": {
+    "Code": "dzsad (törzsi)",
+    "Name": "dzsad (törzsi)",
+    "Advantages": [
+      "Lovaglás",
+      "Nyomolvasás",
+      "Túlélés"
+    ],
+    "Disadvantages": [
+      "Szakma (Hajózás)",
+      "Tűzvarázslói mágia",
+      "Úszás"
+    ]
+  },
+  "dzsad (városi)": {
+    "Code": "dzsad (városi)",
+    "Name": "dzsad (városi)",
+    "Advantages": [
+      "Értékbecslés",
+      "Meggyőzés",
+      "Szakma (Kereskedő)"
+    ],
+    "Disadvantages": [
+      "Szakma (Hajózás)",
+      "Úszás",
+      "Vértviselet"
+    ]
+  },
+  "edorli": {
+    "Code": "edorli",
+    "Name": "edorli",
+    "Advantages": [
+      "Írás/olvasás",
+      "Lovaglás",
+      "Szakma (Hajózás)"
+    ],
+    "Disadvantages": [
+      "Hátbaszúrás",
+      "Méregkeverés/semlegesítés",
+      "Túlélés"
+    ]
+  },
+  "elfendeli": {
+    "Code": "elfendeli",
+    "Name": "elfendeli",
+    "Advantages": [
+      "Herbalizmus",
+      "Legendaismeret",
+      "Művészet (Tánc)"
+    ],
+    "Disadvantages": [
+      "Kultúra (Idegen)",
+      "Vallatás",
+      "Zsebmetszés"
+    ]
+  },
+  "enoszukei": {
+    "Code": "enoszukei",
+    "Name": "enoszukei",
+    "Advantages": [
+      "Etikett",
+      "Pszi (Slan)",
+      "Szakma (Hajózás)"
+    ],
+    "Disadvantages": [
+      "Kultúra (idegen)",
+      "Lovaglás",
+      "Nyelvismeret (idegen)"
+    ]
+  },
+  "enysmoni": {
+    "Code": "enysmoni",
+    "Name": "enysmoni",
+    "Advantages": [
+      "Idomítás",
+      "Kapáslövés",
+      "Lovaglás"
+    ],
+    "Disadvantages": [
+      "Álcázás/álruha",
+      "Leszerelés",
+      "Szakma (Hajózás)"
+    ]
+  },
+  "ereni": {
+    "Code": "ereni",
+    "Name": "ereni",
+    "Advantages": [
+      "Lovaglás",
+      "Szakma (Vadász)",
+      "Túlélés"
+    ],
+    "Disadvantages": [
+      "Értékbecslés",
+      "Írás/olvasás",
+      "Kínokozás"
+    ]
+  },
+  "erigowi": {
+    "Code": "erigowi",
+    "Name": "erigowi",
+    "Advantages": [
+      "Heraldika",
+      "Legendaismeret",
+      "Művészet (Ének)"
+    ],
+    "Disadvantages": [
+      "Álcázás/álruha",
+      "Hátbaszúrás",
+      "Túlélés"
+    ]
+  },
+  "erioni": {
+    "Code": "erioni",
+    "Name": "erioni",
+    "Advantages": [
+      "Lélektan",
+      "Megtévesztés",
+      "Nyelvismeret (idegen)"
+    ],
+    "Disadvantages": [
+      "Futás",
+      "Nyomolvasás/eltűntetés",
+      "Túlélés"
+    ]
+  }
+}

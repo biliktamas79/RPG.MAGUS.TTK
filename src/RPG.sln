@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGUS.TTK.Domain.Test.Unit"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F770FE12-2BA5-43C1-84AE-291210AB79B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeList", "CodeList\CodeList.csproj", "{9445D19E-C3A3-428A-AE61-D77248092D22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeList.Tests.Unit", "CodeList.Tests.Unit\CodeList.Tests.Unit.csproj", "{A7B9ECD0-4CD3-4882-91F6-C588BE0658A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{845D9641-7814-44E8-BCBA-5275A7325876}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{845D9641-7814-44E8-BCBA-5275A7325876}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{845D9641-7814-44E8-BCBA-5275A7325876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9445D19E-C3A3-428A-AE61-D77248092D22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9445D19E-C3A3-428A-AE61-D77248092D22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9445D19E-C3A3-428A-AE61-D77248092D22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9445D19E-C3A3-428A-AE61-D77248092D22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7B9ECD0-4CD3-4882-91F6-C588BE0658A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7B9ECD0-4CD3-4882-91F6-C588BE0658A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7B9ECD0-4CD3-4882-91F6-C588BE0658A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7B9ECD0-4CD3-4882-91F6-C588BE0658A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -21,13 +21,13 @@ namespace MAGUS.TTK.Domain.Character
         /// </summary>
         public int Level;
         /// <summary>
-        /// A karakter faja
+        /// A karakter fajának kódja
         /// </summary>
-        public string Race;
+        public string RaceCode;
         /// <summary>
         /// A karakter kasztja
         /// </summary>
-        public string Class;
+        public string ClassCode;
         /// <summary>
         /// A karakter neme
         /// </summary>
@@ -37,13 +37,13 @@ namespace MAGUS.TTK.Domain.Character
         /// </summary>
         public int Age;
         /// <summary>
-        /// Háttér/Származás
+        /// Háttér/Származás kódja
         /// </summary>
-        public Background<AttributeBase> Origin;
+        public string OriginCode;
         /// <summary>
-        /// Háttér/Neveltetés
+        /// Háttér/Neveltetés kódja
         /// </summary>
-        public Background<AbilityDefinition> Upbringing;
+        public string UpbringingCode;
 
         /// <summary>
         /// A karakter tulajdonságai

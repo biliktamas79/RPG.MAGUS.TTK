@@ -4,8 +4,6 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
-
-    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,8 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MAGUS.TTK.Domain\MAGUS.TTK.Domain.csproj" />
-    <ProjectReference Include="..\RPG.Domain\RPG.Domain.csproj" />
+    <ProjectReference Include="..\CodeList\CodeList.csproj" />
   </ItemGroup>
 
 </Project>

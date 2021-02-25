@@ -11,7 +11,7 @@ namespace RPG.Domain.Definitions
     public class StatDefinition : IHasUniqueCode
     {
         /// <summary>
-        /// Skill unique code, like Fight.Melee, ...
+        /// Statistic unique code, like KÉ, TÉ, VÉ, Mp, Pp, ...
         /// </summary>
         public string Code { get; private set; }
     }

@@ -33,7 +33,7 @@ namespace MAGUS.TTK.Domain.Character.DTOs.Serializer
             else
             {
                 writer.WriteStartObject();
-                writer.WriteNumber(nameof(IntValueWithDiceModifierDto.Value), value.Value);
+                writer.WriteNumber(nameof(StatsValue.Value), value.Value);
                 JsonSerializer.Serialize(value.ValueComponentsByType);
                 //if (value.ValueComponentsByType.Count > 0)
                 //{

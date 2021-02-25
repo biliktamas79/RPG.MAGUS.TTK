@@ -28,16 +28,13 @@ namespace MAGUS.TTK.Domain.Test.Unit
                     Erz = new IntValueWithDiceModifierDto() { Value = 14 },
                 },
                 Age = 29,
-                Class = "Tolvaj",
+                ClassCode = "Tolvaj",
                 Description = null,
                 Gender = GenderEnum.Male,
                 Level = 5,
                 Name = "Mesterlövész Tolvaj",
-                Origin = new Background<AttributeBase>()
-                {
-                    Name = "erioni"
-                },
-                Race = "Ember",
+                OriginCode = "erioni",
+                RaceCode = "Ember",
                 Resistances = new MagusTtkCharacterResistancesDto()
                 {
                     Asztralis = new IntValueWithDiceModifierDto() { Value = 10 },

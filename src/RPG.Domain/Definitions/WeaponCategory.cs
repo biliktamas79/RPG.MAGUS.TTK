@@ -13,7 +13,7 @@ namespace RPG.Domain.Definitions
         /// <summary>
         /// Weapon category unique code, like Melee.Blades.Short, or LongBlades, or ThrowingBlades, ...
         /// </summary>
-        public string Code { get; private set; }
+        public string Code { get; set; }
         public string Name;
     }
 }

@@ -1,10 +1,9 @@
-﻿using MAGUS.TTK.Domain.Character.DTOs.Serializer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Unicode;
 
-namespace MAGUS.TTK.Domain.Test.Unit
+namespace CodeList.Tests.Unit
 {
     internal static class Utils
     {
@@ -21,9 +20,6 @@ namespace MAGUS.TTK.Domain.Test.Unit
 
         static Utils()
         {
-            JsonSerializerOptions.Converters.Add(new IntValueWithDiceModifierDtoSerializer());
-            JsonSerializerOptions.Converters.Add(new StatsValueSerializer());
-            JsonSerializerOptions.Converters.Add(new CodeOnlyAttributeSerializer());
         }
 
         public static string SerializeToJsonString<T>(T value)
