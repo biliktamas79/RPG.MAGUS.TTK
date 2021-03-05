@@ -11,9 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGUS.TTK.Domain.Test.Unit"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F770FE12-2BA5-43C1-84AE-291210AB79B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeList", "CodeList\CodeList.csproj", "{9445D19E-C3A3-428A-AE61-D77248092D22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeList", "CodeList\CodeList.csproj", "{9445D19E-C3A3-428A-AE61-D77248092D22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeList.Tests.Unit", "CodeList.Tests.Unit\CodeList.Tests.Unit.csproj", "{A7B9ECD0-4CD3-4882-91F6-C588BE0658A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeList.Tests.Unit", "CodeList.Tests.Unit\CodeList.Tests.Unit.csproj", "{A7B9ECD0-4CD3-4882-91F6-C588BE0658A3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGUS.TTK.Data", "MAGUS.TTK.Data\MAGUS.TTK.Data.csproj", "{5789CAFD-62BB-4A0C-84EE-2F9DD6CDADED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAGUS.TTK.Data.Test.Unit", "MAGUS.TTK.Data.Test.Unit\MAGUS.TTK.Data.Test.Unit.csproj", "{E14F4A6B-D785-4934-BAD9-EC1405D62B45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,12 +45,21 @@ Global
 		{A7B9ECD0-4CD3-4882-91F6-C588BE0658A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7B9ECD0-4CD3-4882-91F6-C588BE0658A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7B9ECD0-4CD3-4882-91F6-C588BE0658A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5789CAFD-62BB-4A0C-84EE-2F9DD6CDADED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5789CAFD-62BB-4A0C-84EE-2F9DD6CDADED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5789CAFD-62BB-4A0C-84EE-2F9DD6CDADED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5789CAFD-62BB-4A0C-84EE-2F9DD6CDADED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E14F4A6B-D785-4934-BAD9-EC1405D62B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E14F4A6B-D785-4934-BAD9-EC1405D62B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E14F4A6B-D785-4934-BAD9-EC1405D62B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E14F4A6B-D785-4934-BAD9-EC1405D62B45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{845D9641-7814-44E8-BCBA-5275A7325876} = {F770FE12-2BA5-43C1-84AE-291210AB79B4}
+		{E14F4A6B-D785-4934-BAD9-EC1405D62B45} = {F770FE12-2BA5-43C1-84AE-291210AB79B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9F14DFCD-1180-4335-B84B-623AC3C28A07}

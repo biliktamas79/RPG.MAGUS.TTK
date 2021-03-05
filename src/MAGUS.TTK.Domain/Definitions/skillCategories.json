@@ -1,0 +1,26 @@
+﻿[
+  {
+    "Code": "HAR",
+    "Name": "Harci"
+  },
+  {
+    "Code": "TUD",
+    "Name": "Tudományos"
+  },
+  {
+    "Code": "SZO",
+    "Name": "Szociális"
+  },
+  {
+    "Code": "VIL",
+    "Name": "Világi"
+  },
+  {
+    "Code": "ALV",
+    "Name": "Alvilági"
+  },
+  {
+    "Code": "MAG",
+    "Name": "Mágikus"
+  }
+]

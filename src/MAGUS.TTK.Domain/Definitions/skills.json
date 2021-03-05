@@ -1,0 +1,51 @@
+﻿[
+  {
+    "Code": "Birkózás",
+    "ClassCode": "II.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Erő", "Asz", "Érz" ]
+  },
+  {
+    "Code": "Célzás",
+    "ClassCode": "IV.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Ügy", "Asz", "Érz" ]
+  },
+  {
+    "Code": "Fegyverhasználat",
+    "ClassCode": "III.",
+    "CategoryCode": "HAR",
+    "AbilityBaseDependsOnSpecialization": true,
+    "Specializations": [ "RP", "HP", "ÓP", "HAS", "ZÚZ", "SZÁ", "LOV", "NYD", "PD", "ÍJ", "SZÍ", "EGY", "HM" ]
+  },
+  {
+    "Code": "Fegyvertörés",
+    "ClassCode": "II.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Erő" ]
+  },
+  {
+    "Code": "Harci ösztön",
+    "ClassCode": "II.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Asz", "Érz" ]
+  },
+  {
+    "Code": "Harci rutin",
+    "ClassCode": "I.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Ügy", "Érz" ]
+  },
+  {
+    "Code": "Hárítás",
+    "ClassCode": "III.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Erő", "Gyo", "Ügy" ]
+  },
+  {
+    "Code": "Kapáslövés/dobás",
+    "ClassCode": "II.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Gyo", "Ügy", "Érz" ]
+  }
+]

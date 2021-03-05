@@ -20,10 +20,10 @@ namespace MAGUS.TTK.Domain
 
         private void InitCharacterAbilities(Character.MagusTtkCharacter c)
         {
-            foreach (var ability in this.Definitions.CharacterAbilities)
-            {
-                c.Abilities.Add(ability.Key, new Character.AbilityValue() { Definition = ability.Value });
-            }
+            //foreach (var ability in this.Definitions.CharacterAbilities)
+            //{
+            //    c.Abilities.Add(ability.Key, new Character.AbilityValue() { Definition = ability.Value });
+            //}
 
             //this.Definitions.CharacterAbilities.Select(kvp => )
         }

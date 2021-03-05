@@ -11,22 +11,22 @@ namespace MAGUS.TTK.Domain.Definitions
     {
         public string Version { get; set; }
 
-        /// <summary>
-        /// Karakter Tulajdonság definíciók (Erő, Gyo, Ügy, ...)
-        /// </summary>
-        public readonly Dictionary<MagusTtkCharacterAbilityEnum, AbilityDefinition> CharacterAbilities = new Dictionary<MagusTtkCharacterAbilityEnum, AbilityDefinition>(10)
-        {
-            { MagusTtkCharacterAbilityEnum.Strength, new AbilityDefinition() { Code = "Erő", MinValue = 6, MaxValue = 20 } },
-            { MagusTtkCharacterAbilityEnum.Quickness, new AbilityDefinition() { Code = "Gyo", MinValue = 6, MaxValue = 20 } },
-            { MagusTtkCharacterAbilityEnum.Dexterity, new AbilityDefinition() { Code = "Ügy", MinValue = 6, MaxValue = 20 } },
-            { MagusTtkCharacterAbilityEnum.Stamina, new AbilityDefinition() { Code = "Áll", MinValue = 6, MaxValue = 20 } },
-            { MagusTtkCharacterAbilityEnum.Health, new AbilityDefinition() { Code = "Egé", MinValue = 6, MaxValue = 20 } },
-            { MagusTtkCharacterAbilityEnum.Charisma, new AbilityDefinition() { Code = "Kar", MinValue = 6, MaxValue = 20 } },
-            { MagusTtkCharacterAbilityEnum.Intelligence, new AbilityDefinition() { Code = "Int", MinValue = 6, MaxValue = 20 } },
-            { MagusTtkCharacterAbilityEnum.Will, new AbilityDefinition() { Code = "Aka", MinValue = 6, MaxValue = 20 } },
-            { MagusTtkCharacterAbilityEnum.Astral, new AbilityDefinition() { Code = "Asz", MinValue = 6, MaxValue = 20 } },
-            { MagusTtkCharacterAbilityEnum.Perception, new AbilityDefinition() { Code = "Érz", MinValue = 6, MaxValue = 20 } },
-        };
+        ///// <summary>
+        ///// Karakter Tulajdonság definíciók (Erő, Gyo, Ügy, ...)
+        ///// </summary>
+        //public readonly Dictionary<MagusTtkCharacterAbilityEnum, AbilityDefinition> CharacterAbilities = new Dictionary<MagusTtkCharacterAbilityEnum, AbilityDefinition>(10)
+        //{
+        //    { MagusTtkCharacterAbilityEnum.Strength, new AbilityDefinition() { Code = "Erő", MinValue = 6, MaxValue = 20 } },
+        //    { MagusTtkCharacterAbilityEnum.Quickness, new AbilityDefinition() { Code = "Gyo", MinValue = 6, MaxValue = 20 } },
+        //    { MagusTtkCharacterAbilityEnum.Dexterity, new AbilityDefinition() { Code = "Ügy", MinValue = 6, MaxValue = 20 } },
+        //    { MagusTtkCharacterAbilityEnum.Stamina, new AbilityDefinition() { Code = "Áll", MinValue = 6, MaxValue = 20 } },
+        //    { MagusTtkCharacterAbilityEnum.Health, new AbilityDefinition() { Code = "Egé", MinValue = 6, MaxValue = 20 } },
+        //    { MagusTtkCharacterAbilityEnum.Charisma, new AbilityDefinition() { Code = "Kar", MinValue = 6, MaxValue = 20 } },
+        //    { MagusTtkCharacterAbilityEnum.Intelligence, new AbilityDefinition() { Code = "Int", MinValue = 6, MaxValue = 20 } },
+        //    { MagusTtkCharacterAbilityEnum.Will, new AbilityDefinition() { Code = "Aka", MinValue = 6, MaxValue = 20 } },
+        //    { MagusTtkCharacterAbilityEnum.Astral, new AbilityDefinition() { Code = "Asz", MinValue = 6, MaxValue = 20 } },
+        //    { MagusTtkCharacterAbilityEnum.Perception, new AbilityDefinition() { Code = "Érz", MinValue = 6, MaxValue = 20 } },
+        //};
 
         public readonly Dictionary<MagusTtkSkillCategoryEnum, SkillCategory> SkillCategories = new Dictionary<MagusTtkSkillCategoryEnum, SkillCategory>(6)
         {
@@ -37,6 +37,25 @@ namespace MAGUS.TTK.Domain.Definitions
             { MagusTtkSkillCategoryEnum.Alvilagi, new SkillCategory() { Code = "ALVILAGI", Name = "Alvilági" } },
             { MagusTtkSkillCategoryEnum.Magikus, new SkillCategory() { Code = "MAGIKUS", Name = "Mágikus" } },
         };
+
+        public readonly List<MagusTtkSkillClassDefinition> SkillClassDefinitions = new List<MagusTtkSkillClassDefinition>(5)
+        {
+            new MagusTtkSkillClassDefinition() { Code = "I.", KpPrice = new[] { 2, 6, 12, 20, 30 } },
+            new MagusTtkSkillClassDefinition() { Code = "II.", KpPrice = new[] { 3, 9, 18, 30, 45 } },
+            new MagusTtkSkillClassDefinition() { Code = "III.", KpPrice = new[] { 4, 12, 24, 40, 60 } },
+            new MagusTtkSkillClassDefinition() { Code = "IV.", KpPrice = new[] { 5, 15, 30, 50, 75 } },
+            new MagusTtkSkillClassDefinition() { Code = "V.", KpPrice = new[] { 6, 18, 36, 60, 90 } }
+        };
+
+        //public readonly List<SkillDefinition> SkillDefinitions = new List<SkillDefinition>()
+        //{
+        //    new SkillDefinition() { Code = "Birkózás", Category = , Name = "Harci" } },
+        //    { MagusTtkSkillCategoryEnum.Tudomanyos, new SkillCategory() { Code = "TUDOMANYOS", Name = "Tudományos" } },
+        //    { MagusTtkSkillCategoryEnum.Szocialis, new SkillCategory() { Code = "SZOCIALIS", Name = "Szociális" } },
+        //    { MagusTtkSkillCategoryEnum.Vilagi, new SkillCategory() { Code = "VILAGI", Name = "Világi" } },
+        //    { MagusTtkSkillCategoryEnum.Alvilagi, new SkillCategory() { Code = "ALVILAGI", Name = "Alvilági" } },
+        //    { MagusTtkSkillCategoryEnum.Magikus, new SkillCategory() { Code = "MAGIKUS", Name = "Mágikus" } },
+        //};
 
         public readonly Dictionary<string, WeaponCategory> WeaponCategoryDefinitions = new Dictionary<string, WeaponCategory>()
         {

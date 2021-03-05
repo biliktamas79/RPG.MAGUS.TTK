@@ -14,7 +14,7 @@ namespace MAGUS.TTK.Domain.Character
         /// <summary>
         /// Jellemvonás definíció
         /// </summary>
-        [JsonIgnoreAttribute]
+        [JsonIgnore]
         public TraitDefinition Definition { get; private set; }
         /// <summary>
         /// Jellemvonás aktuális számszerű értéke

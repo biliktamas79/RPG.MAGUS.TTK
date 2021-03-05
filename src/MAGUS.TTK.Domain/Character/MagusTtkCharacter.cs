@@ -51,7 +51,7 @@ namespace MAGUS.TTK.Domain.Character
         /// <summary>
         /// Tulajdonságok
         /// </summary>
-        public readonly Dictionary<MagusTtkCharacterAbilityEnum, AbilityValue> Abilities = new Dictionary<MagusTtkCharacterAbilityEnum, AbilityValue>(10);
+        public readonly Dictionary<string, AbilityValue> Abilities = new Dictionary<string, AbilityValue>(10);
         /// <summary>
         /// Statisztika
         /// </summary>
