@@ -180,5 +180,327 @@
       "Nyomolvasás/eltűntetés",
       "Túlélés"
     ]
+  },
+  {
+    "Code": "felföldi",
+    "Name": "felföldi",
+    "Advantages": [
+      "Herbalizmus",
+      "Legendaismeret",
+      "Túlélés"
+    ],
+    "Disadvantages": [
+      "Etikett",
+      "Heraldika",
+      "Magas Mágia"
+    ]
+  },
+  {
+    "Code": "gianagi",
+    "Name": "gianagi",
+    "Advantages": [
+      "Értékbecslés",
+      "Mászás",
+      "Szakma (Építészet)"
+    ],
+    "Disadvantages": [
+      "Alkímia",
+      "Hátbaszúrás",
+      "Zsebmetszés"
+    ]
+  },
+  {
+    "Code": "gorviki",
+    "Name": "gorviki",
+    "Advantages": [
+      "Hátbaszúrás",
+      "Lopózás",
+      "Művészet (Tánc)"
+    ],
+    "Disadvantages": [
+      "Herbalizmus",
+      "Idomítás",
+      "Túlélés"
+    ]
+  },
+  {
+    "Code": "haonwelli",
+    "Name": "haonwelli",
+    "Advantages": [
+      "Lélektan",
+      "Művészet (Tánc)",
+      "Ugrás"
+    ],
+    "Disadvantages": [
+      "Futás",
+      "Pusztítás",
+      "Túlélés"
+    ]
+  },
+  {
+    "Code": "hatvárosi",
+    "Name": "hatvárosi",
+    "Advantages": [
+      "Szakma (Hajózás)",
+      "Úszás",
+      "Vallásismeret"
+    ],
+    "Disadvantages": [
+      "Lovaglás",
+      "Nyomolvasás/eltűntetés",
+      "Túlélés"
+    ]
+  },
+  {
+    "Code": "ilanori",
+    "Name": "ilanori",
+    "Advantages": [
+      "Idomítás",
+      "Lovaglás",
+      "Szakma (Lótenyésztés)"
+    ],
+    "Disadvantages": [
+      "Etikett",
+      "Írás/olvasás",
+      "Zsebmetszés"
+    ]
+  },
+  {
+    "Code": "kahrei",
+    "Name": "kahrei",
+    "Advantages": [
+      "Alkímia",
+      "Írás/olvasás",
+      "Tudomány (Mechanika)"
+    ],
+    "Disadvantages": [
+      "Közös harcmodor",
+      "Lovaglás",
+      "Ugrás"
+    ]
+  },
+  {
+    "Code": "korg",
+    "Name": "korg",
+    "Advantages": [
+      "Futás",
+      "Szakma (Vadász)",
+      "Túlélés"
+    ],
+    "Disadvantages": [
+      "Etikett",
+      "Értékbecslés",
+      "Lélektan"
+    ]
+  },
+  {
+    "Code": "kráni",
+    "Name": "kráni",
+    "Advantages": [
+      "Méregkeverés/semlegesítés",
+      "Ősi nyelv",
+      "Vallatás"
+    ],
+    "Disadvantages": [
+      "Kultúra (idegen)",
+      "Művészet (Tánc)",
+      "Sebgyógyítás"
+    ]
+  },
+  {
+    "Code": "niarei",
+    "Name": "niarei",
+    "Advantages": [
+      "Etikett",
+      "Pszi (Slan)",
+      "Történelemismeret"
+    ],
+    "Disadvantages": [
+      "Kultúra (idegen)",
+      "Nyelvismeret (idegen)",
+      "Szakma (Hajózás)"
+    ]
+  },
+  {
+    "Code": "nomád",
+    "Name": "nomád",
+    "Advantages": [
+      "Idomítás",
+      "Lovaglás",
+      "Túlélés"
+    ],
+    "Disadvantages": [
+      "Leszerelés",
+      "Szakma (Hajózás)",
+      "Úszás"
+    ]
+  },
+  {
+    "Code": "ordani",
+    "Name": "ordani",
+    "Advantages": [
+      "Szakma (Hajózás)",
+      "Tűzvarázslói mágia",
+      "Vallásismeret"
+    ],
+    "Disadvantages": [
+      "Álcázás/álruha",
+      "Kultúra (idegen)",
+      "Túlélés"
+    ]
+  },
+  {
+    "Code": "predoci",
+    "Name": "predoci",
+    "Advantages": [
+      "Szakma (Borászat)",
+      "Szakma (Hajózás)",
+      "Szakma (Kereskedő)"
+    ],
+    "Disadvantages": [
+      "Mászás",
+      "Ősi nyelv",
+      "Túlélés"
+    ]
+  },
+  {
+    "Code": "pyarroni",
+    "Name": "pyarroni",
+    "Advantages": [
+      "Írás/olvasás",
+      "Pszi (Pyarroni)",
+      "Vallásismeret"
+    ],
+    "Disadvantages": [
+      "Hátbaszúrás",
+      "Pusztítás",
+      "Zsebmetszés"
+    ]
+  },
+  {
+    "Code": "sempyeri",
+    "Name": "sempyeri",
+    "Advantages": [
+      "Heraldika",
+      "Vallásismeret",
+      "Vértviselet"
+    ],
+    "Disadvantages": [
+      "Hátbaszúrás",
+      "Megtévesztés",
+      "Úszás"
+    ]
+  },
+  {
+    "Code": "shadoni",
+    "Name": "shadoni",
+    "Advantages": [
+      "Heraldika",
+      "Szakrális mágia",
+      "Vallásismeret"
+    ],
+    "Disadvantages": [
+      "Boszorkánymágia",
+      "Boszorkánymesteri mágia",
+      "Méregkeverés/semlegesítés"
+    ]
+  },
+  {
+    "Code": "sirenari",
+    "Name": "sirenari",
+    "Advantages": [
+      "Fegyverhasználat (ÍJ)",
+      "Szakma (Íjkészítő)",
+      "Túlélés"
+    ],
+    "Disadvantages": [
+      "Kultúra (idegen)",
+      "Vértviselet",
+      "Zsebmetszés"
+    ]
+  },
+  {
+    "Code": "syburri",
+    "Name": "syburri",
+    "Advantages": [
+      "Hárítás",
+      "Túlélés",
+      "Vallásismeret"
+    ],
+    "Disadvantages": [
+      "Álcázás/álruha",
+      "Etikett",
+      "Hátbaszúrás"
+    ]
+  },
+  {
+    "Code": "tarini",
+    "Name": "tarini",
+    "Advantages": [
+      "Értékbecslés",
+      "Szakma (Építészet)",
+      "Szakma (Kovács)"
+    ],
+    "Disadvantages": [
+      "Kínokozás",
+      "Lovaglás",
+      "Úszás"
+    ]
+  },
+  {
+    "Code": "tiadlani",
+    "Name": "tiadlani",
+    "Advantages": [
+      "Írás/olvasás",
+      "Pszi (Slan)",
+      "Szakma (Kereskedő)"
+    ],
+    "Disadvantages": [
+      "Hátbaszúrás",
+      "Idomítás",
+      "Vértviselet"
+    ]
+  },
+  {
+    "Code": "toroni",
+    "Name": "toroni",
+    "Advantages": [
+      "Etikett",
+      "Ősi nyelv",
+      "Vallásismeret"
+    ],
+    "Disadvantages": [
+      "Kultúra (idegen)",
+      "Nyomolvasás/eltűntetés",
+      "Túlélés"
+    ]
+  },
+  {
+    "Code": "viadomoi",
+    "Name": "viadomoi",
+    "Advantages": [
+      "Szakma (Hadvezetés)",
+      "Közös harcmodor",
+      "Vallásismeret"
+    ],
+    "Disadvantages": [
+      "Futás",
+      "Hátbaszúrás",
+      "Kínokozás"
+    ]
+  },
+  {
+    "Code": "yllinori",
+    "Name": "yllinori",
+    "Advantages": [
+      "Idomítás",
+      "Lovaglás",
+      "Pszi (Pyarroni)"
+    ],
+    "Disadvantages": [
+      "Etikett",
+      "Heraldika",
+      "Trükk"
+    ]
   }
 ]
