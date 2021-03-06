@@ -47,5 +47,623 @@
     "ClassCode": "II.",
     "CategoryCode": "HAR",
     "AbilityBase": [ "Gyo", "Ügy", "Érz" ]
+  },
+  {
+    "Code": "Kétkezes harc",
+    "ClassCode": "III.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Gyo", "Ügy", "Érz" ]
+  },
+  {
+    "Code": "Kínokozás",
+    "ClassCode": "IV.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Ügy", "Érz" ]
+  },
+  {
+    "Code": "Kombináció",
+    "ClassCode": "III.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Gyo", "Ügy", "Érz" ]
+  },
+  {
+    "Code": "Közös harcmodor",
+    "ClassCode": "I.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Int", "Érz" ]
+  },
+  {
+    "Code": "Különleges támadás",
+    "ClassCode": "III.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Gyo", "Ügy", "Érz" ]
+  },
+  {
+    "Code": "Lefegyverzés",
+    "ClassCode": "II.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Ügy", "Érz" ]
+  },
+  {
+    "Code": "Ökölharc",
+    "ClassCode": "III.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Erő", "Ügy" ]
+  },
+  {
+    "Code": "Pusztítás",
+    "ClassCode": "V.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Erő", "Int" ]
+  },
+  {
+    "Code": "Vértviselet",
+    "ClassCode": "III.",
+    "CategoryCode": "HAR",
+    "AbilityBase": [ "Erő", "Áll" ]
+  },
+
+  {
+    "Code": "Alkímia",
+    "ClassCode": "V.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Heraldika",
+    "ClassCode": "II.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Int", "Érz" ]
+  },
+  {
+    "Code": "Herbalizmus",
+    "ClassCode": "III.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Int", "Érz" ]
+  },
+  {
+    "Code": "Írás/olvasás",
+    "ClassCode": "II.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Ügy", "int" ]
+  },
+  {
+    "Code": "Legendaismeret",
+    "ClassCode": "IV.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Méregkeverés/semlegesítés",
+    "ClassCode": "IV.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Ősi nyelv",
+    "ClassCode": "V.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Pszi",
+    "ClassCode": "III.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Int", "Aka", "Asz" ]
+  },
+  {
+    "Code": "Pszi Pyarroni",
+    "ClassCode": "II.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Asz" ]
+  },
+  {
+    "Code": "Pszi Slan",
+    "ClassCode": "III.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Aka" ]
+  },
+  {
+    "Code": "Pszi Kyr",
+    "ClassCode": "III.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Sebgyógyítás",
+    "ClassCode": "III.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Int", "Aka", "Érz" ]
+  },
+  {
+    "Code": "Történelemismeret",
+    "ClassCode": "III.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Tudomány",
+    "ClassCode": "IV.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Int" ],
+    "RequiresSpecialization": true
+  },
+  {
+    "Code": "Vallásismeret",
+    "ClassCode": "II.",
+    "CategoryCode": "TUD",
+    "AbilityBase": [ "Kar", "Int" ]
+  },
+
+  {
+    "Code": "Etikett",
+    "ClassCode": "II.",
+    "CategoryCode": "SZO",
+    "AbilityBase": [ "Kar", "Int" ]
+  },
+  {
+    "Code": "Kultúra",
+    "ClassCode": "II.",
+    "CategoryCode": "SZO",
+    "AbilityBase": [ "Int" ],
+    "RequiresSpecialization": true,
+    "SupportsUniqueSpecialization": true,
+    "Specializations": [ "Pyar", "Toroni", "Shadoni" ]
+  },
+  {
+    "Code": "Lélektan",
+    "ClassCode": "III.",
+    "CategoryCode": "SZO",
+    "AbilityBase": [ "Int", "Asz", "Érz" ]
+  },
+  {
+    "Code": "Meggyőzés",
+    "ClassCode": "III.",
+    "CategoryCode": "SZO",
+    "AbilityBase": [ "Kar", "Int", "Aka" ]
+  },
+  {
+    "Code": "Megtévesztés",
+    "ClassCode": "IV.",
+    "CategoryCode": "SZO",
+    "AbilityBase": [ "Kar", "Int", "Asz" ]
+  },
+  {
+    "Code": "Művészet",
+    "ClassCode": "II.",
+    "CategoryCode": "SZO",
+    "AbilityBase": [ "Aka", "Ügy" ]
+  },
+  {
+    "Code": "Nyelvismeret",
+    "ClassCode": "I.",
+    "CategoryCode": "SZO",
+    "AbilityBase": [ "Int" ]
+  },
+
+  {
+    "Code": "Esés",
+    "ClassCode": "II.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Ügy", "Áll" ]
+  },
+  {
+    "Code": "Értékbecslés",
+    "ClassCode": "II.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Int", "Érz" ]
+  },
+  {
+    "Code": "Fegyverismeret",
+    "ClassCode": "II.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Int", "Érz" ]
+  },
+  {
+    "Code": "Futás",
+    "ClassCode": "I.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Gyo", "Áll" ]
+  },
+  {
+    "Code": "Hangutánzás",
+    "ClassCode": "III.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Aka", "Érz" ]
+  },
+  {
+    "Code": "Idomítás",
+    "ClassCode": "III.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Kar", "Aka", "Érz" ]
+  },
+  {
+    "Code": "Lovaglás",
+    "ClassCode": "II.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Ügy", "Aka" ]
+  },
+  {
+    "Code": "Mászás",
+    "ClassCode": "II.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Ügy", "Áll" ]
+  },
+  {
+    "Code": "Nyomolvasás/eltűntetés",
+    "ClassCode": "IV.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Int", "Érz" ]
+  },
+  {
+    "Code": "Szakma",
+    "ClassCode": "III.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Ügy", "Áll" ],
+    "AbilityBaseDependsOnSpecialization": true,
+    "RequiresSpecialization": true,
+    "SupportsUniqueSpecialization": true
+  },
+  {
+    "Code": "Túlélés",
+    "ClassCode": "IV.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Ügy", "Érz" ]
+  },
+  {
+    "Code": "Ugrás",
+    "ClassCode": "II.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Erő", "Ügy" ]
+  },
+  {
+    "Code": "Úszás",
+    "ClassCode": "I.",
+    "CategoryCode": "VIL",
+    "AbilityBase": [ "Erő", "Áll" ]
+  },
+
+  {
+    "Code": "Álcázás/álruha",
+    "ClassCode": "IV.",
+    "CategoryCode": "ALV",
+    "AbilityBase": [ "Int", "Érz" ]
+  },
+  {
+    "Code": "Hátbaszúrás",
+    "ClassCode": "III.",
+    "CategoryCode": "ALV",
+    "AbilityBase": [ "Gyo", "Ügy", "Int" ]
+  },
+  {
+    "Code": "Kutatás",
+    "ClassCode": "III.",
+    "CategoryCode": "ALV",
+    "AbilityBase": [ "Int", "Érz" ]
+  },
+  {
+    "Code": "Leszerelés",
+    "ClassCode": "III.",
+    "CategoryCode": "ALV",
+    "AbilityBase": [ "Ügy", "Int" ]
+  },
+  {
+    "Code": "Lopózás",
+    "ClassCode": "II.",
+    "CategoryCode": "ALV",
+    "AbilityBase": [ "Ügy", "Érz" ]
+  },
+  {
+    "Code": "Rejtőzködés",
+    "ClassCode": "II.",
+    "CategoryCode": "ALV",
+    "AbilityBase": [ "Asz", "Érz" ]
+  },
+  {
+    "Code": "Trükk",
+    "ClassCode": "III.",
+    "CategoryCode": "ALV",
+    "AbilityBase": [ "Gyo", "Ügy", "Kar" ]
+  },
+  {
+    "Code": "Vallatás",
+    "ClassCode": "III.",
+    "CategoryCode": "ALV",
+    "AbilityBase": [ "Kar", "Aka", "Érz" ]
+  },
+  {
+    "Code": "Zsebmetszés",
+    "ClassCode": "III.",
+    "CategoryCode": "ALV",
+    "AbilityBase": [ "Ügy", "Aka" ]
+  },
+
+  {
+    "Code": "Szakrális mágia",
+    "ClassCode": "IV.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Kar", "Int", "Asz" ]
+  },
+  {
+    "Code": "Kisebb Élet fohászok",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Kisebb Halál fohászok",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Kisebb Természet fohászok",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Kisebb Lélek fohászok",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Nagyobb Élet fohászok",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Nagyobb Halál fohászok",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Nagyobb Természet fohászok",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Nagyobb Lélek fohászok",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int" ]
+  },
+
+  {
+    "Code": "Bárdmágia",
+    "ClassCode": "IV.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Dalmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Kar", "Int" ]
+  },
+  {
+    "Code": "Hangmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Fénymágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Illúziómágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Érz" ]
+  },
+
+  {
+    "Code": "Boszorkánymágia",
+    "ClassCode": "IV.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka", "Asz" ]
+  },
+  {
+    "Code": "Misztikummágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Lángmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Asztrálmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Asz" ]
+  },
+  {
+    "Code": "Sorsmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Asz" ]
+  },
+  {
+    "Code": "Mentálmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Szexuálmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Kar", "Int" ]
+  },
+  {
+    "Code": "Térmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+
+  {
+    "Code": "Boszorkánymesteri mágia",
+    "ClassCode": "IV.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Egé", "Int", "Aka" ]
+  },
+  {
+    "Code": "Villámmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Rontásmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Egé", "Int" ]
+  },
+  {
+    "Code": "Átokmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Méregmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Természetmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Kórmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Egé", "Int" ]
+  },
+  {
+    "Code": "Nekromancia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Asz" ]
+  },
+
+  {
+    "Code": "Tűzvarázslói mágia",
+    "ClassCode": "IV.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Áll", "Int", "Aka" ]
+  },
+  {
+    "Code": "Alap tűzmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Forma tűzmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Manipuláló tűzmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Felső tűzmágia",
+    "ClassCode": "II.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+
+  {
+    "Code": "Tárgymágia",
+    "ClassCode": "III.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Ügy", "Int", "Aka" ]
+  },
+
+  {
+    "Code": "Magas Mágia",
+    "ClassCode": "V.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka", "Asz" ]
+  },
+  {
+    "Code": "Anyag Mágia",
+    "ClassCode": "III.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Elemi Mágia",
+    "ClassCode": "III.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Asztrál Mágia",
+    "ClassCode": "III.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Asz" ]
+  },
+  {
+    "Code": "Mentál Mágia",
+    "ClassCode": "III.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Nekro Mágia",
+    "ClassCode": "III.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Asz" ]
+  },
+  {
+    "Code": "Idő Mágia",
+    "ClassCode": "III.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Tér Mágia",
+    "ClassCode": "III.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int" ]
+  },
+  {
+    "Code": "Jel Mágia",
+    "ClassCode": "III.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Int", "Aka" ]
+  },
+  {
+    "Code": "Rúna Mágia",
+    "ClassCode": "IV.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Ügy", "Int", "Aka" ]
+  },
+  {
+    "Code": "Drágakő Mágia",
+    "ClassCode": "III.",
+    "CategoryCode": "MAG",
+    "AbilityBase": [ "Ügy", "Aka", "Érz" ]
   }
 ]

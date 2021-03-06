@@ -60,7 +60,7 @@
     "Name": "dzsad (törzsi)",
     "Advantages": [
       "Lovaglás",
-      "Nyomolvasás",
+      "Nyomolvasás/eltűntetés",
       "Túlélés"
     ],
     "Disadvantages": [
@@ -130,7 +130,7 @@
     "Name": "enysmoni",
     "Advantages": [
       "Idomítás",
-      "Kapáslövés",
+      "Kapáslövés/dobás",
       "Lovaglás"
     ],
     "Disadvantages": [

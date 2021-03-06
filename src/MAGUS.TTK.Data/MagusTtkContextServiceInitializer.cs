@@ -296,7 +296,18 @@ namespace MAGUS.TTK.Data
             {
                 // ha nem létező skill-re hivatkozna a skill
                 if (!skillDefinitionRepo.TryGetByCode(skillCodeRef.Code, out var skillDefinition))
+                {
+                    int openBraceIndex = skillCodeRef.Code.IndexOf('(');
+                    // ha van benne (
+                    if (openBraceIndex > -1)
+                    {
+                        var code = skillCodeRef.Code.Substring(0, openBraceIndex).Trim();
+                        // ha így már megtaláljuk a skill-t
+                        if (skillDefinitionRepo.TryGetByCode(code, out skillDefinition))
+                            continue;
+                    }
                     throw new ArgumentException($"Skill not found with code '{skillCodeRef.Code}' referenced by background definition '{backgroundDefinition.Code}'.");
+                }
             }
 
             return skillCodeReferences;
