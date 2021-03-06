@@ -20,6 +20,14 @@ namespace MAGUS.TTK.Domain.Test.Unit
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
             var ctx = serviceProvider.GetRequiredService<MagusTtkContext>();
+
+            Assert.AreNotEqual(0, ctx.AbilityDefinitions.Count());
+            Assert.AreNotEqual(0, ctx.OriginDefinitions.Count());
+            Assert.AreNotEqual(0, ctx.SkillCategoryDefinitions.Count());
+            Assert.AreNotEqual(0, ctx.SkillClassDefinitions.Count());
+            Assert.AreNotEqual(0, ctx.SkillDefinitions.Count());
+            Assert.AreNotEqual(0, ctx.TraitDefinitions.Count());
+            Assert.AreNotEqual(0, ctx.WeaponCategoryDefinitions.Count());
         }
     }
 }
