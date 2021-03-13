@@ -20,5 +20,10 @@ namespace MAGUS.TTK.Domain.Character
         /// Jellemvonás aktuális számszerű értéke
         /// </summary>
         public int Value;
+
+        public override string ToString()
+        {
+            return $"{this.Definition.Code}: {this.Value}";
+        }
     }
 }

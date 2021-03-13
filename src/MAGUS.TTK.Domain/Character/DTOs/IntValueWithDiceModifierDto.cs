@@ -18,5 +18,12 @@ namespace MAGUS.TTK.Domain.Character
         /// A dobás módosító
         /// </summary>
         public int? DiceModifier { get; set; }
+
+        public override string ToString()
+        {
+            return this.DiceModifier == null
+                ? $"{this.Value}"
+                : $"{this.Value} (+{this.DiceModifier})";
+        }
     }
 }

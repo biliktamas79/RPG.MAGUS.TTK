@@ -3,6 +3,7 @@ using MAGUS.TTK.Domain.Character.DTOs.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Text.Unicode;
 
 namespace MAGUS.TTK.Data.Repositories.Json
@@ -25,6 +26,8 @@ namespace MAGUS.TTK.Data.Repositories.Json
             JsonSerializerOptions.Converters.Add(new IntValueWithDiceModifierDtoSerializer());
             JsonSerializerOptions.Converters.Add(new StatsValueSerializer());
             JsonSerializerOptions.Converters.Add(new CodeOnlyAttributeSerializer());
+            //JsonSerializerOptions.Converters.Add(new MagusTtkCharacterSkillLevelsEnumSerializer());
+            JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
         }
 
         public static string SerializeToJsonString<T>(T value)

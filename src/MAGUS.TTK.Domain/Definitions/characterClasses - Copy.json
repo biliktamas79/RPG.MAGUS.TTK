@@ -1,0 +1,62 @@
+﻿[
+  {
+    "Code": "Harcos",
+    "Name": "Harcos",
+    "Abilities": {
+      "Erő": 10,
+      "Gyo": 8,
+      "Ügy": 9,
+      "Áll": 8,
+      "Egé": 8,
+      "Kar": 7,
+      "Int": 7,
+      "Aka": 8,
+      "Asz": 6,
+      "Érz": 9
+    },
+    "Skills": [
+      { "Code": "Birkózás", "Level": "If" },
+      { "Code": "Fegyverhasználat", "Level": "Kf" },
+      { "Code": "Fegyverhasználat", "Level": "Af" },
+      { "Code": "Fegyverhasználat", "Level": "If" },
+      { "Code": "Fegyvertörés", "Level": "If" },
+      { "Code": "Harci ösztön", "Level": "If" },
+      { "Code": "Harci rutin", "Level": "Kf" },
+      { "Code": "Hárítás", "Level": "If" },
+      { "Code": "Kombináció", "Level": "If" },
+      { "Code": "Közös harcmodor", "Level": "Af" },
+      { "Code": "Lefegyverzés", "Level": "If" },
+      { "Code": "Ökölharc", "Level": "Af" },
+      { "Code": "Pusztítás", "Level": "If" },
+      { "Code": "Vértviselet", "Level": "If" },
+      { "Code": "Kultúra", "Level": "Kf" },
+      { "Code": "Nelvismeret", "Level": "Kf" },
+      { "Code": "Esés", "Level": "Af" },
+      { "Code": "Fegyverismeret", "Level": "If" },
+      { "Code": "Futás", "Level": "Af" },
+      { "Code": "Lovaglás", "Level": "Af" },
+      { "Code": "Mászás", "Level": "If" },
+      { "Code": "Szakma (Hadvezetés)", "Level": "If" },
+      { "Code": "Túlélés", "Level": "If" },
+      { "Code": "Ugrás", "Level": "Af" }
+    ],
+    "LevelUpBonus": {
+      "FreeHm": 3,
+      "TE": 2,
+      "VE": 2,
+      "CE": 0,
+      "KE": 0,
+      "Fp": 3,
+      "Kp": 4,
+      "Pp": 0,
+      "Mp": 0,
+      "Sp": 15
+    },
+    "Talents": [
+      { "Code": "Harci affinitás" },
+      { "Code": "Megállíthatatlan" },
+      { "Code": "Mesterfegyver" },
+      { "Code": "Világi affinitás" }
+    ]
+  }
+]

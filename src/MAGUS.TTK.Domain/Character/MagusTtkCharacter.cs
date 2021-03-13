@@ -63,7 +63,7 @@ namespace MAGUS.TTK.Domain.Character
         /// <summary>
         /// Képzettségek
         /// </summary>
-        public readonly Dictionary<string, SkillLevel> Skills = new Dictionary<string, SkillLevel>();
+        public readonly MagusTtkCharacterSkills Skills = new MagusTtkCharacterSkills();
 
         /// <summary>
         /// Közelharci értékek

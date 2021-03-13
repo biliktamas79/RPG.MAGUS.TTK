@@ -16,11 +16,28 @@ namespace MAGUS.TTK.Domain.Character
         /// Képzettség definíció
         /// </summary>
         [JsonIgnoreAttribute]
-        public MagusTtkSkillDefinition Definition { get; private set; }
+        public MagusTtkSkillDefinition Definition { get; set; }
 
         /// <summary>
         /// A képzettség foka
         /// </summary>
-        public MagusTtkCharacterSkillLevelsEnum Level { get; }
+        public MagusTtkCharacterSkillLevelsEnum Level { get; set; }
+
+        /// <summary>
+        /// A képzettség specializációja, mint pl. a Fegyverhasználatnál a fegyver kategória, vagy a Nyelvismeret-nél a nyelv, ...
+        /// </summary>
+        public string Specialization { get; set; }
+
+        public bool RequiresSpecialization
+        {
+            get { return this.Definition?.RequiresSpecialization ?? false; }
+        }
+
+        public override string ToString()
+        {
+            return this.RequiresSpecialization
+                ? $"{this.Definition?.Code} ({this.Specialization}) {this.Level}"
+                : $"{this.Definition?.Code} {this.Level}";
+        }
     }
 }

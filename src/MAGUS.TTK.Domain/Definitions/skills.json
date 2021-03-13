@@ -16,6 +16,7 @@
     "ClassCode": "III.",
     "CategoryCode": "HAR",
     "AbilityBaseDependsOnSpecialization": true,
+    "RequiresSpecialization": true,
     "Specializations": [ "RP", "HP", "ÓP", "HAS", "ZÚZ", "SZÁ", "LOV", "NYD", "PD", "ÍJ", "SZÍ", "EGY", "HM" ]
   },
   {
@@ -186,7 +187,8 @@
     "ClassCode": "IV.",
     "CategoryCode": "TUD",
     "AbilityBase": [ "Int" ],
-    "RequiresSpecialization": true
+    "RequiresSpecialization": true,
+    "SupportsUniqueSpecialization": true
   },
   {
     "Code": "Vallásismeret",

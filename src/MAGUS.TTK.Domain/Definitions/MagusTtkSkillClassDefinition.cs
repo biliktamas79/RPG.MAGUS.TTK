@@ -17,5 +17,15 @@ namespace MAGUS.TTK.Domain.Definitions
         /// </summary>
         public string Code { get; set; }
         public int[] KpPrice { get; set; }
+
+        /// <summary>
+        /// Gets the Kp cost of the given skill level.
+        /// </summary>
+        /// <param name="level">The skill level to get Kp cost of.</param>
+        /// <returns>Returns the Kp cost of the given skill level.</returns>
+        public int GetKpCostOfLevel(MagusTtkCharacterSkillLevelsEnum level)
+        {
+            return this.KpPrice[(int)level - 1];
+        }
     }
 }

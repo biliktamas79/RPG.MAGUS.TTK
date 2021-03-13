@@ -12,20 +12,33 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Character\DTOs\Serializer\MagusTtkCharacterSkillLevelsEnumSerializer.cs" />
     <Compile Remove="Character\MagusTtkCharacterAbilityEnum.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Definitions\abilities.json" />
+    <None Remove="Definitions\characterClasses - Copy.json" />
+    <None Remove="Definitions\characterClasses.json" />
     <None Remove="Definitions\origins.json" />
     <None Remove="Definitions\skillCategories.json" />
     <None Remove="Definitions\skillClasses.json" />
     <None Remove="Definitions\skills.json" />
+    <None Remove="Definitions\talents.json" />
     <None Remove="Definitions\traits.json" />
     <None Remove="Definitions\weaponCategories.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Definitions\characterClasses - Copy.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Definitions\characterClasses.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Definitions\talents.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Definitions\traits.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

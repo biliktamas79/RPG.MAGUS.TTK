@@ -26,5 +26,10 @@ namespace MAGUS.TTK.Domain.Character
         /// A tulajdonság értéke
         /// </summary>
         public int Value { get; set; }
+
+        public override string ToString()
+        {
+            return $"{this.Definition.Code}: {this.Value}";
+        }
     }
 }
