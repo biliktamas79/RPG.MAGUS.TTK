@@ -181,6 +181,7 @@ namespace MAGUS.TTK.Data
                     Code = entity.Code,
                     AbilityBase = GetValidatedSkillAbilityBase(entity, abilityRepo),
                     AbilityBaseDependsOnSpecialization = entity.AbilityBaseDependsOnSpecialization,
+                    IsSecret = entity.IsSecret,
                     RequiresSpecialization = entity.RequiresSpecialization,
                     SupportsUniqueSpecialization = entity.SupportsUniqueSpecialization,
                     Specializations = GetValidatedSkillSpecializations(entity),

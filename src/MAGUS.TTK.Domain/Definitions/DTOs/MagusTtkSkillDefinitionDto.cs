@@ -23,5 +23,6 @@ namespace MAGUS.TTK.Domain.Definitions
         public bool RequiresSpecialization { get; set; }
         public bool SupportsUniqueSpecialization { get; set; }
         public string[] Specializations { get; set; }
+        public bool IsSecret { get; set; }
     }
 }

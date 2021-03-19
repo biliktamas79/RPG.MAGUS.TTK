@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <None Remove="Definitions\abilities.json" />
-    <None Remove="Definitions\characterClasses - Copy.json" />
     <None Remove="Definitions\characterClasses.json" />
     <None Remove="Definitions\origins.json" />
     <None Remove="Definitions\skillCategories.json" />
@@ -30,9 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Definitions\characterClasses - Copy.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Definitions\characterClasses.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
