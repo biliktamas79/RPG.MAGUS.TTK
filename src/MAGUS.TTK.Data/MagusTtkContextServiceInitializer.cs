@@ -27,6 +27,7 @@ namespace MAGUS.TTK.Data
                 .AddSingleton<IReadOnlyRepository<TalentDefinition>, InMemoryRepository<TalentDefinition>>(serviceProvider => InitializeTalentDefinitionInMemoryRepositoryFromJson(serviceProvider, "talents.json"))
                 .AddSingleton<IReadOnlyRepository<Background<CodeOnlyAttribute>>, InMemoryRepository<Background<CodeOnlyAttribute>>>(serviceProvider => InitializeBackgroundDefinitionInMemoryRepositoryFromJson(serviceProvider, "origins.json"))
                 .AddSingleton<IReadOnlyRepository<MagusTtkCharacterClassDefinition>, InMemoryRepository<MagusTtkCharacterClassDefinition>>(serviceProvider => InitializeCharacterClassDefinitionInMemoryRepositoryFromJson(serviceProvider, "characterClasses.json"))
+                .AddSingleton<IReadOnlyRepository<MagusTtkWeaponDefinition>, InMemoryRepository<MagusTtkWeaponDefinition>>(serviceProvider => InitializeWeaponDefinitionInMemoryRepositoryFromJson(serviceProvider, "weapons.json"))
                 ;
 
             //InitializeInMemoryRepositoryInstances(serviceCollection);
@@ -608,6 +609,52 @@ namespace MAGUS.TTK.Data
             var skills = new MagusTtkCharacterSkills();
             skills.Initialize(skillLevelList);
             return skills;
+        }
+
+        private InMemoryRepository<MagusTtkWeaponDefinition> InitializeWeaponDefinitionInMemoryRepositoryFromJson(IServiceProvider serviceProvider, string jsonFileName)
+        {
+            var weaponCategoryRepo = serviceProvider.GetRequiredService<IReadOnlyRepository<WeaponCategory>>();
+
+            string jsonString = File.ReadAllText(Path.Combine("Definitions", jsonFileName));
+            if (string.IsNullOrWhiteSpace(jsonString))
+                throw new ArgumentException($"Json file '{jsonFileName}' not found.");
+
+            var entitiesFromJson = JsonDeserializer.DeserializeFromJsonString<MagusTtkWeaponDefinition[]>(jsonString);
+
+            // JSON séma hiba
+            if ((entitiesFromJson == null) || (entitiesFromJson.Length == 0))
+                throw new ArgumentException($"Could not parse entities of type '{typeof(MagusTtkWeaponDefinition)}' from Json file '{jsonFileName}'.");
+
+            HashSet<string> codeHashes = new HashSet<string>();
+            List<MagusTtkWeaponDefinition> weaponDefinitions = new List<MagusTtkWeaponDefinition>(entitiesFromJson.Length);
+            foreach (var entity in entitiesFromJson)
+            {
+                // hiányzó Code
+                if (string.IsNullOrWhiteSpace(entity.Code))
+                    throw new ArgumentException($"Skill code in file '{jsonFileName}' is empty.");
+
+                // ha nem tudja hozzáadni, akkor már volt ilyen kóddal skill definition
+                if (!codeHashes.Add(entity.Code))
+                    throw new ArgumentException($"Skill code '{entity.Code}' in file '{jsonFileName}' is a duplicate.");
+
+                // ha nincs megadva egy fegyver kategória sem
+                if ((entity.CategoryCodes == null) || (entity.CategoryCodes.Length == 0))
+                    throw new ArgumentException($"CategoryCodes are missing for weapon code '{entity.Code}' in file '{jsonFileName}'.");
+
+                foreach (var weaponCategoryCode in entity.CategoryCodes)
+                {
+                    // ha nem valid fegyver kategória van megadva
+                    if (!weaponCategoryRepo.TryGetByCode(weaponCategoryCode, out var weaponCategory))
+                        throw new ArgumentException($"Weapon category code '{weaponCategoryCode}' in weapon definition '{entity.Code}' is unknown.");
+                }
+
+                weaponDefinitions.Add(entity);
+            }
+
+            var repo = new InMemoryRepository<MagusTtkWeaponDefinition>();
+            repo.Init(weaponDefinitions);
+
+            return repo;
         }
     }
 }

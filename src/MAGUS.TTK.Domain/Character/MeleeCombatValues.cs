@@ -11,7 +11,7 @@ namespace MAGUS.TTK.Domain.Character
     public class MeleeCombatValues
     {
         /// <summary>
-        /// Tulajdonság definíció
+        /// Fegyver definíció
         /// </summary>
         public WeaponDefinition Weapon { get; private set; }
         /// <summary>

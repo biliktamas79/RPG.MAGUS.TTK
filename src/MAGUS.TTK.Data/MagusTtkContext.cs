@@ -20,7 +20,8 @@ namespace MAGUS.TTK.Data
             IReadOnlyRepository<TraitDefinition> traitDefinitions,
             IReadOnlyRepository<TalentDefinition> talentDefinitions,
             IReadOnlyRepository<Background<CodeOnlyAttribute>> originDefinitions,
-            IReadOnlyRepository<MagusTtkCharacterClassDefinition> characterClassDefinitions)
+            IReadOnlyRepository<MagusTtkCharacterClassDefinition> characterClassDefinitions,
+            IReadOnlyRepository<MagusTtkWeaponDefinition> weaponDefinitions)
         {
             this.AbilityDefinitions = abilityDefinitions ?? throw new ArgumentNullException(nameof(abilityDefinitions));
             this.SkillCategoryDefinitions = skillCategoryDefinitions ?? throw new ArgumentNullException(nameof(skillCategoryDefinitions));
@@ -31,6 +32,7 @@ namespace MAGUS.TTK.Data
             this.TalentDefinitions = talentDefinitions ?? throw new ArgumentNullException(nameof(talentDefinitions));
             this.OriginDefinitions = originDefinitions ?? throw new ArgumentNullException(nameof(originDefinitions));
             this.CharacterClassDefinitions = characterClassDefinitions ?? throw new ArgumentNullException(nameof(characterClassDefinitions));
+            this.WeaponDefinitions = weaponDefinitions ?? throw new ArgumentNullException(nameof(weaponDefinitions));
         }
 
         public IReadOnlyRepository<AbilityDefinition> AbilityDefinitions { get; private set; }
@@ -42,5 +44,6 @@ namespace MAGUS.TTK.Data
         public IReadOnlyRepository<TalentDefinition> TalentDefinitions { get; private set; }
         public IReadOnlyRepository<Background<CodeOnlyAttribute>> OriginDefinitions { get; private set; }
         public IReadOnlyRepository<MagusTtkCharacterClassDefinition> CharacterClassDefinitions { get; private set; }
+        public IReadOnlyRepository<MagusTtkWeaponDefinition> WeaponDefinitions { get; private set; }
     }
 }

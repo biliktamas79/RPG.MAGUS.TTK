@@ -1,0 +1,889 @@
+﻿[
+  {
+    "Code": "Vasököl",
+    "CategoryCodes": [ "Ökölh." ],
+    "StatsIn1Hand": {
+      "Seb": "+1"
+    }
+  },
+  {
+    "Code": "Béltépő",
+    "CategoryCodes": [ "RP" ],
+    "StatsIn1Hand": {
+      "TE": 4,
+      "VE": 1,
+      "Seb": "k10",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Hárítótőr",
+    "CategoryCodes": [ "RP" ],
+    "StatsIn1Hand": {
+      "TE": 2,
+      "VE": 8,
+      "Seb": "k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Kés",
+    "CategoryCodes": [ "RP" ],
+    "StatsIn1Hand": {
+      "TE": 4,
+      "VE": 1,
+      "Seb": "k5",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Levéltőr",
+    "CategoryCodes": [ "RP" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 3,
+      "Seb": "k10",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Pugoss",
+    "CategoryCodes": [ "RP" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 2,
+      "Seb": "k10",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Ramiera",
+    "CategoryCodes": [ "RP" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 3,
+      "Seb": "k10",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Sai tőr",
+    "CategoryCodes": [ "RP" ],
+    "StatsIn1Hand": {
+      "TE": 3,
+      "VE": 7,
+      "Seb": "k5+1",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Sequor",
+    "CategoryCodes": [ "RP" ],
+    "StatsIn1Hand": {
+      "TE": 6,
+      "VE": 3,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Slan tőr",
+    "CategoryCodes": [ "RP" ],
+    "StatsIn1Hand": {
+      "TE": 6,
+      "VE": 2,
+      "Seb": "k10",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Sryn tőr",
+    "CategoryCodes": [ "RP" ],
+    "StatsIn1Hand": {
+      "TE": 6,
+      "VE": 1,
+      "Seb": "k5+1",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Tőr",
+    "CategoryCodes": [ "RP" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 2,
+      "Seb": "k5+1",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Dzsenn szablya",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 7,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Emerlin kard",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 6,
+      "VE": 6,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Fejvadászkard",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 5,
+      "Seb": "k10",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Hiequar",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 4,
+      "Seb": "3k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Hollókard",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 6,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Hosszúkard",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 5,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Ívkard",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 8,
+      "VE": 6,
+      "Seb": "2k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Jatagán",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 4,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Khossas",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 4,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Kígyókard",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 6,
+      "VE": 4,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Lagoss",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 3,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Lovagkard",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 6,
+      "VE": 4,
+      "Seb": "3k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Meneth",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 3,
+      "Seb": "3k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Mesterkard",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 4,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Rövidkard",
+    "CategoryCodes": [ "HP", "RP" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 4,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Sárkánykard",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 6,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Slan kard",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 9,
+      "VE": 4,
+      "Seb": "3k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Szablya",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 6,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Széleskard",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 6,
+      "VE": 5,
+      "Seb": "k10",
+      "Tam": 1
+    },
+    "StatsIn2Hands": {
+      "TE": 6,
+      "VE": 5,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Tőrkard",
+    "CategoryCodes": [ "HP" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 7,
+      "Seb": "k10",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Csatacsákány",
+    "CategoryCodes": [ "HAS" ],
+    "StatsIn1Hand": {
+      "TE": 6,
+      "VE": 2,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Egykezes csatabárd",
+    "CategoryCodes": [ "HAS" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 3,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Holdsrló",
+    "CategoryCodes": [ "HAS" ],
+    "StatsIn1Hand": {
+      "TE": 4,
+      "VE": 6,
+      "Seb": "k5+1",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Kétkezes csatabárd",
+    "CategoryCodes": [ "HAS" ],
+    "StatsIn2Hands": {
+      "TE": 7,
+      "VE": 3,
+      "Seb": "3k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Furkósbot",
+    "CategoryCodes": [ "ZÚZ" ],
+    "StatsIn1Hand": {
+      "TE": 4,
+      "VE": 4,
+      "Seb": "k10",
+      "Tam": 1
+    },
+    "StatsIn2Hands": {
+      "TE": 4,
+      "VE": 4,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Csatacsillag",
+    "CategoryCodes": [ "ZÚZ" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 2,
+      "Seb": "3k5",
+      "Tam": 1
+    },
+    "StatsIn2Hands": {
+      "TE": 7,
+      "VE": 2,
+      "Seb": "3k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Egykezes buzogány",
+    "CategoryCodes": [ "ZÚZ" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 3,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Harci kalapács",
+    "CategoryCodes": [ "ZÚZ" ],
+    "StatsIn1Hand": {
+      "TE": 6,
+      "VE": 3,
+      "Seb": "2k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Kétkezes buzogány",
+    "CategoryCodes": [ "ZÚZ" ],
+    "StatsIn2Hands": {
+      "TE": 8,
+      "VE": 2,
+      "Seb": "2k10",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Láncos buzogány",
+    "CategoryCodes": [ "ZÚZ" ],
+    "StatsIn1Hand": {
+      "TE": 8,
+      "VE": 1,
+      "Seb": "3k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Nunchaku",
+    "CategoryCodes": [ "ZÚZ" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 5,
+      "Seb": "k5+1",
+      "Tam": 2
+    },
+    "StatsIn2Hands": {
+      "TE": 7,
+      "VE": 5,
+      "Seb": "k5+1",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Rövidbot",
+    "CategoryCodes": [ "ZÚZ" ],
+    "StatsIn1Hand": {
+      "TE": 4,
+      "VE": 5,
+      "Seb": "k5+1",
+      "Tam": 2
+    },
+    "StatsIn2Hands": {
+      "TE": 4,
+      "VE": 5,
+      "Seb": "k5+1",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Shadleki buzogány",
+    "CategoryCodes": [ "ZÚZ", "HAS" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 4,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Másfélkezes kard",
+    "CategoryCodes": [ "ÓP", "HP" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 6,
+      "Seb": "3k5",
+      "Tam": 1
+    },
+    "StatsIn2Hands": {
+      "TE": 7,
+      "VE": 6,
+      "Seb": "3k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Mara-sequor",
+    "CategoryCodes": [ "ÓP" ],
+    "StatsIn1Hand": {
+      "TE": 8,
+      "VE": 6,
+      "Seb": "3k5",
+      "Tam": 1
+    },
+    "StatsIn2Hands": {
+      "TE": 8,
+      "VE": 6,
+      "Seb": "3k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Pallos",
+    "CategoryCodes": [ "ÓP" ],
+    "StatsIn2Hands": {
+      "TE": 8,
+      "VE": 8,
+      "Seb": "2k10",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Alabárd",
+    "CategoryCodes": [ "SZÁ", "HAS" ],
+    "StatsIn2Hands": {
+      "TE": 6,
+      "VE": 7,
+      "Seb": "3k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Dipada",
+    "CategoryCodes": [ "SZÁ" ],
+    "StatsIn1Hand": {
+      "TE": 6,
+      "VE": 6,
+      "Seb": "2k5",
+      "Tam": 1
+    },
+    "StatsIn2Hands": {
+      "TE": 6,
+      "VE": 6,
+      "Seb": "2k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Horgaskard",
+    "CategoryCodes": [ "SZÁ" ],
+    "StatsIn2Hands": {
+      "TE": 7,
+      "VE": 6,
+      "Seb": "3k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Hosszúbot",
+    "CategoryCodes": [ "SZÁ" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 7,
+      "Seb": "k10",
+      "Tam": 1
+    },
+    "StatsIn2Hands": {
+      "TE": 5,
+      "VE": 7,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Lándzsa.Melee",
+    "Name": "Lándzsa (közelharc)",
+    "CategoryCodes": [ "SZÁ", "LOV" ],
+    "StatsIn1Hand": {
+      "TE": 7,
+      "VE": 6,
+      "Seb": "2k5",
+      "Tam": 1
+    },
+    "StatsIn2Hands": {
+      "TE": 7,
+      "VE": 6,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Szigony.Melee",
+    "Name": "Szigony (közelharc)",
+    "CategoryCodes": [ "SZÁ" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 8,
+      "Seb": "2k5",
+      "Tam": 1
+    },
+    "StatsIn2Hands": {
+      "TE": 5,
+      "VE": 8,
+      "Seb": "2k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Könnyűkopja",
+    "CategoryCodes": [ "LOV" ],
+    "StatsIn1Hand": {
+      "TE": 8,
+      "VE": 2,
+      "Seb": "3k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Nehézkopja",
+    "CategoryCodes": [ "LOV" ],
+    "StatsIn1Hand": {
+      "TE": 10,
+      "VE": 0,
+      "Seb": "2k10",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Korbács, Ostor",
+    "CategoryCodes": [ "EGY" ],
+    "StatsIn1Hand": {
+      "TE": 4,
+      "VE": 1,
+      "Seb": "2k2",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Láncos sarló",
+    "CategoryCodes": [ "EGY" ],
+    "StatsIn1Hand": {
+      "TE": 5,
+      "VE": 6,
+      "Seb": "k5",
+      "Tam": 1
+    },
+    "StatsIn2Hands": {
+      "TE": 5,
+      "VE": 6,
+      "Seb": "k5",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Tonfa",
+    "CategoryCodes": [ "EGY" ],
+    "StatsIn1Hand": {
+      "TE": 2,
+      "VE": 7,
+      "Seb": "k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Többrészes bot",
+    "CategoryCodes": [ "EGY" ],
+    "StatsIn2Hands": {
+      "TE": 7,
+      "VE": 7,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Vaskígyó",
+    "CategoryCodes": [ "EGY" ],
+    "StatsIn1Hand": {
+      "TE": 8,
+      "VE": 2,
+      "Seb": "k5",
+      "Tam": 1
+    },
+    "StatsIn2Hands": {
+      "TE": 8,
+      "VE": 2,
+      "Seb": "k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Bóla",
+    "CategoryCodes": [ "PD" ],
+    "StatsIn1Hand": {
+      "CE": 3,
+      "VE": 1,
+      "Tav": 10,
+      "Seb": "2k2",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Dobótőr",
+    "CategoryCodes": [ "PD" ],
+    "StatsIn1Hand": {
+      "CE": 4,
+      "VE": 1,
+      "Tav": 10,
+      "Seb": "k5+1",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Hajítóbárd",
+    "CategoryCodes": [ "PD" ],
+    "StatsIn1Hand": {
+      "CE": 5,
+      "VE": 2,
+      "Tav": 15,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Slan csillag",
+    "CategoryCodes": [ "PD" ],
+    "StatsIn1Hand": {
+      "CE": 5,
+      "VE": 0,
+      "Tav": 15,
+      "Seb": "k5",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Hajítódárda",
+    "CategoryCodes": [ "NYD" ],
+    "StatsIn1Hand": {
+      "CE": 8,
+      "VE": 3,
+      "Tav": 25,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Lándzsa.Thrown",
+    "Name": "Lándzsa (dobva)",
+    "CategoryCodes": [ "NYD" ],
+    "StatsIn1Hand": {
+      "CE": 6,
+      "VE": 6,
+      "Tav": 20,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Szigony.Thrown",
+    "Name":  "Szigony (dobva)",
+    "CategoryCodes": [ "NYD" ],
+    "StatsIn1Hand": {
+      "CE": 5,
+      "VE": 8,
+      "Tav": 20,
+      "Seb": "2k5",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Dobóháló",
+    "CategoryCodes": [ "EGY" ],
+    "StatsIn1Hand": {
+      "CE": 1,
+      "VE": 2,
+      "Tav": 5,
+      "Seb": "k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Rövid íj",
+    "CategoryCodes": [ "ÍJ" ],
+    "StatsIn2Hands": {
+      "CE": 3,
+      "Tav": 50,
+      "Seb": "k5+1",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Hosszú íj",
+    "CategoryCodes": [ "ÍJ" ],
+    "StatsIn2Hands": {
+      "CE": 4,
+      "Tav": 70,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Elf íj",
+    "CategoryCodes": [ "ÍJ" ],
+    "StatsIn2Hands": {
+      "CE": 7,
+      "Tav": 80,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Visszacsapó íj",
+    "CategoryCodes": [ "ÍJ" ],
+    "StatsIn2Hands": {
+      "CE": 4,
+      "Tav": 100,
+      "Seb": "k10",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Kahrei nyílpuska",
+    "CategoryCodes": [ "SZÍ" ],
+    "StatsIn1Hand": {
+      "CE": 7,
+      "Tav": 30,
+      "Seb": "k5",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Kézi nyílpuska",
+    "CategoryCodes": [ "SZÍ" ],
+    "StatsIn1Hand": {
+      "CE": 6,
+      "Tav": 30,
+      "Seb": "k5+1",
+      "Tam": 2
+    }
+  },
+  {
+    "Code": "Könnyű nyílpuska",
+    "CategoryCodes": [ "SZÍ" ],
+    "StatsIn2Hands": {
+      "CE": 8,
+      "Tav": 50,
+      "Seb": "2k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Nehéz nyílpuska",
+    "CategoryCodes": [ "SZÍ" ],
+    "StatsIn2Hands": {
+      "CE": 7,
+      "Tav": 60,
+      "Seb": "3k5",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Shadoni nyílpuska",
+    "CategoryCodes": [ "SZÍ" ],
+    "StatsIn2Hands": {
+      "CE": 8,
+      "Tav": 80,
+      "Seb": "2k10",
+      "Tam": 1
+    }
+  },
+  {
+    "Code": "Fúvócső",
+    "CategoryCodes": [ "EGY" ],
+    "StatsIn1Hand": {
+      "CE": 5,
+      "Tav": 20,
+      "Seb": "k2",
+      "Tam": 3
+    }
+  },
+  {
+    "Code": "Parittya",
+    "CategoryCodes": [ "EGY" ],
+    "StatsIn1Hand": {
+      "CE": 2,
+      "Tav": 60,
+      "Seb": "k5",
+      "Tam": 1
+    }
+  }
+]

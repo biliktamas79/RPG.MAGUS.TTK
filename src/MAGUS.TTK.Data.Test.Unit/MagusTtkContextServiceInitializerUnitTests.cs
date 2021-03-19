@@ -29,6 +29,7 @@ namespace MAGUS.TTK.Domain.Test.Unit
             Assert.AreNotEqual(0, ctx.TraitDefinitions.Count());
             Assert.AreNotEqual(0, ctx.WeaponCategoryDefinitions.Count());
             Assert.AreNotEqual(0, ctx.CharacterClassDefinitions.Count());
+            Assert.AreNotEqual(0, ctx.WeaponDefinitions.Count());
         }
     }
 }

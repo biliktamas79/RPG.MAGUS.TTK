@@ -13,9 +13,14 @@ namespace RPG.Domain.Definitions
         /// <summary>
         /// Weapon unique code, like ShortBlade, ThrowingKnife, ...
         /// </summary>
-        public string Code { get; private set; }
+        public string Code { get; set; }
+        /// <summary>
+        /// Weapon category.
+        /// </summary>
         public WeaponCategory Category { get; set; }
-
-        public int Range { get; set; }
+        /// <summary>
+        /// Weapon description.
+        /// </summary>
+        public string Description { get; set; }
     }
 }

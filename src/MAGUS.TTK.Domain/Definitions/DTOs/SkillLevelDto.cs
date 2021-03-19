@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
+using MAGUS.TTK.Domain.Character;
 using MAGUS.TTK.Domain.Definitions;
 using RPG.Domain;
 using RPG.Domain.Definitions;
 
-namespace MAGUS.TTK.Domain.Character
+namespace MAGUS.TTK.Domain.Definitions
 {
     /// <summary>
     /// MAGUS karakter képzettség szint DTO
