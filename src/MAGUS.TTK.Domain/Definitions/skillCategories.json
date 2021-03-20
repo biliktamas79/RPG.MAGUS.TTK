@@ -1,26 +1,32 @@
 ﻿[
   {
     "Code": "HAR",
-    "Name": "Harci"
+    "Name": "Harci",
+    "DisplayOrder": 1
   },
   {
     "Code": "TUD",
-    "Name": "Tudományos"
+    "Name": "Tudományos",
+    "DisplayOrder": 2
   },
   {
     "Code": "SZO",
-    "Name": "Szociális"
+    "Name": "Szociális",
+    "DisplayOrder": 3
   },
   {
     "Code": "VIL",
-    "Name": "Világi"
+    "Name": "Világi",
+    "DisplayOrder": 4
   },
   {
     "Code": "ALV",
-    "Name": "Alvilági"
+    "Name": "Alvilági",
+    "DisplayOrder": 5
   },
   {
     "Code": "MAG",
-    "Name": "Mágikus"
+    "Name": "Mágikus",
+    "DisplayOrder": 6
   }
 ]

@@ -30,6 +30,23 @@ namespace MAGUS.TTK.Domain.Test.Unit
             Assert.AreNotEqual(0, ctx.WeaponCategoryDefinitions.Count());
             Assert.AreNotEqual(0, ctx.CharacterClassDefinitions.Count());
             Assert.AreNotEqual(0, ctx.WeaponDefinitions.Count());
+
+            foreach (var charClassDef in ctx.CharacterClassDefinitions.List())
+            {
+                System.Diagnostics.Debug.WriteLine($"Skills of charcter class '{charClassDef.Name ?? charClassDef.Code}' by category:");
+
+                foreach (var group in charClassDef.Skills.GetSkillsByCategory())
+                {
+                    System.Diagnostics.Debug.WriteLine($"  Skill category '{group.Key.Name ?? group.Key.Code}'");
+
+                    foreach (var skill in group)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"    - {skill}");
+                    }
+                }
+
+                System.Diagnostics.Debug.WriteLine("");
+            }
         }
     }
 }

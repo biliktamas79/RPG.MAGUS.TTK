@@ -14,6 +14,7 @@ namespace RPG.Domain.Definitions
         /// Skill category unique code, like Fight, Magic, Misc, ...
         /// </summary>
         public string Code { get; set; }
-        public string Name;
+        public string Name { get; set; }
+        public int DisplayOrder { get; set; }
     }
 }

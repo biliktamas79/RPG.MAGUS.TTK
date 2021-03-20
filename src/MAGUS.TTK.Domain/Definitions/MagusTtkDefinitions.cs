@@ -30,12 +30,12 @@ namespace MAGUS.TTK.Domain.Definitions
 
         public readonly Dictionary<MagusTtkSkillCategoryEnum, SkillCategory> SkillCategories = new Dictionary<MagusTtkSkillCategoryEnum, SkillCategory>(6)
         {
-            { MagusTtkSkillCategoryEnum.Harci, new SkillCategory() { Code = "HARCI", Name = "Harci" } },
-            { MagusTtkSkillCategoryEnum.Tudomanyos, new SkillCategory() { Code = "TUDOMANYOS", Name = "Tudományos" } },
-            { MagusTtkSkillCategoryEnum.Szocialis, new SkillCategory() { Code = "SZOCIALIS", Name = "Szociális" } },
-            { MagusTtkSkillCategoryEnum.Vilagi, new SkillCategory() { Code = "VILAGI", Name = "Világi" } },
-            { MagusTtkSkillCategoryEnum.Alvilagi, new SkillCategory() { Code = "ALVILAGI", Name = "Alvilági" } },
-            { MagusTtkSkillCategoryEnum.Magikus, new SkillCategory() { Code = "MAGIKUS", Name = "Mágikus" } },
+            { MagusTtkSkillCategoryEnum.Harci, new SkillCategory() { Code = "HARCI", Name = "Harci", DisplayOrder = 1 } },
+            { MagusTtkSkillCategoryEnum.Tudomanyos, new SkillCategory() { Code = "TUDOMANYOS", Name = "Tudományos", DisplayOrder = 2 } },
+            { MagusTtkSkillCategoryEnum.Szocialis, new SkillCategory() { Code = "SZOCIALIS", Name = "Szociális", DisplayOrder = 3 } },
+            { MagusTtkSkillCategoryEnum.Vilagi, new SkillCategory() { Code = "VILAGI", Name = "Világi", DisplayOrder = 4 } },
+            { MagusTtkSkillCategoryEnum.Alvilagi, new SkillCategory() { Code = "ALVILAGI", Name = "Alvilági", DisplayOrder = 5 } },
+            { MagusTtkSkillCategoryEnum.Magikus, new SkillCategory() { Code = "MAGIKUS", Name = "Mágikus", DisplayOrder = 6 } },
         };
 
         public readonly List<MagusTtkSkillClassDefinition> SkillClassDefinitions = new List<MagusTtkSkillClassDefinition>(5)
