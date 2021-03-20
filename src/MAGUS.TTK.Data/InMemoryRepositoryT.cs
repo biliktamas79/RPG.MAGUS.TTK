@@ -62,5 +62,10 @@ namespace MAGUS.TTK.Data
         {
             return this.Dict.Select(kvp => kvp.Value).GetEnumerator();
         }
+
+        public override string ToString()
+        {
+            return $"InMemoryRepository<{typeof(TEntity).Name}> (Count = {this.Dict.Count})";
+        }
     }
 }
