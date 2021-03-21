@@ -11,6 +11,8 @@ namespace MAGUS.TTK.Domain.Definitions
     /// </summary>
     public class MagusTtkSkillDefinition : SkillDefinition
     {
+        public string Group { get; set; }
+        public int DisplayOrderInGroup { get; set; }
         /// <summary>
         /// Definition of one of the 5 skill classes in TTK
         /// </summary>
@@ -24,6 +26,11 @@ namespace MAGUS.TTK.Domain.Definitions
         public bool SupportsUniqueSpecialization { get; set; }
         public string[] Specializations { get; set; }
         public bool IsSecret { get; set; }
+
+        public override string ToString()
+        {
+            return $"{this.Code}  {this.GetKpCostSummary()}  {((this.AbilityBase == null) ? string.Empty : string.Join(", ", this.AbilityBase))}  {this.SkillClassDefinition.Code}";
+        }
 
         public string GetKpCostSummary(string separator = "/")
         {

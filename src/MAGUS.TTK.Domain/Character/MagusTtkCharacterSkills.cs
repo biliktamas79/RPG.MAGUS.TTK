@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using RPG.Domain.Definitions;
+using MAGUS.TTK.Domain.Definitions;
 
 namespace MAGUS.TTK.Domain.Character
 {
@@ -130,27 +131,12 @@ namespace MAGUS.TTK.Domain.Character
 
         public IEnumerable<SkillLevel> GetSkillsOfCategory(SkillCategory category, bool orderByDefault = true)
         {
-            if (category == null)
-                throw new ArgumentNullException(nameof(category));
-
-            var skills = this.SkillLevels.Where(skillLevel => skillLevel.Definition.Category.Code == category.Code);
-            
-            return orderByDefault
-                ? skills.OrderBy(skillLevel => skillLevel.Definition.Code)
-                : skills;
+            return this.SkillLevels.GetSkillLevelsOfCategory(category, orderByDefault);
         }
 
         public IEnumerable<IGrouping<SkillCategory, SkillLevel>> GetSkillsByCategory(bool orderByDefault = true)
         {
-            var skillLevels = orderByDefault
-                ? (IEnumerable<SkillLevel>)this.SkillLevels.OrderBy(skillLevel => skillLevel.Definition.Code)
-                : this.SkillLevels;
-
-            var groups = skillLevels.GroupBy(skillLevel => skillLevel.Definition.Category);
-
-            return orderByDefault
-                ? groups.OrderBy(group => group.Key.DisplayOrder)
-                : groups;
+            return this.SkillLevels.GroupSkillLevelsByCategory(orderByDefault);
         }
     }
 }

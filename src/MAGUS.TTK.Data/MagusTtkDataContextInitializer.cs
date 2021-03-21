@@ -149,6 +149,8 @@ namespace MAGUS.TTK.Data
                 var newEntity = new MagusTtkSkillDefinition()
                 {
                     Code = entity.Code,
+                    Group = entity.Group,
+                    DisplayOrderInGroup = entity.DisplayOrderInGroup,
                     AbilityBase = await GetValidatedSkillAbilityBase(entity, dataContext.AbilityDefinitions, cancellationToken),
                     AbilityBaseDependsOnSpecialization = entity.AbilityBaseDependsOnSpecialization,
                     IsSecret = entity.IsSecret,

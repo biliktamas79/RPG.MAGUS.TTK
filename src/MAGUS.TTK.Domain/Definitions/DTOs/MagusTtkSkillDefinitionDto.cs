@@ -12,6 +12,8 @@ namespace MAGUS.TTK.Domain.Definitions
     public class MagusTtkSkillDefinitionDto
     {
         public string Code { get; set; }
+        public string Group { get; set; }
+        public int DisplayOrderInGroup { get; set; }
         public string ClassCode { get; set; }
         public string CategoryCode { get; set; }
         //public string Name { get; set; }

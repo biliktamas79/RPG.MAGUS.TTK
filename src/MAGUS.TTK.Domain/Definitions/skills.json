@@ -390,6 +390,8 @@
     "Code": "Szakrális mágia",
     "ClassCode": "IV.",
     "CategoryCode": "MAG",
+    "Group": "1",
+    "DisplayOrderInGroup": 1,
     "IsSecret": true,
     "AbilityBase": [ "Kar", "Int", "Asz" ]
   },
@@ -397,6 +399,8 @@
     "Code": "Kisebb Élet fohászok",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "1",
+    "DisplayOrderInGroup": 2,
     "IsSecret": true,
     "AbilityBase": [ "Int" ]
   },
@@ -404,6 +408,8 @@
     "Code": "Kisebb Halál fohászok",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "1",
+    "DisplayOrderInGroup": 3,
     "IsSecret": true,
     "AbilityBase": [ "Int" ]
   },
@@ -411,6 +417,8 @@
     "Code": "Kisebb Természet fohászok",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "1",
+    "DisplayOrderInGroup": 4,
     "IsSecret": true,
     "AbilityBase": [ "Int" ]
   },
@@ -418,6 +426,8 @@
     "Code": "Kisebb Lélek fohászok",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "1",
+    "DisplayOrderInGroup": 5,
     "IsSecret": true,
     "AbilityBase": [ "Int" ]
   },
@@ -425,6 +435,9 @@
     "Code": "Nagyobb Élet fohászok",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "1",
+
+    "DisplayOrderInGroup": 6,
     "IsSecret": true,
     "AbilityBase": [ "Int" ]
   },
@@ -432,6 +445,8 @@
     "Code": "Nagyobb Halál fohászok",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "1",
+    "DisplayOrderInGroup": 7,
     "IsSecret": true,
     "AbilityBase": [ "Int" ]
   },
@@ -439,6 +454,8 @@
     "Code": "Nagyobb Természet fohászok",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "1",
+    "DisplayOrderInGroup": 8,
     "IsSecret": true,
     "AbilityBase": [ "Int" ]
   },
@@ -446,6 +463,8 @@
     "Code": "Nagyobb Lélek fohászok",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "1",
+    "DisplayOrderInGroup": 9,
     "IsSecret": true,
     "AbilityBase": [ "Int" ]
   },
@@ -454,6 +473,8 @@
     "Code": "Bárdmágia",
     "ClassCode": "IV.",
     "CategoryCode": "MAG",
+    "Group": "2",
+    "DisplayOrderInGroup": 1,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -461,6 +482,8 @@
     "Code": "Dalmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "2",
+    "DisplayOrderInGroup": 2,
     "IsSecret": true,
     "AbilityBase": [ "Kar", "Int" ]
   },
@@ -468,6 +491,8 @@
     "Code": "Hangmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "2",
+    "DisplayOrderInGroup": 3,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -475,6 +500,8 @@
     "Code": "Fénymágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "2",
+    "DisplayOrderInGroup": 4,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -482,6 +509,8 @@
     "Code": "Illúziómágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "2",
+    "DisplayOrderInGroup": 5,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Érz" ]
   },
@@ -490,6 +519,8 @@
     "Code": "Boszorkánymágia",
     "ClassCode": "IV.",
     "CategoryCode": "MAG",
+    "Group": "3",
+    "DisplayOrderInGroup": 1,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka", "Asz" ]
   },
@@ -497,6 +528,8 @@
     "Code": "Misztikummágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "3",
+    "DisplayOrderInGroup": 2,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -504,6 +537,8 @@
     "Code": "Lángmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "3",
+    "DisplayOrderInGroup": 3,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -511,6 +546,8 @@
     "Code": "Asztrálmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "3",
+    "DisplayOrderInGroup": 4,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Asz" ]
   },
@@ -518,6 +555,8 @@
     "Code": "Sorsmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "3",
+    "DisplayOrderInGroup": 5,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Asz" ]
   },
@@ -525,6 +564,8 @@
     "Code": "Mentálmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "3",
+    "DisplayOrderInGroup": 6,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -532,6 +573,8 @@
     "Code": "Szexuálmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "3",
+    "DisplayOrderInGroup": 7,
     "IsSecret": true,
     "AbilityBase": [ "Kar", "Int" ]
   },
@@ -539,6 +582,8 @@
     "Code": "Térmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "3",
+    "DisplayOrderInGroup": 8,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -547,6 +592,8 @@
     "Code": "Boszorkánymesteri mágia",
     "ClassCode": "IV.",
     "CategoryCode": "MAG",
+    "Group": "4",
+    "DisplayOrderInGroup": 1,
     "IsSecret": true,
     "AbilityBase": [ "Egé", "Int", "Aka" ]
   },
@@ -554,6 +601,8 @@
     "Code": "Villámmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "4",
+    "DisplayOrderInGroup": 2,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -561,6 +610,8 @@
     "Code": "Rontásmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "4",
+    "DisplayOrderInGroup": 3,
     "IsSecret": true,
     "AbilityBase": [ "Egé", "Int" ]
   },
@@ -568,6 +619,8 @@
     "Code": "Átokmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "4",
+    "DisplayOrderInGroup": 4,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -575,6 +628,8 @@
     "Code": "Méregmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "4",
+    "DisplayOrderInGroup": 5,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -582,6 +637,8 @@
     "Code": "Természetmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "4",
+    "DisplayOrderInGroup": 6,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -589,6 +646,8 @@
     "Code": "Kórmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "4",
+    "DisplayOrderInGroup": 7,
     "IsSecret": true,
     "AbilityBase": [ "Egé", "Int" ]
   },
@@ -596,6 +655,8 @@
     "Code": "Nekromancia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "4",
+    "DisplayOrderInGroup": 8,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Asz" ]
   },
@@ -604,6 +665,8 @@
     "Code": "Tűzvarázslói mágia",
     "ClassCode": "IV.",
     "CategoryCode": "MAG",
+    "Group": "5",
+    "DisplayOrderInGroup": 1,
     "IsSecret": true,
     "AbilityBase": [ "Áll", "Int", "Aka" ]
   },
@@ -611,6 +674,8 @@
     "Code": "Alap tűzmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "5",
+    "DisplayOrderInGroup": 2,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -618,6 +683,8 @@
     "Code": "Forma tűzmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "5",
+    "DisplayOrderInGroup": 3,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -625,6 +692,8 @@
     "Code": "Manipuláló tűzmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "5",
+    "DisplayOrderInGroup": 4,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -632,6 +701,8 @@
     "Code": "Felső tűzmágia",
     "ClassCode": "II.",
     "CategoryCode": "MAG",
+    "Group": "5",
+    "DisplayOrderInGroup": 5,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -640,6 +711,7 @@
     "Code": "Tárgymágia",
     "ClassCode": "III.",
     "CategoryCode": "MAG",
+    "Group": "6",
     "IsSecret": true,
     "AbilityBase": [ "Ügy", "Int", "Aka" ]
   },
@@ -648,6 +720,8 @@
     "Code": "Magas Mágia",
     "ClassCode": "V.",
     "CategoryCode": "MAG",
+    "Group": "7",
+    "DisplayOrderInGroup": 1,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka", "Asz" ]
   },
@@ -655,6 +729,8 @@
     "Code": "Anyag Mágia",
     "ClassCode": "III.",
     "CategoryCode": "MAG",
+    "Group": "7",
+    "DisplayOrderInGroup": 2,
     "IsSecret": true,
     "AbilityBase": [ "Int" ]
   },
@@ -662,6 +738,8 @@
     "Code": "Elemi Mágia",
     "ClassCode": "III.",
     "CategoryCode": "MAG",
+    "Group": "7",
+    "DisplayOrderInGroup": 2,
     "IsSecret": true,
     "AbilityBase": [ "Int" ]
   },
@@ -669,6 +747,8 @@
     "Code": "Asztrál Mágia",
     "ClassCode": "III.",
     "CategoryCode": "MAG",
+    "Group": "7",
+    "DisplayOrderInGroup": 3,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Asz" ]
   },
@@ -676,6 +756,8 @@
     "Code": "Mentál Mágia",
     "ClassCode": "III.",
     "CategoryCode": "MAG",
+    "Group": "7",
+    "DisplayOrderInGroup": 4,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -683,6 +765,8 @@
     "Code": "Nekro Mágia",
     "ClassCode": "III.",
     "CategoryCode": "MAG",
+    "Group": "7",
+    "DisplayOrderInGroup": 5,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Asz" ]
   },
@@ -690,6 +774,8 @@
     "Code": "Idő Mágia",
     "ClassCode": "III.",
     "CategoryCode": "MAG",
+    "Group": "7",
+    "DisplayOrderInGroup": 6,
     "IsSecret": true,
     "AbilityBase": [ "Int" ]
   },
@@ -697,6 +783,8 @@
     "Code": "Tér Mágia",
     "ClassCode": "III.",
     "CategoryCode": "MAG",
+    "Group": "7",
+    "DisplayOrderInGroup": 7,
     "IsSecret": true,
     "AbilityBase": [ "Int" ]
   },
@@ -704,6 +792,8 @@
     "Code": "Jel Mágia",
     "ClassCode": "III.",
     "CategoryCode": "MAG",
+    "Group": "7",
+    "DisplayOrderInGroup": 8,
     "IsSecret": true,
     "AbilityBase": [ "Int", "Aka" ]
   },
@@ -711,6 +801,8 @@
     "Code": "Rúna Mágia",
     "ClassCode": "IV.",
     "CategoryCode": "MAG",
+    "Group": "7",
+    "DisplayOrderInGroup": 9,
     "IsSecret": true,
     "AbilityBase": [ "Ügy", "Int", "Aka" ]
   },
@@ -718,6 +810,8 @@
     "Code": "Drágakő Mágia",
     "ClassCode": "III.",
     "CategoryCode": "MAG",
+    "Group": "7",
+    "DisplayOrderInGroup": 10,
     "IsSecret": true,
     "AbilityBase": [ "Ügy", "Aka", "Érz" ]
   }
