@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeList.Tests.Unit", "Code
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGUS.TTK.Data", "MAGUS.TTK.Data\MAGUS.TTK.Data.csproj", "{5789CAFD-62BB-4A0C-84EE-2F9DD6CDADED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAGUS.TTK.Data.Test.Unit", "MAGUS.TTK.Data.Test.Unit\MAGUS.TTK.Data.Test.Unit.csproj", "{E14F4A6B-D785-4934-BAD9-EC1405D62B45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGUS.TTK.Data.Test.Unit", "MAGUS.TTK.Data.Test.Unit\MAGUS.TTK.Data.Test.Unit.csproj", "{E14F4A6B-D785-4934-BAD9-EC1405D62B45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAGUS.TTK.CharacterEditor.BlazorPWA", "MAGUS.TTK.CharacterEditor.BlazorPWA\MAGUS.TTK.CharacterEditor.BlazorPWA.csproj", "{B48D2B02-49F2-43E6-A598-D5A86C5CCF5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{E14F4A6B-D785-4934-BAD9-EC1405D62B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E14F4A6B-D785-4934-BAD9-EC1405D62B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E14F4A6B-D785-4934-BAD9-EC1405D62B45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B48D2B02-49F2-43E6-A598-D5A86C5CCF5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48D2B02-49F2-43E6-A598-D5A86C5CCF5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48D2B02-49F2-43E6-A598-D5A86C5CCF5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48D2B02-49F2-43E6-A598-D5A86C5CCF5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

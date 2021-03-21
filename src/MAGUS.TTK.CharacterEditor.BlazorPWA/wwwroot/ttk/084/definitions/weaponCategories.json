@@ -1,0 +1,58 @@
+﻿[
+  {
+    "Code": "Ökölh.",
+    "Name": "Ökölharc"
+  },
+  {
+    "Code": "RP",
+    "Name": "Rövid penge"
+  },
+  {
+    "Code": "HP",
+    "Name": "Hosszú penge"
+  },
+  {
+    "Code": "ÓP",
+    "Name": "Óriás penge"
+  },
+  {
+    "Code": "HAS",
+    "Name": "Hasító"
+  },
+  {
+    "Code": "ZÚZ",
+    "Name": "Zúzó"
+  },
+  {
+    "Code": "SZÁ",
+    "Name": "Szálfegyver"
+  },
+  {
+    "Code": "LOV",
+    "Name": "Lovas"
+  },
+  {
+    "Code": "NYD",
+    "Name": "Nyársaló dobó"
+  },
+  {
+    "Code": "PD",
+    "Name": "Pergő dobó"
+  },
+  {
+    "Code": "ÍJ",
+    "Name": "Íj"
+  },
+  {
+    "Code": "SZÍ",
+    "Name": "Számszeríj"
+  },
+  {
+    "Code": "EGY",
+    "Name": "Egyedi"
+  },
+  {
+    "Code": "HM",
+    "Name": "Harcművész"
+  }
+]

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace RPG.Domain
 {
@@ -32,5 +34,21 @@ namespace RPG.Domain
         ///// <param name="match">The optional filter to match.</param>
         ///// <returns>Returns the entities matching the given filter.</returns>
         //IEnumerable<TEntity> List(Func<TEntity, bool> match = null);
+
+        /// <summary>
+        /// Adds the given entity to the repository or throws if already exists.
+        /// </summary>
+        /// <param name="entity">The entity to add.</param>
+        /// <param name="cancellationToken">The token used for cancelling this operation.</param>
+        /// <returns>Returns an awaitable task representing this async operation.</returns>
+        Task Add(TEntity entity, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the given entities to the repository or throws if at least one of the already exists.
+        /// </summary>
+        /// <param name="entities">The entities to add.</param>
+        /// <param name="cancellationToken">The token used for cancelling this operation.</param>
+        /// <returns>Returns an awaitable task representing this async operation.</returns>
+        Task AddRange(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
     }
 }

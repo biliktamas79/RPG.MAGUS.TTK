@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace RPG.Domain
 {
@@ -12,25 +14,35 @@ namespace RPG.Domain
         where TEntity : IHasUniqueCode
     {
         /// <summary>
+        /// Checks whether an entity with the given code already exists.
+        /// </summary>
+        /// <param name="code">The code.</param>
+        /// <param name="cancellationToken">The token used for cancelling this operation.</param>
+        /// <returns>Returns true if an entity with the given code already exists, otherwise false.</returns>
+        Task<bool> ExistsByCode(string code, CancellationToken cancellationToken = default);
+        /// <summary>
         /// Tries to get the entity by the given code.
         /// </summary>
         /// <param name="code">The code.</param>
         /// <param name="value">The value if found, otherwise the type's default value.</param>
+        /// <param name="cancellationToken">The token used for cancelling this operation.</param>
         /// <returns>Returns true if the entity was found, otherwise false.</returns>
-        bool TryGetByCode(string code, out TEntity value);
+        Task<bool> TryGetByCode(string code, out TEntity value, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the count of entities matching the given optional filter.
         /// </summary>
         /// <param name="match">The optional filter to match.</param>
+        /// <param name="cancellationToken">The token used for cancelling this operation.</param>
         /// <returns>Returns the count of entities matching the given filter.</returns>
-        int Count(Func<TEntity, bool> match = null);
+        Task<int> Count(Func<TEntity, bool> match = null, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the entities matching the given optional filter.
         /// </summary>
         /// <param name="match">The optional filter to match.</param>
+        /// <param name="cancellationToken">The token used for cancelling this operation.</param>
         /// <returns>Returns the entities matching the given filter.</returns>
-        IEnumerable<TEntity> List(Func<TEntity, bool> match = null);
+        Task<IEnumerable<TEntity>> All(Func<TEntity, bool> match = null, CancellationToken cancellationToken = default);
     }
 }

@@ -1,0 +1,62 @@
+﻿[
+  {
+    "Code": "Erő",
+    "Name": "Erő",
+    "MinValue": 6,
+    "MaxValue": 20
+  },
+  {
+    "Code": "Gyo",
+    "Name": "Gyorsaság",
+    "MinValue": 6,
+    "MaxValue": 20
+  },
+  {
+    "Code": "Ügy",
+    "Name": "Ügyesség",
+    "MinValue": 6,
+    "MaxValue": 20
+  },
+  {
+    "Code": "Áll",
+    "Name": "Állóképesség",
+    "MinValue": 6,
+    "MaxValue": 20
+  },
+  {
+    "Code": "Egé",
+    "Name": "Egészség",
+    "MinValue": 6,
+    "MaxValue": 20
+  },
+  {
+    "Code": "Kar",
+    "Name": "Karizma",
+    "MinValue": 6,
+    "MaxValue": 20
+  },
+  {
+    "Code": "Int",
+    "Name": "Intelligencia",
+    "MinValue": 6,
+    "MaxValue": 20
+  },
+  {
+    "Code": "Aka",
+    "Name": "Akaraterő",
+    "MinValue": 6,
+    "MaxValue": 20
+  },
+  {
+    "Code": "Asz",
+    "Name": "Asztrál",
+    "MinValue": 6,
+    "MaxValue": 20
+  },
+  {
+    "Code": "Érz",
+    "Name": "Érzékelés",
+    "MinValue": 6,
+    "MaxValue": 20
+  }
+]

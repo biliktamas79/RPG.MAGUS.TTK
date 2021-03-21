@@ -45,5 +45,7 @@ namespace MAGUS.TTK.Data
         public IReadOnlyRepository<Background<CodeOnlyAttribute>> OriginDefinitions { get; private set; }
         public IReadOnlyRepository<MagusTtkCharacterClassDefinition> CharacterClassDefinitions { get; private set; }
         public IReadOnlyRepository<MagusTtkWeaponDefinition> WeaponDefinitions { get; private set; }
+
+        internal bool IsDataInitialized;
     }
 }

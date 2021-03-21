@@ -24,5 +24,17 @@ namespace MAGUS.TTK.Domain.Definitions
         public bool SupportsUniqueSpecialization { get; set; }
         public string[] Specializations { get; set; }
         public bool IsSecret { get; set; }
+
+        public string GetKpCostSummary(string separator = "/")
+        {
+            var sb = new StringBuilder();
+            foreach (var level in Enum.GetValues(typeof(MagusTtkCharacterSkillLevelsEnum)))
+            {
+                if (sb.Length > 0)
+                    sb.Append(separator);
+                sb.Append(this.SkillClassDefinition.GetKpCostOfLevel((MagusTtkCharacterSkillLevelsEnum)level));
+            }
+            return sb.ToString();
+        }
     }
 }

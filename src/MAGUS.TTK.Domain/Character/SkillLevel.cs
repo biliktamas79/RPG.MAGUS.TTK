@@ -33,6 +33,15 @@ namespace MAGUS.TTK.Domain.Character
             get { return this.Definition?.RequiresSpecialization ?? false; }
         }
 
+        /// <summary>
+        /// Get the default Kp cost of this skill level.
+        /// </summary>
+        /// <returns></returns>
+        public int GetKpCost()
+        {
+            return this.Definition.SkillClassDefinition.GetKpCostOfLevel(this.Level);
+        }
+
         public override string ToString()
         {
             return this.RequiresSpecialization

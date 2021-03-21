@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using RPG.Domain;
 
 namespace MAGUS.TTK.Data
@@ -30,25 +32,60 @@ namespace MAGUS.TTK.Data
         }
 
         /// <inheritdoc/>
-        public bool TryGetByCode(string code, out TEntity value)
+        public Task<bool> ExistsByCode(string code, CancellationToken cancellationToken = default)
         {
-            return this.Dict.TryGetValue(code, out value);
+            var result = this.Dict.ContainsKey(code);
+
+            return Task.FromResult(result);
         }
 
         /// <inheritdoc/>
-        public int Count(Func<TEntity, bool> match = null)
+        public Task<bool> TryGetByCode(string code, out TEntity value, CancellationToken cancellationToken = default)
         {
-            return (match == null)
+            var result = this.Dict.TryGetValue(code, out value);
+
+            return Task.FromResult(result);
+        }
+
+        /// <inheritdoc/>
+        public Task<int> Count(Func<TEntity, bool> match = null, CancellationToken cancellationToken = default)
+        {
+            var result = (match == null)
                 ? this.Dict.Count
                 : this.Dict.Count(kvp => match(kvp.Value));
+
+            return Task.FromResult(result);
         }
 
         /// <inheritdoc/>
-        public IEnumerable<TEntity> List(Func<TEntity, bool> match = null)
+        public Task<IEnumerable<TEntity>> All(Func<TEntity, bool> match = null, CancellationToken cancellationToken = default)
         {
-            return (match == null)
+            var result = (match == null)
                 ? this.Dict.Select(kvp => kvp.Value)
                 : this.Dict.Where(kvp => match(kvp.Value)).Select(kvp => kvp.Value);
+
+            return Task.FromResult(result);
+        }
+
+        /// <inheritdoc/>
+        public Task Add(TEntity entity, CancellationToken cancellationToken = default)
+        {
+            this.Dict.Add(entity.Code, entity);
+
+            return Task.CompletedTask;
+        }
+
+        /// <inheritdoc/>
+        public Task AddRange(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
+        {
+            foreach (var entity in entities)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+
+                this.Dict.Add(entity.Code, entity);
+            }
+
+            return Task.CompletedTask;
         }
 
         /// <inheritdoc/>

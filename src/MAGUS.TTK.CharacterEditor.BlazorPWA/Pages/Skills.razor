@@ -1,0 +1,54 @@
+﻿@page "/skills"
+@inject HttpClient Http
+@inject MagusTtkContext TtkContext
+@inject IDataInitializer<MagusTtkContext> DataInitializer
+
+<h1>Skills</h1>
+
+@if (skillDefinitionsByCategory == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    @foreach (var group in skillDefinitionsByCategory)
+    {
+<p>
+    <h2>@(group.Key.Name ?? group.Key.Code)</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Képzettség neve</th>
+                <th>Nehézség (Kp érték)</th>
+                <th>Tulajdonság követelmény</th>
+                <th>Oszt</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var skillDef in group)
+            {
+                <tr>
+                    <td>@skillDef.Code</td>
+                    <td>@skillDef.GetKpCostSummary()</td>
+                    <td>@((skillDef.AbilityBase == null) ? string.Empty : string.Join(", ", skillDef.AbilityBase))</td>
+                    <td>@skillDef.SkillClassDefinition.Code</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</p>
+    }
+}
+
+@code {
+    private IGrouping<SkillCategory, MagusTtkSkillDefinition>[] skillDefinitionsByCategory;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await DataInitializer.InitializeData(TtkContext);
+
+        skillDefinitionsByCategory = (await TtkContext.SkillDefinitions.All())
+            .GroupSkillDefinitionsByCategory()
+            .ToArray();
+    }
+}

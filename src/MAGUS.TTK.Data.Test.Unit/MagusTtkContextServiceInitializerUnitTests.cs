@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MAGUS.TTK.Domain.Test.Unit
 {
@@ -11,15 +13,20 @@ namespace MAGUS.TTK.Domain.Test.Unit
     public class MagusTtkContextServiceInitializerUnitTests
     {
         [TestMethod]
-        public void Test_MagusTtkContextServiceInitializer_Initialize()
+        public async Task Test_MagusTtkContextServiceInitializer_Initialize(CancellationToken cancellationToken)
         {
-            var initializer = new MagusTtkContextServiceInitializer();
             var serviceCollection = new ServiceCollection();
-            initializer.Initialize(serviceCollection);
+            serviceCollection.AddSingleton<IFileContentResolver>(serviceProvider => new LocalFileContentResolver("Definitions/"));
+
+            var initializer = new MagusTtkContextServiceInitializer();
+            initializer.RegisterServices(serviceCollection);
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
             var ctx = serviceProvider.GetRequiredService<MagusTtkContext>();
+            var dataInitializer = serviceProvider.GetRequiredService<IDataInitializer<MagusTtkContext>>();
+
+            await dataInitializer.InitializeData(ctx, cancellationToken);
 
             Assert.AreNotEqual(0, ctx.AbilityDefinitions.Count());
             Assert.AreNotEqual(0, ctx.OriginDefinitions.Count());
@@ -31,7 +38,7 @@ namespace MAGUS.TTK.Domain.Test.Unit
             Assert.AreNotEqual(0, ctx.CharacterClassDefinitions.Count());
             Assert.AreNotEqual(0, ctx.WeaponDefinitions.Count());
 
-            foreach (var charClassDef in ctx.CharacterClassDefinitions.List())
+            foreach (var charClassDef in await ctx.CharacterClassDefinitions.All(null, cancellationToken))
             {
                 System.Diagnostics.Debug.WriteLine($"Skills of charcter class '{charClassDef.Name ?? charClassDef.Code}' by category:");
 

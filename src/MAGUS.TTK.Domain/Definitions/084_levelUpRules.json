@@ -1,0 +1,122 @@
+﻿[
+  {
+    "Level": 1,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 1,
+    "LpIncrease": 2
+  },
+  {
+    "Level": 2,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 0,
+    "LpIncrease": 1
+  },
+  {
+    "Level": 3,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 1,
+    "LpIncrease": 0
+  },
+  {
+    "Level": 4,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 0,
+    "LpIncrease": 1
+  },
+  {
+    "Level": 5,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 1,
+    "LpIncrease": 0
+  },
+  {
+    "Level": 6,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 0,
+    "LpIncrease": 1
+  },
+  {
+    "Level": 7,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 1,
+    "LpIncrease": 0
+  },
+  {
+    "Level": 8,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 0,
+    "LpIncrease": 1
+  },
+  {
+    "Level": 9,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 1,
+    "LpIncrease": 0
+  },
+  {
+    "Level": 10,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 0,
+    "LpIncrease": 1
+  },
+  {
+    "Level": 11,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 1,
+    "LpIncrease": 0
+  },
+  {
+    "Level": 12,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 0,
+    "LpIncrease": 1
+  },
+  {
+    "Level": 13,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 1,
+    "LpIncrease": 0
+  },
+  {
+    "Level": 14,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 0,
+    "LpIncrease": 1
+  },
+  {
+    "Level": 15,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 1,
+    "LpIncrease": 0
+  },
+  {
+    "Level": 16,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 0,
+    "LpIncrease": 1
+  },
+  {
+    "Level": 17,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 1,
+    "LpIncrease": 0
+  },
+  {
+    "Level": 18,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 0,
+    "LpIncrease": 1
+  },
+  {
+    "Level": 19,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 1,
+    "LpIncrease": 0
+  },
+  {
+    "Level": 20,
+    "FreeAbilityCount": 1,
+    "FreeTalentCount": 0,
+    "LpIncrease": 1
+  }
+]
