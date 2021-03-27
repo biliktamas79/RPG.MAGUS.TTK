@@ -245,7 +245,10 @@
     "Code": "Nyelvismeret",
     "ClassCode": "I.",
     "CategoryCode": "SZO",
-    "AbilityBase": [ "Int" ]
+    "AbilityBase": [ "Int" ],
+    "RequiresSpecialization": true,
+    "SupportsUniqueSpecialization": true,
+    "Specializations": [ "Pyar", "Toroni", "Shadoni" ]
   },
 
   {
