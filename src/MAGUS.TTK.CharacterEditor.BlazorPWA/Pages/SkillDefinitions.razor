@@ -11,42 +11,45 @@
 }
 else
 {
+<TabControl>
     @foreach (var group in skillDefinitionsByCategory)
     {
-<p>
-    <h2>@(group.Key.Name ?? group.Key.Code)</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Képzettség neve</th>
-                <th>Nehézség (Kp érték)</th>
-                <th>Tulajdonság követelmény</th>
-                <th>Osztály</th>
-            </tr>
-        </thead>
-        <tbody>
-            @{
-                rowClassIndex = 0;
-                previous = null;
-            }
-            @foreach (var skillDef in group)
-            {
-                <tr class="@GetRowClass(skillDef)">
-                    <td>@skillDef.Code</td>
-                    <td>@skillDef.GetKpCostSummary()</td>
-                    <td>@((skillDef.AbilityBase == null) ? string.Empty : string.Join(", ", skillDef.AbilityBase))</td>
-                    <td>@skillDef.SkillClassDefinition.Code</td>
-                </tr>
-                previous = skillDef;
-           }
-        </tbody>
-    </table>
-</p>
+    <TabPage Text=@(group.Key.Name ?? group.Key.Code)>
+        <p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Képzettség neve</th>
+                        <th>Nehézség (Kp érték)</th>
+                        <th>Tulajdonság követelmény</th>
+                        <th>Osztály</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        rowClassIndex = 0;
+                        previous = null;
+                    }
+                    @foreach (var skillDef in group)
+                    {
+                        <tr class="@GetRowClass(skillDef)">
+                            <td>@skillDef.Code</td>
+                            <td>@skillDef.GetKpCostSummary(" / ")</td>
+                            <td>@((skillDef.AbilityBase == null) ? string.Empty : string.Join(", ", skillDef.AbilityBase))</td>
+                            <td>@skillDef.SkillClassDefinition.Code</td>
+                        </tr>
+                        previous = skillDef;
+                    }
+                </tbody>
+            </table>
+        </p>
+    </TabPage>
     }
+</TabControl>
 }
 
 @code {
-    private static string[] SkillTableRowClasses = new string[] { "table-primary", "table-secondary" };
+    private static string[] SkillTableRowClasses = new string[] { "", "table-secondary" };
     private IGrouping<SkillCategory, MagusTtkSkillDefinition>[] skillDefinitionsByCategory;
     private MagusTtkSkillDefinition previous = null;
     private int rowClassIndex = 0;

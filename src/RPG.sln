@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGUS.TTK.Data", "MAGUS.TTK
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGUS.TTK.Data.Test.Unit", "MAGUS.TTK.Data.Test.Unit\MAGUS.TTK.Data.Test.Unit.csproj", "{E14F4A6B-D785-4934-BAD9-EC1405D62B45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAGUS.TTK.CharacterEditor.BlazorPWA", "MAGUS.TTK.CharacterEditor.BlazorPWA\MAGUS.TTK.CharacterEditor.BlazorPWA.csproj", "{B48D2B02-49F2-43E6-A598-D5A86C5CCF5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGUS.TTK.CharacterEditor.BlazorPWA", "MAGUS.TTK.CharacterEditor.BlazorPWA\MAGUS.TTK.CharacterEditor.BlazorPWA.csproj", "{B48D2B02-49F2-43E6-A598-D5A86C5CCF5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
