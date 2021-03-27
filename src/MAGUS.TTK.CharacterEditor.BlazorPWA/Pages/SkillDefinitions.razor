@@ -1,13 +1,13 @@
-﻿@page "/skills"
+﻿@page "/skilldefinitions"
 @inject HttpClient Http
 @inject MagusTtkContext TtkContext
 @inject IDataInitializer<MagusTtkContext> DataInitializer
 
-<h1>Skills</h1>
+<h1>Képzettségek</h1>
 
 @if (skillDefinitionsByCategory == null)
 {
-    <p><em>Loading...</em></p>
+    <p><em>Betöltés...</em></p>
 }
 else
 {
@@ -21,19 +21,24 @@ else
                 <th>Képzettség neve</th>
                 <th>Nehézség (Kp érték)</th>
                 <th>Tulajdonság követelmény</th>
-                <th>Oszt</th>
+                <th>Osztály</th>
             </tr>
         </thead>
         <tbody>
+            @{
+                rowClassIndex = 0;
+                previous = null;
+            }
             @foreach (var skillDef in group)
             {
-                <tr>
+                <tr class="@GetRowClass(skillDef)">
                     <td>@skillDef.Code</td>
                     <td>@skillDef.GetKpCostSummary()</td>
                     <td>@((skillDef.AbilityBase == null) ? string.Empty : string.Join(", ", skillDef.AbilityBase))</td>
                     <td>@skillDef.SkillClassDefinition.Code</td>
                 </tr>
-            }
+                previous = skillDef;
+           }
         </tbody>
     </table>
 </p>
@@ -41,7 +46,10 @@ else
 }
 
 @code {
+    private static string[] SkillTableRowClasses = new string[] { "table-primary", "table-secondary" };
     private IGrouping<SkillCategory, MagusTtkSkillDefinition>[] skillDefinitionsByCategory;
+    private MagusTtkSkillDefinition previous = null;
+    private int rowClassIndex = 0;
 
     protected override async Task OnInitializedAsync()
     {
@@ -50,5 +58,17 @@ else
         skillDefinitionsByCategory = (await TtkContext.SkillDefinitions.All())
             .GroupSkillDefinitionsByCategory()
             .ToArray();
+    }
+
+    private string GetRowClass(MagusTtkSkillDefinition current)
+    {
+        // ha másik group következik
+        if ((previous != null) && (previous.Group != current.Group))
+        {
+            // akkor átváltunk  másik row class-ra
+            rowClassIndex = (rowClassIndex + 1) % SkillTableRowClasses.Length;
+        }
+
+        return SkillTableRowClasses[rowClassIndex];
     }
 }

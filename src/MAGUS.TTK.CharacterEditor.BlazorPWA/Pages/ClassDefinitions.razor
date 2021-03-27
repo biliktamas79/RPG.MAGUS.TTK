@@ -1,0 +1,87 @@
+﻿@page "/classdefinitions"
+@inject HttpClient Http
+@inject MagusTtkContext TtkContext
+@inject IDataInitializer<MagusTtkContext> DataInitializer
+
+<h1>Kasztok</h1>
+
+@if (classDefinitions == null)
+{
+    <p><em>Betöltés...</em></p>
+}
+else
+{
+    @foreach (var classDef in classDefinitions)
+    {
+<p>
+    <h2>@(classDef.Name ?? classDef.Code)</h2>
+    <h3>Tulajdonság alap értékek</h3>
+    <table class="table">
+        <tbody>
+            @foreach (var kvp in classDef.Abilities)
+            {
+                <tr>
+                    <td>@kvp.Key:</td>
+                    <td>@kvp.Value+</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h3>Képzettségek induláskor</h3>
+    <table class="table">
+        <tbody>
+            @foreach (var skillLevel in classDef.Skills)
+            {
+                <tr>
+                    <td>
+                        @(skillLevel.RequiresSpecialization
+                        ? $"{skillLevel.Definition.Code} ({skillLevel.Specialization ?? "választott"})"
+                        : skillLevel.Definition.Code)
+                    </td>
+                    <td>@skillLevel.Level</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h3>Kalandozói bónusz (már az 1. TSz-en is!)</h3>
+    <table class="table">
+        <tbody>
+            <tr><td>Harcérték módosító:</td> <td>@($"{classDef.LevelUpBonus.FreeHm} ({classDef.LevelUpBonus.TE}/{classDef.LevelUpBonus.VE}/{classDef.LevelUpBonus.CE})")</td></tr>
+            <tr><td>Kezdeményező érték:</td> <td>@classDef.LevelUpBonus.KE</td></tr>
+            <tr><td>Fájdalom pont:</td> <td>@classDef.LevelUpBonus.Fp</td></tr>
+            <tr><td>Képzettség pont:</td> <td>@classDef.LevelUpBonus.Kp</td></tr>
+            <tr><td>Pszi pont:</td> <td>@classDef.LevelUpBonus.Pp</td></tr>
+            <tr><td>Mana pont:</td> <td>@classDef.LevelUpBonus.Mp</td></tr>
+            <tr><td>Sors pont:</td> <td>@classDef.LevelUpBonus.Sp</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Adottságok</h3>
+    <table class="table">
+        <tbody>
+            @foreach (var talentDef in classDef.Talents)
+            {
+                <tr>
+                    <td>@talentDef.Code</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</p>
+    }
+}
+
+@code {
+    private MagusTtkCharacterClassDefinition[] classDefinitions;
+    private MagusTtkSkillDefinition selected = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await DataInitializer.InitializeData(TtkContext);
+
+        classDefinitions = (await TtkContext.CharacterClassDefinitions.All())
+            .ToArray();
+    }
+}
