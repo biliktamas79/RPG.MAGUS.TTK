@@ -606,6 +606,76 @@ namespace MAGUS.TTK.Data
             }
         }
 
+        public async Task InitializeRaceDefinitionInMemoryRepositoryFromJson(MagusTtkContext dataContext, string jsonFilePath, CancellationToken cancellationToken = default)
+        {
+            string jsonString = await fileContentResolver.ReadFileAsTextAsync(jsonFilePath, cancellationToken);
+            if (string.IsNullOrWhiteSpace(jsonString))
+                throw new ArgumentException($"Json file '{jsonFilePath}' not found.");
+
+            var entitiesFromJson = JsonDeserializer.DeserializeFromJsonString<MagusTtkRaceDefinition[]>(jsonString);
+
+            // JSON séma hiba
+            if ((entitiesFromJson == null) || (entitiesFromJson.Length == 0))
+                throw new ArgumentException($"Could not parse entities of type '{typeof(MagusTtkRaceDefinition)}' from Json file '{jsonFilePath}'.");
+
+            var editableRepo = dataContext.RaceDefinitions.AsEditableRepository();
+            foreach (var entity in entitiesFromJson)
+            {
+                // hiányzó Code
+                if (string.IsNullOrWhiteSpace(entity.Code))
+                    throw new ArgumentException($"Race code in file '{jsonFilePath}' is empty.");
+
+                // ha már van ilyen kóddal már faj
+                if (await dataContext.RaceDefinitions.ExistsByCode(entity.Code, cancellationToken))
+                    throw new ArgumentException($"Race code '{entity.Code}' in file '{jsonFilePath}' is a duplicate.");
+
+                // ha nincs megadva egy korkategória sem
+                if ((entity.Aging == null) || (entity.Aging.Length == 0))
+                    throw new ArgumentException($"Aging categories are missing for race code '{entity.Code}' in file '{jsonFilePath}'.");
+                else
+                {
+                    AgingCategory previousAgingCategory = null; 
+                    foreach (var agingCategory in entity.Aging)
+                    {
+                        // ha negatív FromAge van megadva
+                        if (agingCategory.FromAge < 0)
+                            throw new ArgumentException($"FromAge value '{agingCategory.FromAge}' of aging category '{agingCategory.Name}' in file '{jsonFilePath}' cannot be negative.");
+                        // ha a ToAge nem nagyobb, mint a FromAge
+                        if ((agingCategory.ToAge != null) && (agingCategory.ToAge.Value <= agingCategory.FromAge))
+                            throw new ArgumentException($"ToAge value '{agingCategory.ToAge.Value}' of aging category '{agingCategory.ToAge.Value}' in file '{jsonFilePath}' cannot be smaller than the FromAge '{agingCategory.FromAge}'.");
+                        // ha negatív SpPerYear van megadva
+                        if (agingCategory.SpPerYear < 0)
+                            throw new ArgumentException($"SpPerYear value '{agingCategory.SpPerYear}' of aging category '{agingCategory.Name}' in file '{jsonFilePath}' cannot be negative.");
+                        // ha negatív AgingFactor van megadva
+                        if ((agingCategory.AgingFactor != null) && (agingCategory.AgingFactor.Value < 0))
+                            throw new ArgumentException($"AgingFactor value '{agingCategory.AgingFactor.Value}' of aging category '{agingCategory.Name}' in file '{jsonFilePath}' cannot be negative.");
+
+                        if (previousAgingCategory != null)
+                        {
+                            previousAgingCategory.ToAge = agingCategory.FromAge - 1;
+                        }
+
+                        previousAgingCategory = agingCategory;
+                    }
+                }
+
+                // ha vannak tulajdonság módosítók
+                if (entity.AbilityModifiers != null)
+                {
+                    foreach (var abilityModifier in entity.AbilityModifiers)
+                    {
+                        // ha nem létező tulajdonság van megadva
+                        if (!await dataContext.AbilityDefinitions.TryGetByCode(abilityModifier.Key, out var abilityDef, cancellationToken))
+                            throw new ArgumentException($"Ability modifier code '{abilityModifier.Key}' in race definition '{entity.Code}' is unknown.");
+                    }
+                }
+
+                // végül megpróbáljuk hozzáadni (elszáll, ha már lenne ilyen kóddal)
+                await editableRepo.Add(entity, cancellationToken);
+            }
+        }
+        
+
         public async Task InitializeData(MagusTtkContext dataContext, CancellationToken cancellationToken)
         {
             if (!dataContext.IsDataInitialized)
@@ -618,6 +688,7 @@ namespace MAGUS.TTK.Data
                 await InitializeTraitDefinitionInMemoryRepositoryFromJson(dataContext, "traits.json", cancellationToken);
                 await InitializeTalentDefinitionInMemoryRepositoryFromJson(dataContext, "talents.json", cancellationToken);
                 await InitializeBackgroundDefinitionInMemoryRepositoryFromJson(dataContext, "origins.json", cancellationToken);
+                await InitializeRaceDefinitionInMemoryRepositoryFromJson(dataContext, "races.json", cancellationToken);
                 await InitializeCharacterClassDefinitionInMemoryRepositoryFromJson(dataContext, "characterClasses.json", cancellationToken);
                 await InitializeWeaponDefinitionInMemoryRepositoryFromJson(dataContext, "weapons.json", cancellationToken);
 

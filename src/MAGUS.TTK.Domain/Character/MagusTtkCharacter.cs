@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MAGUS.TTK.Domain.Definitions;
 using RPG.Domain.Character;
 using RPG.Domain.Definitions;
 
@@ -23,11 +24,11 @@ namespace MAGUS.TTK.Domain.Character
         /// <summary>
         /// A karakter faja
         /// </summary>
-        public string Race;
+        public MagusTtkRaceDefinition Race;
         /// <summary>
         /// A karakter kasztja
         /// </summary>
-        public string Class;
+        public MagusTtkCharacterClassDefinition Class;
         /// <summary>
         /// A karakter neme
         /// </summary>
@@ -35,7 +36,7 @@ namespace MAGUS.TTK.Domain.Character
         /// <summary>
         /// A karakter kora
         /// </summary>
-        public int Age;
+        public decimal Age;
         /// <summary>
         /// Háttér/Származás
         /// </summary>
@@ -73,5 +74,23 @@ namespace MAGUS.TTK.Domain.Character
         /// Hajító / lőfegyveres harcértékek
         /// </summary>
         public readonly List<RangedCombatValues> RangedCombatValues = new List<RangedCombatValues>();
+
+        /// <summary>
+        /// Kiszámolja, hogy ez a karakter a korából fakadóan eddig összesen hányszor kellett már öregedési próbát dobnia.
+        /// </summary>
+        /// <returns></returns>
+        public int GetSumAgingRollsCount()
+        {
+            return this.Race?.Aging?.GetAgingRollsCount(this.Age) ?? 0;
+        }
+
+        /// <summary>
+        /// Kiszámolja, hogy ez a karakter a korából fakadóan összesen hány Sp-t kap.
+        /// </summary>
+        /// <returns></returns>
+        public int GetSumSp()
+        {
+            return this.Race?.Aging?.GetFreeSp(this.Age) ?? 0;
+        }
     }
 }

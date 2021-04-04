@@ -1,0 +1,101 @@
+﻿[
+  {
+    "Code": "Ember",
+    "Description": "Napjainkban az emberi faj uralja Ynev világát. Ennek legfőbb oka a hihetetlen szaporaságán túl, a páratlan és gyors alkalmazkodó képessége. A benne rejlő nyitottság és tudásvágy. Egy ember lelkének gyertyája a többi fajéhoz képest óriási lánggal és páratlan hevességgel ég. Ez a pusztító lángolás viszont sokkal gyorsabban felemészti az emberi testnek rendelt éveket. Az emberként evilágra született Kalandozók legfőbb ellenfele az idő. A legtöbbjüket az évek múlása, illetve az emiatt rájuk telepedő türelmetlenség, a más fajokhoz képest hírtelen fejlődésükből fakadó önhittség gátolja meg abban, hogy életük során elérjék lelkük kiteljesedését.",
+    "Genders": [ "Female", "Male" ],
+    "AbilityModifiers": null,
+    "Aging": [
+      { "Name": "gyermek", "FromAge": 0 },
+      { "Name": "serdülő", "FromAge": 13 },
+      { "Name": "ifjú", "FromAge": 17, "SpPerYear": 8, "SpPerTimeUnit": 8, "SpTimeUnitYears": 1 },
+      { "Name": "középkorú", "FromAge": 31, "SpPerYear": 4, "SpPerTimeUnit": 4, "SpTimeUnitYears": 1 },
+      { "Name": "meglett", "FromAge": 43, "SpPerYear": 2, "SpPerTimeUnit": 2, "SpTimeUnitYears": 1, "AgingFactor": 1 },
+      { "Name": "idős", "FromAge": 56, "SpPerYear": 1, "SpPerTimeUnit": 1, "SpTimeUnitYears": 1, "AgingFactor": 0.5 },
+      { "Name": "agg", "FromAge": 76, "SpPerYear": 0.5, "SpPerTimeUnit": 1, "SpTimeUnitYears": 2, "AgingFactor": 0.33334 }
+    ]
+  },
+  {
+    "Code": "Elf",
+    "Description": "Az emberi fajhoz képest az elfek a nyugalom rezdületlen szobrai. Az előttük álló évszázadok a lehetőségek végtelen tárházát hozzák el számukra, mellyel - kevés kivétellel - mind élnek is. A Kalandozó lelkületű elfek jellemzően kettős természetűek. Megfontoltak, ám ha elérkezett a cselekvés ideje, sosem halogatják a döntést és élnek a sors által nekik juttatott lehetőséggel. Ezek után viszont ismét elrévednek, hogy türelemmel kivárják, míg ismét kedvez nekik a csillagok állása. A más fajok tagjaival való közös kalandozások számukra szükségtelen kockázat, hisz a többi fajhoz képest számukra idő adatott rengeteg.",
+    "Genders": [ "Female", "Male" ],
+    "AbilityModifiers": {
+      "Erő": -2,
+      "Ügy": 1,
+      "Áll": -1,
+      "Kar": 1,
+      "Érz": 1
+    },
+    "Aging": [
+      { "Name": "gyermek", "FromAge": 0 },
+      { "Name": "serdülő", "FromAge": 30 },
+      { "Name": "ifjú", "FromAge": 51, "SpPerYear": 0.08334, "SpPerTimeUnit": 1, "SpTimeUnitYears": 12 },
+      { "Name": "középkorú", "FromAge": 1395, "SpPerYear": 0.25, "SpPerTimeUnit": 1, "SpTimeUnitYears": 4 },
+      { "Name": "meglett", "FromAge": 1587, "SpPerYear": 0.125, "SpPerTimeUnit": 1, "SpTimeUnitYears": 8, "AgingFactor": 20 },
+      { "Name": "idős", "FromAge": 1795, "SpPerYear": 0.2, "SpPerTimeUnit": 1, "SpTimeUnitYears": 5, "AgingFactor": 10 },
+      { "Name": "agg", "FromAge": 1895, "SpPerYear": 0.02, "SpPerTimeUnit": 1, "SpTimeUnitYears": 50, "AgingFactor": 5 }
+    ]
+  },
+  {
+    "Code": "Félelf",
+    "Description": "A faj minden értelemben az emberi és az elf faj keveréke. Szinte minden félelf élete során szembesül is azzal, hogy e két világ közt ragadt. Nyugtalan természetük, a folyamatos útkeresésük lévén a közülük kikerülő kalandozók rendre sokra hivatottak. Bár az is igaz, hogy többségük dicstelen véget ér a kiteljesedés felé vezető úton.",
+    "Genders": [ "Female", "Male" ],
+    "AbilityModifiers": {
+      "Erő": -1,
+      "Gyo": 1
+    },
+    "Aging": [
+      { "Name": "gyermek", "FromAge": 0 },
+      { "Name": "serdülő", "FromAge": 16 },
+      { "Name": "ifjú", "FromAge": 23, "SpPerYear": 1.33334, "SpPerTimeUnit": 4, "SpTimeUnitYears": 3 },
+      { "Name": "középkorú", "FromAge": 107, "SpPerYear": 2, "SpPerTimeUnit": 2, "SpTimeUnitYears": 1 },
+      { "Name": "meglett", "FromAge": 131, "SpPerYear": 1.33334, "SpPerTimeUnit": 4, "SpTimeUnitYears": 3, "AgingFactor": 2 },
+      { "Name": "idős", "FromAge": 151, "SpPerYear": 1, "SpPerTimeUnit": 1, "SpTimeUnitYears": 1, "AgingFactor": 0.75 },
+      { "Name": "agg", "FromAge": 171, "SpPerYear": 0.25, "SpPerTimeUnit": 1, "SpTimeUnitYears": 4, "AgingFactor": 0.5 }
+    ]
+  },
+  {
+    "Code": "Törpe",
+    "Description": "Még az Ynev földjét taposó többi fajhoz képest is sokkal kisebb arányban születnek törpe kalandozók. Ennek talán legfőbb oka a faj lelkületében oly mélyen gyökerező zárkózottság. Másrészt épp e faj egyedei azok, akik a leginkább képesek dacolni az ébredéssel. Azaz önfejűségüknek és erős szociális ráhatásuknak hála, egyesek közülük képesek akár örökre lemondani az előbb-utóbb minden kalandozót megigéző késztetésről. Arról, hogy a megismerésért útra keljen.",
+    "Genders": [ "Female", "Male" ],
+    "AbilityModifiers": {
+      "Erő": 1,
+      "Áll": 1,
+      "Egé": 1,
+      "Kar": -1,
+      "Int": -1,
+      "Asz": -1
+    },
+    "Aging": [
+      { "Name": "gyermek", "FromAge": 0 },
+      { "Name": "serdülő", "FromAge": 25 },
+      { "Name": "ifjú", "FromAge": 41, "SpPerYear": 0.33334, "SpPerTimeUnit": 1, "SpTimeUnitYears": 3 },
+      { "Name": "középkorú", "FromAge": 377, "SpPerYear": 0.2, "SpPerTimeUnit": 1, "SpTimeUnitYears": 5 },
+      { "Name": "meglett", "FromAge": 617, "SpPerYear": 0.33334, "SpPerTimeUnit": 1, "SpTimeUnitYears": 3, "AgingFactor": 8 },
+      { "Name": "idős", "FromAge": 695, "SpPerYear": 0.33334, "SpPerTimeUnit": 1, "SpTimeUnitYears": 3, "AgingFactor": 3 },
+      { "Name": "agg", "FromAge": 755, "SpPerYear": 0.066667, "SpPerTimeUnit": 1, "SpTimeUnitYears": 15, "AgingFactor": 2 }
+    ]
+  },
+  {
+    "Code": "Udvari ork",
+    "Description": "E faj kiváló példája annak, hogy a cél szentesíti az eszközt. A hallhatatlan lélek a hosszú útja során bizony kiváltképp képes profitálni abból, ha egy udvari ork testében tölti evilági éveit. Ilyen formában hosszú és kihívásokkal teli életet lehet élni, ahol rendkívül sokféle tapasztalat vár reá. Végignézve a történelem lapjain, ilyen esetben persze korántsem garantált a békés öregkor, de hát nem is az a cél.",
+    "Genders": [ "Female", "Male" ],
+    "AbilityModifiers": {
+      "Erő": 2,
+      "Áll": 1,
+      "Egé": 2,
+      "Érz": 1,
+      "Kar": -2,
+      "Int": -2,
+      "Asz": -2
+    },
+    "Aging": [
+      { "Name": "gyermek", "FromAge": 0 },
+      { "Name": "serdülő", "FromAge": 15 },
+      { "Name": "ifjú", "FromAge": 20, "SpPerYear": 1, "SpPerTimeUnit": 1, "SpTimeUnitYears": 1 },
+      { "Name": "középkorú", "FromAge": 132, "SpPerYear": 0.5, "SpPerTimeUnit": 1, "SpTimeUnitYears": 2 },
+      { "Name": "meglett", "FromAge": 228, "SpPerYear": 1, "SpPerTimeUnit": 1, "SpTimeUnitYears": 1, "AgingFactor": 2 },
+      { "Name": "idős", "FromAge": 254, "SpPerYear": 1, "SpPerTimeUnit": 1, "SpTimeUnitYears": 1, "AgingFactor": 1 },
+      { "Name": "agg", "FromAge": 274, "SpPerYear": 0.25, "SpPerTimeUnit": 1, "SpTimeUnitYears": 4, "AgingFactor": 0.66667 }
+    ]
+  }
+]

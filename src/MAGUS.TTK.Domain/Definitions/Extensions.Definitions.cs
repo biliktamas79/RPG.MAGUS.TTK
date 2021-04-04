@@ -66,5 +66,53 @@ namespace MAGUS.TTK.Domain.Definitions
                 ? groups.OrderBy(group => group.Key.DisplayOrder).ThenBy(group => group.Key.Name ?? group.Key.Code)
                 : groups;
         }
+
+        /// <summary>
+        /// Kiszámolja, hogy egy adott korú karakternek hányszor kell öregedési próbát dobnia ebben a korkategóriában.
+        /// </summary>
+        /// <param name="age">A karakter kora, amire a módosítót ki kell számolni.</param>
+        /// <returns></returns>
+        public static int GetAgingRollsCount(this AgingCategory[] agingCategories, decimal age)
+        {
+            if ((agingCategories == null) || (agingCategories.Length == 0))
+                return 0;
+
+            decimal agingRollsCount = 0;
+            // minden korkategóriára
+            foreach (var categ in agingCategories)
+            {
+                if (categ.FromAge > age)
+                    break;
+
+                // kiszámoljuk, hogy abban a korkategóriában hányszor kell öregedési próbát dobnia
+                agingRollsCount += categ.GetAgingRollsCount(age);
+            }
+
+            return (int)agingRollsCount;
+        }
+
+        /// <summary>
+        /// Kiszámolja, hogy egy adott korú karakter mennyi Sp-t kap.
+        /// </summary>
+        /// <param name="age">A karakter kora, amire a módosítót ki kell számolni.</param>
+        /// <returns></returns>
+        public static int GetFreeSp(this AgingCategory[] agingCategories, decimal age)
+        {
+            if ((agingCategories == null) || (agingCategories.Length == 0))
+                return 0;
+
+            int freeSp = 0;
+            // minden korkategóriára
+            foreach (var categ in agingCategories)
+            {
+                if (categ.FromAge > age)
+                    break;
+
+                // kiszámoljuk, hogy abban a korkategóriában mekkora tulajdonság módosítót kap
+                freeSp += categ.GetFreeSp(age);
+            }
+
+            return freeSp;
+        }
     }
 }

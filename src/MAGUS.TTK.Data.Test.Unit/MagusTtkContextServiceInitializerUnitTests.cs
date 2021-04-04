@@ -38,6 +38,7 @@ namespace MAGUS.TTK.Domain.Test.Unit
             Assert.AreNotEqual(0, ctx.WeaponCategoryDefinitions.Count());
             Assert.AreNotEqual(0, ctx.CharacterClassDefinitions.Count());
             Assert.AreNotEqual(0, ctx.WeaponDefinitions.Count());
+            Assert.AreNotEqual(0, ctx.RaceDefinitions.Count());
 
             foreach (var charClassDef in await ctx.CharacterClassDefinitions.All(null, CancellationToken.None))
             {

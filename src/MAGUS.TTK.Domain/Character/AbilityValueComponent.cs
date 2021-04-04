@@ -11,9 +11,13 @@ namespace MAGUS.TTK.Domain.Character
     /// </summary>
     public class AbilityValueComponent
     {
-        [JsonIgnoreAttribute]
-        public readonly AbilityDefinition Definition;
+        public AbilityValueComponent(AbilityValueComponentTypeEnum type)
+        {
+            this.Type = type;
+        }
+
         public readonly AbilityValueComponentTypeEnum Type;
         public int Value;
+        public int? Level;
     }
 }

@@ -1,0 +1,73 @@
+﻿@page "/racedefinitions"
+@inject HttpClient Http
+@inject MagusTtkContext TtkContext
+@inject IDataInitializer<MagusTtkContext> DataInitializer
+
+<h1>Fajok</h1>
+
+@if (raceDefinitions == null)
+{
+    <p><em>Betöltés...</em></p>
+}
+else
+{
+    <TabControl>
+        @foreach (var raceDef in raceDefinitions)
+        {
+            <TabPage Text=@(raceDef.Code)>
+                <div class="col-xl-6">
+                    <h3>Leírás</h3>
+                    <p>@raceDef.Description</p>
+                    <h3>Tulajdonság módosítók</h3>
+                    <p>@GetAbilityModifierListString(raceDef)</p>
+                </div>
+                <div class="col-xl-6">
+                    <h3>Öregedés, fejlődés</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Kor kategória</th>
+                                <th>Életkor</th>
+                                <th>Sp</th>
+                                <th>Öregedési próbák</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var agingCategory in raceDef.Aging)
+                            {
+                            <tr>
+                                <td>@agingCategory.Name</td>
+                                <td>@($"{agingCategory.GetAgeRangeString()} év")</td>
+                                <td>@((agingCategory.SpPerTimeUnit == 0) ? "-" : $"{agingCategory.SpPerTimeUnit} Sp / {agingCategory.SpTimeUnitYears} év")</td>
+                                <td>@((agingCategory.AgingFactor == null) ? "-" : $"{agingCategory.AgingFactor.Value} évente")</td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </TabPage>
+        }
+    </TabControl>
+}
+
+@code {
+    private MagusTtkRaceDefinition[] raceDefinitions;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await DataInitializer.InitializeData(TtkContext);
+
+        raceDefinitions = (await TtkContext.RaceDefinitions.All())
+            .ToArray();
+    }
+
+    private string GetAbilityModifierListString(MagusTtkRaceDefinition raceDef)
+    {
+        if (raceDef == null)
+            return null;
+        else if ((raceDef.AbilityModifiers == null) || (raceDef.AbilityModifiers.Count == 0))
+            return "-";
+        else
+            return string.Join("; ", raceDef.AbilityModifiers.Select(kvp => $"{kvp.Key} {kvp.Value.ToString("+0;-0;")}"));
+    }
+}

@@ -1,0 +1,74 @@
+﻿@inject MagusTtkContext TtkContext
+
+<h3>TtkCharacterAttributes</h3>
+
+<div>
+    @if (ttkCharacter != null)
+    {
+        <table class="table">
+            <tbody>
+                @foreach (var kvp in ttkCharacter.Abilities)
+                {
+                    <tr>
+                        <td class="align-middle">@(kvp.Value?.Definition?.Name ?? kvp.Key)</td>
+                        <td>
+                            <RadzenNumeric TValue="int" Min="6" Max="20" @bind-Value=@kvp.Value.Value Change=@(args => OnChange(args, $"{kvp.Value?.Definition?.Name ?? kvp.Key}")) />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @*@foreach (var kvp in ttkCharacter.Abilities)
+        {
+            <h3 class="float-md-left" style="margin-top: 2rem">@(kvp.Value?.Definition?.Name ?? kvp.Key)</h3>
+            <RadzenNumeric class="float-md-left" TValue="int" Min="6" Max="20" @bind-Value=@kvp.Value.Value Change=@(args => OnChange(args, $"{kvp.Value?.Definition?.Name ?? kvp.Key}")) />
+        }*@
+    }
+</div>
+
+
+@code {
+    [Parameter]
+    public MagusTtkCharacter ttkCharacter { get; set; }
+
+    void OnChange(dynamic value, string name)
+    {
+        System.Console.WriteLine($"{name} value changed to {value}");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        System.Console.WriteLine($"{this.GetType().Name}.OnInitializedAsync()");
+
+        //if (ttkCharacter != null)
+        //{
+        //    //ttkCharacter = new MagusTtkCharacter();
+        //    foreach (var kvp in (await TtkContext.CharacterClassDefinitions.All()).First().Abilities)
+        //    {
+        //        var def = await TtkContext.AbilityDefinitions.GetByCode(kvp.Key);
+        //        ttkCharacter.Abilities.Add(kvp.Key, new AbilityValue() { Definition = def, Value = kvp.Value });
+        //    }
+        //}
+    }
+
+    //protected override async Task OnParametersSetAsync()
+    //{
+    //    System.Console.WriteLine($"{this.GetType().Name}.OnParametersSetAsync()");
+
+    //    // ha még nem lenne inicializálva
+    //    if ((ttkCharacter != null) && (ttkCharacter.Abilities.Count == 0))
+    //    {
+    //        System.Console.WriteLine($"{this.GetType().Name} ttkCharacter.Abilities is empty --> initializing...");
+
+    //        //ttkCharacter = new MagusTtkCharacter();
+    //        foreach (var kvp in (await TtkContext.CharacterClassDefinitions.All()).First().Abilities)
+    //        {
+    //            var def = await TtkContext.AbilityDefinitions.GetByCode(kvp.Key);
+    //            ttkCharacter.Abilities.Add(kvp.Key, new AbilityValue() { Definition = def, Value = kvp.Value });
+    //        }
+    //    }
+
+    //    await base.OnParametersSetAsync();
+    //}
+}

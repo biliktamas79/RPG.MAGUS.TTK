@@ -9,7 +9,7 @@ namespace MAGUS.TTK.Domain.Character
     /// <summary>
     /// MAGUS karakter képesség, mint Erő, Ügy, ...
     /// </summary>
-    public class AbilityValue
+    public class AbilityCompoundValue
     {
         /// <summary>
         /// Tulajdonság definíció
@@ -18,9 +18,14 @@ namespace MAGUS.TTK.Domain.Character
         public AbilityDefinition Definition { get; set; }
 
         /// <summary>
+        /// Tulajdonság módosítók típus szerint
+        /// </summary>
+        public readonly Dictionary<AbilityValueComponentTypeEnum, AbilityValueComponent> ValueComponentsByType = new Dictionary<AbilityValueComponentTypeEnum, AbilityValueComponent>(5);
+
+        /// <summary>
         /// A tulajdonság értéke
         /// </summary>
-        public int Value { get; set; }
+        public int Value { get; }
 
         public override string ToString()
         {

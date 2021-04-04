@@ -1,0 +1,37 @@
+﻿@page "/editcharacter"
+
+@inject MagusTtkContext TtkContext
+@inject IDataInitializer<MagusTtkContext> DataInitializer
+
+<h1>Karakter szerkesztő</h1>
+
+<div class="row">
+    <div class="col-xl-4">
+        <h2>Tulajdonságok</h2>
+        <TtkCharacterAttributes ttkCharacter=@ttkCharacter />
+    </div>
+    <div class="col-xl-4">
+        <h2>Faj / Kaszt / ...</h2>
+    </div>
+    <div class="col-xl-4">
+        <h2>Elosztható pontok</h2>
+    </div>
+</div>
+
+@code {
+    private MagusTtkCharacter ttkCharacter { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        System.Console.WriteLine($"{this.GetType().Name}.OnInitializedAsync()");
+
+        await DataInitializer.InitializeData(TtkContext);
+
+        ttkCharacter = new MagusTtkCharacter();
+        foreach (var kvp in (await TtkContext.CharacterClassDefinitions.All()).First().Abilities)
+        {
+            var def = await TtkContext.AbilityDefinitions.GetByCode(kvp.Key);
+            ttkCharacter.Abilities.Add(kvp.Key, new AbilityValue() { Definition = def, Value = kvp.Value });
+        }
+    }
+}

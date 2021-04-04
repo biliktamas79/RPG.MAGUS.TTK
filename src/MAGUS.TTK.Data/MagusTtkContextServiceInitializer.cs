@@ -29,6 +29,7 @@ namespace MAGUS.TTK.Data
                 .AddSingleton<IReadOnlyRepository<TraitDefinition>, InMemoryRepository<TraitDefinition>>()
                 .AddSingleton<IReadOnlyRepository<TalentDefinition>, InMemoryRepository<TalentDefinition>>()
                 .AddSingleton<IReadOnlyRepository<Background<CodeOnlyAttribute>>, InMemoryRepository<Background<CodeOnlyAttribute>>>()
+                .AddSingleton<IReadOnlyRepository<MagusTtkRaceDefinition>, InMemoryRepository<MagusTtkRaceDefinition>>()
                 .AddSingleton<IReadOnlyRepository<MagusTtkCharacterClassDefinition>, InMemoryRepository<MagusTtkCharacterClassDefinition>>()
                 .AddSingleton<IReadOnlyRepository<MagusTtkWeaponDefinition>, InMemoryRepository<MagusTtkWeaponDefinition>>()
                 ;
