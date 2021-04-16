@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-xl-4">
         <h2>Tulajdonságok</h2>
-        <TtkCharacterAttributes ttkCharacter=@ttkCharacter />
+        <TtkCharacterAttributes ttkCharacter=@ttkCharacter freePointsToDistribute=15 />
     </div>
     <div class="col-xl-4">
         <h2>Faj / Kaszt / ...</h2>
@@ -28,7 +28,9 @@
         await DataInitializer.InitializeData(TtkContext);
 
         ttkCharacter = new MagusTtkCharacter();
-        foreach (var kvp in (await TtkContext.CharacterClassDefinitions.All()).First().Abilities)
+        ttkCharacter.Race = await TtkContext.RaceDefinitions.GetByCode("Elf");
+        ttkCharacter.Class = await TtkContext.CharacterClassDefinitions.GetByCode("Tolvaj");
+        foreach (var kvp in ttkCharacter.Class.Abilities)
         {
             var def = await TtkContext.AbilityDefinitions.GetByCode(kvp.Key);
             ttkCharacter.Abilities.Add(kvp.Key, new AbilityValue() { Definition = def, Value = kvp.Value });

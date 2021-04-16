@@ -68,6 +68,6 @@ else
         else if ((raceDef.AbilityModifiers == null) || (raceDef.AbilityModifiers.Count == 0))
             return "-";
         else
-            return string.Join("; ", raceDef.AbilityModifiers.Select(kvp => $"{kvp.Key} {kvp.Value.ToString("+0;-0;")}"));
+            return string.Join("; ", raceDef.AbilityModifiers.Select(kvp => $"{TtkContext.AbilityDefinitions.GetByCode(kvp.Key).Result.Name ?? kvp.Key} {kvp.Value.ToString("+0;-0;")}"));
     }
 }

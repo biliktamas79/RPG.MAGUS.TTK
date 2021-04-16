@@ -5,14 +5,23 @@
 <div>
     @if (ttkCharacter != null)
     {
+        <div>Kaszt: @(ttkCharacter.Class?.Name ?? ttkCharacter.Class?.Code)</div>
+        <div>Faj: @(ttkCharacter.Race?.Code)</div>
+        @if (freePointsToDistribute != null)
+        {
+            <div>Elosztható pontok: @freePointsToDistribute</div>
+            <div>Elosztott pontok: @pointsDistributed</div>
+        }
         <table class="table">
             <tbody>
                 @foreach (var kvp in ttkCharacter.Abilities)
                 {
                     <tr>
                         <td class="align-middle">@(kvp.Value?.Definition?.Name ?? kvp.Key)</td>
+                        <td class="align-middle">@ttkCharacter.Class?.Abilities.GetValueOrDefault(kvp.Value.Definition.Code)</td>
+                        <td class="align-middle">@((ttkCharacter.Race == null) ? string.Empty : (ttkCharacter.Race.AbilityModifiers.TryGetValue(kvp.Value.Definition.Code, out var raceModifier) ? raceModifier.ToString("+##;-##;") : string.Empty))</td>
                         <td>
-                            <RadzenNumeric TValue="int" Min="6" Max="20" @bind-Value=@kvp.Value.Value Change=@(args => OnChange(args, $"{kvp.Value?.Definition?.Name ?? kvp.Key}")) />
+                            <RadzenNumeric TValue="int" Min=@(GetAbilityMin(kvp.Value) ?? 1) Max=@(GetAbilityMax(kvp.Value) ?? 99) Value=@kvp.Value.Value ValueExpression=@(() => kvp.Value.Value) ValueChanged=@(args => OnValueChanging(kvp.Value, args)) Change=@(args => OnChange(args, $"{kvp.Value?.Definition?.Name ?? kvp.Key}")) />
                         </td>
                     </tr>
                 }
@@ -20,10 +29,10 @@
         </table>
 
         @*@foreach (var kvp in ttkCharacter.Abilities)
-        {
-            <h3 class="float-md-left" style="margin-top: 2rem">@(kvp.Value?.Definition?.Name ?? kvp.Key)</h3>
-            <RadzenNumeric class="float-md-left" TValue="int" Min="6" Max="20" @bind-Value=@kvp.Value.Value Change=@(args => OnChange(args, $"{kvp.Value?.Definition?.Name ?? kvp.Key}")) />
-        }*@
+            {
+                <h3 class="float-md-left" style="margin-top: 2rem">@(kvp.Value?.Definition?.Name ?? kvp.Key)</h3>
+                <RadzenNumeric class="float-md-left" TValue="int" Min="6" Max="20" @bind-Value=@kvp.Value.Value Change=@(args => OnChange(args, $"{kvp.Value?.Definition?.Name ?? kvp.Key}")) />
+            }*@
     }
 </div>
 
@@ -32,9 +41,65 @@
     [Parameter]
     public MagusTtkCharacter ttkCharacter { get; set; }
 
+    [Parameter]
+    public int? freePointsToDistribute { get; set; }
+
+    public int pointsDistributed { get; set; }
+
+    private int PointsDistributable
+    {
+        get { return (freePointsToDistribute ?? 0) - pointsDistributed; }
+    }
+
+    void OnValueChanging(AbilityValue ability, dynamic newValue)
+    {
+        //System.Console.WriteLine($"{ability?.Definition?.Name} value is changing from {ability.Value} to {newValue}.");
+
+        int diff = newValue - ability.Value;
+        diff = Math.Min(diff, this.PointsDistributable);
+
+        if ((diff == 0))// || (freePointsToDistribute == null) || (freePointsToDistribute.Value == 0) || (pointsDistributed >= freePointsToDistribute.Value))
+        {
+            //System.Console.WriteLine($"{ability?.Definition?.Name} value change disabled: no free points to distribute.");
+            return;
+        }
+
+        System.Console.WriteLine($"{ability?.Definition?.Name} value {ability.Value} is changing by {diff.ToString("+##;-##;0")}.");
+        ability.Value += diff;
+        pointsDistributed += diff;
+    }
+
+    int? GetAbilityMin(AbilityValue abilityValue)
+    {
+        if (abilityValue?.Definition == null)
+            return null;
+
+        var min = ttkCharacter.GetAbilityValueMin(abilityValue.Definition.Code);
+
+        //System.Console.WriteLine($"{abilityValue.Definition.Name} Min set to {min}.");
+
+        return min;
+    }
+
+    int? GetAbilityMax(AbilityValue abilityValue)
+    {
+        if (abilityValue?.Definition == null)
+            return null;
+
+        var max = ttkCharacter.GetAbilityValueMax(abilityValue.Definition.Code);
+        if (max == null)
+            return null;
+
+        max = Math.Min(max.Value, abilityValue.Value + this.PointsDistributable);
+
+        //System.Console.WriteLine($"{abilityValue.Definition.Name} Max set to {max}.");
+
+        return max;
+    }
+
     void OnChange(dynamic value, string name)
     {
-        System.Console.WriteLine($"{name} value changed to {value}");
+        //System.Console.WriteLine($"{name} value changed to {value}");
     }
 
     protected override async Task OnInitializedAsync()

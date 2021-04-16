@@ -92,5 +92,53 @@ namespace MAGUS.TTK.Domain.Character
         {
             return this.Race?.Aging?.GetFreeSp(this.Age) ?? 0;
         }
+
+        public int? GetAbilityValueMin(string abilityCode)
+        {
+            if (!this.Abilities.TryGetValue(abilityCode, out var av))
+                return null;
+
+            int? min = av?.Definition?.MinValue ?? null;
+            if (min == null)
+                return null;
+
+            // ha tudjuk már milyen kaszt
+            if (this.Class != null)
+            {
+                // akkor a minimumot a kasztnál megadott értékre állítjuk
+                if (this.Class.Abilities.TryGetValue(abilityCode, out var classAbilityValue))
+                    min = classAbilityValue;
+            }
+
+            //// ha be lett már állítva a faj
+            //if (this.Race != null)
+            //{
+            //    // akkor érvényesítjük a faji módosítókat is
+            //    if (this.Race.AbilityModifiers.TryGetValue(abilityCode, out var raceModifier))
+            //        min += raceModifier;
+            //}
+
+            return min;
+        }
+
+        public int? GetAbilityValueMax(string abilityCode)
+        {
+            if (!this.Abilities.TryGetValue(abilityCode, out var av))
+                return null;
+
+            int? max = av?.Definition?.MaxValue ?? null;
+            if (max == null)
+                return null;
+
+            // ha be lett már állítva a faj
+            if (this.Race != null)
+            {
+                // akkor érvényesítjük a faji módosítókat is
+                if (this.Race.AbilityModifiers.TryGetValue(abilityCode, out var raceModifier))
+                    max += raceModifier;
+            }
+
+            return max;
+        }
     }
 }
