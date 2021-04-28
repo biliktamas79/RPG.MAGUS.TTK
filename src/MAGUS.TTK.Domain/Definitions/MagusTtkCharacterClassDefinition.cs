@@ -41,5 +41,10 @@ namespace MAGUS.TTK.Domain.Definitions
         /// Adottságok
         /// </summary>
         public List<TalentDefinition> Talents;
+
+        public override string ToString()
+        {
+            return Name ?? Code;
+        }
     }
 }

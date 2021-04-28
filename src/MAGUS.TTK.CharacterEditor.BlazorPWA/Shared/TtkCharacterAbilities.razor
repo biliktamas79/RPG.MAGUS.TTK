@@ -1,48 +1,72 @@
 ﻿@inject MagusTtkContext TtkContext
-
-<h3>TtkCharacterAbilities</h3>
+@implements IDisposable
 
 <div>
     @if (ttkCharacter != null)
     {
-    <div>Kaszt: @(ttkCharacter.Class?.Name ?? ttkCharacter.Class?.Code)</div>
-    <div>Faj: @(ttkCharacter.Race?.Code)</div>
-        @if (freePointsToDistribute != null)
-        {
-            <div>Elosztható pontok: @freePointsToDistribute</div>
-            <div>Elosztott pontok: @pointsDistributed</div>
-        }
-    <RadzenCard Style="width:400px;">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Tulajdonság</th>
-                    <th>Kaszt</th>
-                    <th>Faj</th>
-                    <th>Érték</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var kvp in ttkCharacter.Abilities)
-                {
+        <RadzenCard Style="width:550px;">
+            <table class="table">
+                <thead>
                     <tr>
-                        <td class="align-middle">@(kvp.Value?.Definition?.Name ?? kvp.Key)</td>
-                        <td class="align-middle">@ttkCharacter.Class?.Abilities.GetValueOrDefault(kvp.Value.Definition.Code)</td>
-                        <td class="align-middle">@((ttkCharacter.Race == null) ? string.Empty : (ttkCharacter.Race.AbilityModifiers.TryGetValue(kvp.Value.Definition.Code, out var raceModifier) ? raceModifier.ToString("+##;-##;") : string.Empty))</td>
-                        <td>
-                            <RadzenNumeric Style="width:80px;" TValue="int" Min=@(GetAbilityMin(kvp.Value) ?? 1) Max=@(GetAbilityMax(kvp.Value) ?? 99) Value=@kvp.Value.Value ValueExpression=@(() => kvp.Value.Value) ValueChanged=@(args => OnValueChanging(kvp.Value, args)) Change=@(args => OnChange(args, $"{kvp.Value?.Definition?.Name ?? kvp.Key}")) />
-                        </td>
+                        <th class="text-center">Tulajdonság</th>
+                        <th class="text-center">Kaszt</th>
+                        <th class="text-center">Faj</th>
+                        <th class="text-center">Elosztás</th>
+                        <th colspan="2" class="text-center">Szintlépés</th>
+                        <th class="text-center">Érték</th>
+                        <th class="text-center">Próbához</th>
                     </tr>
-                }
-            </tbody>
-        </table>
-    </RadzenCard>
+                    <tr>
+                        <th />
+                        <th />
+                        <th />
+                        <th />
+                        <th class="text-center">Kapott</th>
+                        <th class="text-center">Vett</th>
+                        <th />
+                        <th />
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var kvp in ttkCharacter.Abilities)
+                    {
+                        System.Console.WriteLine($"Rendering ability '{kvp.Key}'...");
+                        if (kvp.Value == null)
+                            continue;
 
-        @*@foreach (var kvp in ttkCharacter.Abilities)
-            {
-                <h3 class="float-md-left" style="margin-top: 2rem">@(kvp.Value?.Definition?.Name ?? kvp.Key)</h3>
-                <RadzenNumeric class="float-md-left" TValue="int" Min="6" Max="20" @bind-Value=@kvp.Value.Value Change=@(args => OnChange(args, $"{kvp.Value?.Definition?.Name ?? kvp.Key}")) />
-            }*@
+                        var abDef = kvp.Value?.Definition;
+                        var avc = kvp.Value.GetValueComponentOrThrow(AbilityValueComponentTypeEnum.CharacterCreation);
+                        var avcLevelUp = kvp.Value.GetValueComponentOrThrow(AbilityValueComponentTypeEnum.LevelUp);
+                        var avcBoughtFromSp = kvp.Value.GetValueComponentOrThrow(AbilityValueComponentTypeEnum.BoughtFromSP);
+                    <tr>
+                        <td class="align-middle">@((abDef == null) ? string.Empty : abDef.Name ?? kvp.Key)</td>
+                        <td class="align-middle text-center">@(((ttkCharacter.Class == null) || (abDef == null)) ? string.Empty : ttkCharacter.Class.Abilities?.GetValueOrDefault(abDef.Code))</td>
+                        <td class="align-middle text-center">@(((ttkCharacter.Race?.AbilityModifiers == null) || (abDef == null)) ? string.Empty : (ttkCharacter.Race.AbilityModifiers.TryGetValue(abDef.Code, out var raceModifier) ? raceModifier.ToString("+##;-##;") : string.Empty))</td>
+                        <td>
+                            <RadzenNumeric Style="width:80px;" TValue="int" Min=1 Max=5 Value=@avc.Value ValueExpression=@(() => avc.Value) ValueChanged=@(args => OnAbilityDistributedPointsChanging(kvp.Value, args)) Change=@(args => OnChange(args, $"{abDef?.Name ?? kvp.Key}")) />
+                        </td>
+                        <td class="align-middle text-center">@(avcLevelUp.Value.ToString("+##;-##; "))</td>
+                        <td class="align-middle text-center">@(avcBoughtFromSp.Value.ToString("+##;-##; "))</td>
+                        <td class="h2 align-middle text-center">@(kvp.Value?.Value)</td>
+                        <td class="align-middle text-center">@(kvp.Value?.GetDiceRollValueString())</td>
+                    </tr>
+                    }
+                    @if (freePointsToDistribute != null)
+                    {
+                    <tr>
+                        <td />
+                        <td />
+                        <td />
+                        <td class="align-middle text-center">@pointsDistributed / @freePointsToDistribute</td>
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </RadzenCard>
     }
 </div>
 
@@ -61,11 +85,12 @@
         get { return (freePointsToDistribute ?? 0) - pointsDistributed; }
     }
 
-    void OnValueChanging(AbilityValue ability, dynamic newValue)
+    void OnAbilityDistributedPointsChanging(AbilityCompoundValue value, dynamic newValue)
     {
+        var avc = value.GetValueComponentOrThrow(AbilityValueComponentTypeEnum.CharacterCreation);
         //System.Console.WriteLine($"{ability?.Definition?.Name} value is changing from {ability.Value} to {newValue}.");
 
-        int diff = newValue - ability.Value;
+        int diff = (int)newValue - avc.Value;
         diff = Math.Min(diff, this.PointsDistributable);
 
         if ((diff == 0))// || (freePointsToDistribute == null) || (freePointsToDistribute.Value == 0) || (pointsDistributed >= freePointsToDistribute.Value))
@@ -74,24 +99,30 @@
             return;
         }
 
-        System.Console.WriteLine($"{ability?.Definition?.Name} value {ability.Value} is changing by {diff.ToString("+##;-##;0")}.");
-        ability.Value += diff;
+        System.Console.WriteLine($"{value?.Definition?.Name} value component {avc.Value} of type {avc.Type} is changing by {diff.ToString("+##;-##;0")}.");
+        //ability.SetComponentValue(AbilityValueComponentTypeEnum.CharacterCreation, (int)newValue);
         pointsDistributed += diff;
+
+        avc.Value = (int)newValue;
+
+        this.ttkCharacter.ChangeNotificationManager?.Changed(nameof(MagusTtkCharacter.Abilities), this.ttkCharacter.Abilities, this.ttkCharacter.Abilities);
+
+        //this.StateHasChanged();
     }
 
-    int? GetAbilityMin(AbilityValue abilityValue)
+    int? GetAbilityMin(AbilityCompoundValue abilityValue)
     {
         if (abilityValue?.Definition == null)
             return null;
 
         var min = ttkCharacter.GetAbilityValueMin(abilityValue.Definition.Code);
 
-        //System.Console.WriteLine($"{abilityValue.Definition.Name} Min set to {min}.");
+        System.Console.WriteLine($"{abilityValue.Definition.Name} Min set to {min}.");
 
         return min;
     }
 
-    int? GetAbilityMax(AbilityValue abilityValue)
+    int? GetAbilityMax(AbilityCompoundValue abilityValue)
     {
         if (abilityValue?.Definition == null)
             return null;
@@ -102,7 +133,7 @@
 
         max = Math.Min(max.Value, abilityValue.Value + this.PointsDistributable);
 
-        //System.Console.WriteLine($"{abilityValue.Definition.Name} Max set to {max}.");
+        System.Console.WriteLine($"{abilityValue.Definition.Name} Max set to {max}.");
 
         return max;
     }
@@ -112,38 +143,79 @@
         //System.Console.WriteLine($"{name} value changed to {value}");
     }
 
-    protected override async Task OnInitializedAsync()
+    protected override Task OnInitializedAsync()
     {
         System.Console.WriteLine($"{this.GetType().Name}.OnInitializedAsync()");
 
-        //if (ttkCharacter != null)
-        //{
-        //    //ttkCharacter = new MagusTtkCharacter();
-        //    foreach (var kvp in (await TtkContext.CharacterClassDefinitions.All()).First().Abilities)
-        //    {
-        //        var def = await TtkContext.AbilityDefinitions.GetByCode(kvp.Key);
-        //        ttkCharacter.Abilities.Add(kvp.Key, new AbilityValue() { Definition = def, Value = kvp.Value });
-        //    }
-        //}
+        return Task.CompletedTask;
     }
 
-    //protected override async Task OnParametersSetAsync()
-    //{
-    //    System.Console.WriteLine($"{this.GetType().Name}.OnParametersSetAsync()");
+    public override Task SetParametersAsync(ParameterView parameters)
+    {
+        System.Console.WriteLine($"{this.GetType().Name}.SetParametersAsync()");
 
-    //    // ha még nem lenne inicializálva
-    //    if ((ttkCharacter != null) && (ttkCharacter.Abilities.Count == 0))
-    //    {
-    //        System.Console.WriteLine($"{this.GetType().Name} ttkCharacter.Abilities is empty --> initializing...");
+        this.ttkCharacter?.ChangeNotificationManager?.Unsubscribe(this.OnModelChanged);
 
-    //        //ttkCharacter = new MagusTtkCharacter();
-    //        foreach (var kvp in (await TtkContext.CharacterClassDefinitions.All()).First().Abilities)
-    //        {
-    //            var def = await TtkContext.AbilityDefinitions.GetByCode(kvp.Key);
-    //            ttkCharacter.Abilities.Add(kvp.Key, new AbilityValue() { Definition = def, Value = kvp.Value });
-    //        }
-    //    }
+        return base.SetParametersAsync(parameters);
+    }
 
-    //    await base.OnParametersSetAsync();
-    //}
+    protected override void OnParametersSet()
+    {
+        System.Console.WriteLine($"{this.GetType().Name}.OnParametersSet()");
+
+        RefreshPointsDistributed();
+
+        //this.ttkCharacter?.ChangeNotificationManager?.Unsubscribe(this.OnModelChanged);
+        this.ttkCharacter?.ChangeNotificationManager?.Subscribe(this.OnModelChanged, this.ModelChangeNotificationFilter);
+
+        base.OnParametersSet();
+    }
+
+    private bool ModelChangeNotificationFilter(string changedFieldName)
+    {
+        return changedFieldName == nameof(MagusTtkCharacter.Class)
+            || changedFieldName == nameof(MagusTtkCharacter.Race)
+            //|| changedFieldName == nameof(MagusTtkCharacter.Abilities)
+            ;
+    }
+
+    private Task OnModelChanged(string changedField, object prevValue, object newValue)
+    {
+        System.Console.WriteLine($"{this.GetType().Name}.OnModelChanged({changedField}, {prevValue}, {newValue})");
+
+        this.StateHasChanged();
+
+        return Task.CompletedTask;
+    }
+
+    public void Dispose()
+    {
+        System.Console.WriteLine($"{this.GetType().Name}.Dispose()");
+
+        this.ttkCharacter?.ChangeNotificationManager?.Unsubscribe(this.OnModelChanged);
+    }
+
+    private void RefreshPointsDistributed()
+    {
+        var newValue = 0;
+
+        if (this.ttkCharacter != null)
+        {
+            foreach (var kvp in this.ttkCharacter.Abilities)
+            {
+                var avc = kvp.Value.ValueComponentsByType[AbilityValueComponentTypeEnum.CharacterCreation];
+
+                newValue += avc.Value;
+            }
+        }
+
+        if (pointsDistributed != newValue)
+        {
+            System.Console.WriteLine($"{this.GetType().Name}.RefreshPointsDistributed() is changing pointsDistributed from {pointsDistributed} to {newValue}...");
+
+            pointsDistributed = newValue;
+
+            //this.StateHasChanged();
+        }
+    }
 }

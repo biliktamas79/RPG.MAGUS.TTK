@@ -3,7 +3,7 @@ using RPG.Domain.Character;
 using RPG.Domain.Definitions;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace MAGUS.TTK.Domain.Definitions
 {
@@ -25,5 +25,10 @@ namespace MAGUS.TTK.Domain.Definitions
         ///// Abilities this skill is based on. Ability requirements for reaching certain levels of this skill are based on these.
         ///// </summary>
         //public MagusTtkTalentLevelDefinition[] Levels { get; set; }
+
+        public int? GetAdventureStartingAge()
+        {
+            return this.Aging?.FirstOrDefault(r => (r.SpPerTimeUnit > 0) || (r.SpPerYear > 0))?.FromAge;
+        }
     }
 }

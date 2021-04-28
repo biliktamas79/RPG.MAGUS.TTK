@@ -19,5 +19,10 @@ namespace RPG.Domain.Definitions
         /// The valid genders of this race.
         /// </summary>
         public GenderEnum[] Genders { get; set; }
+
+        public override string ToString()
+        {
+            return Code;
+        }
     }
 }

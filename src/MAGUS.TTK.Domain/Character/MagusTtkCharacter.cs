@@ -21,14 +21,64 @@ namespace MAGUS.TTK.Domain.Character
         /// A karakter tapasztalati szintje
         /// </summary>
         public int Level;
+        
+        private MagusTtkRaceDefinition _race;
         /// <summary>
         /// A karakter faja
         /// </summary>
-        public MagusTtkRaceDefinition Race;
+        public MagusTtkRaceDefinition Race
+        {
+            get { return _race; }
+            set
+            {
+                var prevValue = _race;
+                if (prevValue != value)
+                {
+                    _race = value;
+
+                    //this.ChangeNotificationManager?.Changed(nameof(Race), prevValue, value);
+
+                    foreach (var kvp in this.Abilities)
+                    {
+                        // set the 'Race' component of each attribute to the value from the race
+                        kvp.Value.SetComponentValue(AbilityValueComponentTypeEnum.Race, (value != null) && (value.AbilityModifiers != null)
+                            && value.AbilityModifiers.TryGetValue(kvp.Value.Definition.Code, out var abModif) ? abModif : 0);
+
+                        //this.ChangeNotificationManager?.Changed($"{nameof(Abilities)}.{kvp.Value.Definition.Code}.{nameof(AbilityValueComponentTypeEnum.Race)}", prevValue, value);
+                    }
+
+                    //this.ChangeNotificationManager?.Changed(nameof(Abilities), this.Abilities, this.Abilities);
+                }
+            }
+        }
+
+        private MagusTtkCharacterClassDefinition _class;
         /// <summary>
         /// A karakter kasztja
         /// </summary>
-        public MagusTtkCharacterClassDefinition Class;
+        public MagusTtkCharacterClassDefinition Class
+        {
+            get { return _class; }
+            set
+            {
+                var prevValue = _class;
+                if (prevValue != value)
+                {
+                    _class = value;
+
+                    foreach (var kvp in this.Abilities)
+                    {
+                        // set the 'Class' component of each attribute to the value from the class
+                        kvp.Value.SetComponentValue(AbilityValueComponentTypeEnum.Class, (value == null) ? 0 : value.Abilities[kvp.Value.Definition.Code]);
+
+                        //this.ChangeNotificationManager?.Changed($"{nameof(Abilities)}.{kvp.Value.Definition.Code}.{nameof(AbilityValueComponentTypeEnum.Class)}", prevValue, value);
+                    }
+
+                    //this.ChangeNotificationManager?.Changed(nameof(Class), prevValue, value);
+                }
+            }
+        }
+
         /// <summary>
         /// A karakter neme
         /// </summary>
@@ -40,7 +90,7 @@ namespace MAGUS.TTK.Domain.Character
         /// <summary>
         /// Háttér/Származás
         /// </summary>
-        public Background<AttributeBase> Origin;
+        public Background<CodeOnlyAttribute> Origin;
         /// <summary>
         /// Háttér/Neveltetés
         /// </summary>
@@ -52,7 +102,7 @@ namespace MAGUS.TTK.Domain.Character
         /// <summary>
         /// Tulajdonságok
         /// </summary>
-        public readonly Dictionary<string, AbilityValue> Abilities = new Dictionary<string, AbilityValue>(10);
+        public readonly Dictionary<string, AbilityCompoundValue> Abilities = new Dictionary<string, AbilityCompoundValue>(10);
         /// <summary>
         /// Statisztika
         /// </summary>
@@ -74,6 +124,8 @@ namespace MAGUS.TTK.Domain.Character
         /// Hajító / lőfegyveres harcértékek
         /// </summary>
         public readonly List<RangedCombatValues> RangedCombatValues = new List<RangedCombatValues>();
+
+        public IChangeNotificationManager ChangeNotificationManager { get; set; }
 
         /// <summary>
         /// Kiszámolja, hogy ez a karakter a korából fakadóan eddig összesen hányszor kellett már öregedési próbát dobnia.

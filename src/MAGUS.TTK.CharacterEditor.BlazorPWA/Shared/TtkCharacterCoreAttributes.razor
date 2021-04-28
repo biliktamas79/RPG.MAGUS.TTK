@@ -1,0 +1,182 @@
+﻿@inject MagusTtkContext TtkContext
+@implements IDisposable
+
+<div>
+    @if (ttkCharacter != null)
+    {
+        <RadzenCard Style="width:400px;">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td class="align-middle">Kaszt:</td>
+                        <td class="align-middle">
+                            <RadzenDropDown AllowClear="false" TValue="MagusTtkCharacterClassDefinition"
+                                            Data=@classDefinitions
+                                            TextProperty="Name"
+                                            Value="@ttkCharacter.Class"
+                                            ValueChanged="OnCharacterClassChangedCallback" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle">Faj:</td>
+                        <td class="align-middle">
+                            <RadzenDropDown AllowClear="false" TValue="MagusTtkRaceDefinition"
+                                            Data=@raceDefinitions
+                                            TextProperty="Code"
+                                            Value="@ttkCharacter.Race"
+                                            ValueChanged="OnCharacterRaceChangedCallback"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle">Életkor:</td>
+                        <td class="align-middle">
+                            <RadzenNumeric Style="width:80px;" TValue="decimal" Min=@(GetAgeMin(ttkCharacter.Race) ?? 1) Max=@(GetAgeMax(ttkCharacter.Race) ?? 99) Step="1" @bind-Value=@ttkCharacter.Age />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle">Korból járó Sp: @ttkCharacter.GetSumSp()</td>
+                        <td class="align-middle">Öregedési próbák száma: @ttkCharacter.GetSumAgingRollsCount()</td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle">Származás:</td>
+                        <td class="align-middle">
+                            <RadzenDropDown AllowClear="false" TValue="Background<CodeOnlyAttribute>"
+                                            Data=@origins
+                                            @bind-Value="ttkCharacter.Origin"
+                                            SelectedItemChanged="OnOriginChanged" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle">Neveltetés:</td>
+                        <td class="align-middle">
+                            <RadzenDropDown AllowClear="false" TValue="Background<AbilityDefinition>"
+                                            Data=@upbringings
+                                            @bind-Value="ttkCharacter.Upbringing"
+                                            SelectedItemChanged="OnUpbringingChanged" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </RadzenCard>
+    }
+</div>
+
+
+@code {
+    [Parameter]
+    public MagusTtkCharacter ttkCharacter { get; set; }
+
+    [Parameter]
+    public EventCallback<MagusTtkCharacterClassDefinition> OnCharacterClassChangedCallback { get; set; }
+    
+    [Parameter]
+    public EventCallback<MagusTtkRaceDefinition> OnCharacterRaceChangedCallback { get; set; }
+
+    private IEnumerable<MagusTtkCharacterClassDefinition> classDefinitions;
+    private IEnumerable<MagusTtkRaceDefinition> raceDefinitions;
+    private IEnumerable<Background<CodeOnlyAttribute>> origins;
+    private IEnumerable<Background<AbilityDefinition>> upbringings;
+
+    int? GetAgeMin(MagusTtkRaceDefinition race)
+    {
+        if (race == null)
+            return null;
+
+        var min = race.GetAdventureStartingAge();
+
+        return min;
+    }
+
+    int? GetAgeMax(MagusTtkRaceDefinition race)
+    {
+        if (race == null)
+            return null;
+
+        var lastAgingCategory = race.Aging?.LastOrDefault();
+
+        var max = lastAgingCategory?.ToAge ?? lastAgingCategory.FromAge * 2;
+
+        return max;
+    }
+
+    void OnClassChanged(object o)
+    {
+        var newClass = o as MagusTtkCharacterClassDefinition;
+        System.Console.WriteLine($"{this.GetType().Name}: Class set to {newClass}.");
+    }
+
+    void OnRaceChanged(object o)
+    {
+        var newRace = o as MagusTtkRaceDefinition;
+        System.Console.WriteLine($"{this.GetType().Name}: Race set to {newRace}.");
+    }
+
+    void OnOriginChanged(object o)
+    {
+        var newOrigin = o as Background<CodeOnlyAttribute>;
+        System.Console.WriteLine($"{this.GetType().Name}: Origin set to {newOrigin}.");
+    }
+
+    void OnUpbringingChanged(object o)
+    {
+        var newUpbringing = o as Background<AbilityDefinition>;
+        System.Console.WriteLine($"{this.GetType().Name}: Upbringing set to {newUpbringing}.");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        System.Console.WriteLine($"{this.GetType().Name}.OnInitializedAsync()");
+
+        this.classDefinitions = await TtkContext.CharacterClassDefinitions.All();
+
+        this.raceDefinitions = await TtkContext.RaceDefinitions.All();
+
+        this.origins = await TtkContext.OriginDefinitions.All();
+
+        this.upbringings = new Background<AbilityDefinition>[0];
+    }
+
+    public override Task SetParametersAsync(ParameterView parameters)
+    {
+        System.Console.WriteLine($"{this.GetType().Name}.SetParametersAsync()");
+
+        this.ttkCharacter?.ChangeNotificationManager?.Unsubscribe(this.OnModelChanged);
+
+        return base.SetParametersAsync(parameters);
+
+    }
+
+    protected override void OnParametersSet()
+    {
+        System.Console.WriteLine($"{this.GetType().Name}.OnParametersSet()");
+
+        //this.ttkCharacter?.ChangeNotificationManager?.Unsubscribe(this.OnModelChanged);
+        this.ttkCharacter?.ChangeNotificationManager?.Subscribe(this.OnModelChanged, this.ModelChangeNotificationFilter);
+
+        base.OnParametersSet();
+    }
+
+    private bool ModelChangeNotificationFilter(string changedFieldName)
+    {
+        return changedFieldName == nameof(MagusTtkCharacter.Class)
+            || changedFieldName == nameof(MagusTtkCharacter.Race)
+            || changedFieldName == nameof(MagusTtkCharacter.Origin)
+            || changedFieldName == nameof(MagusTtkCharacter.Upbringing);
+    }
+
+    private Task OnModelChanged(string changedField, object prevValue, object newValue)
+    {
+        System.Console.WriteLine($"{this.GetType().Name}.OnModelChanged({changedField}, {prevValue}, {newValue})");
+
+        this.StateHasChanged();
+
+        return Task.CompletedTask;
+    }
+
+    public void Dispose()
+    {
+        System.Console.WriteLine($"{this.GetType().Name}.Dispose()");
+
+        this.ttkCharacter?.ChangeNotificationManager?.Unsubscribe(this.OnModelChanged);
+    }
+}

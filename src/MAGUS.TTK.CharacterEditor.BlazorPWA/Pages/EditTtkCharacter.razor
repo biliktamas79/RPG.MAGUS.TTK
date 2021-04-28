@@ -7,11 +7,10 @@
 
 <div class="row">
     <div class="col-xl-4">
-        <h2>Tulajdonságok</h2>
-        <TtkCharacterAbilities ttkCharacter=@ttkCharacter freePointsToDistribute=15 />
+        <TtkCharacterAbilities ttkCharacter=@ttkCharacter freePointsToDistribute=30 />
     </div>
     <div class="col-xl-4">
-        <h2>Faj / Kaszt / ...</h2>
+        <TtkCharacterCoreAttributes ttkCharacter=@ttkCharacter OnCharacterClassChangedCallback="OnClassChanged" OnCharacterRaceChangedCallback="OnRaceChanged" />
     </div>
     <div class="col-xl-4">
         <h2>Elosztható pontok</h2>
@@ -29,11 +28,49 @@
 
         ttkCharacter = new MagusTtkCharacter();
         ttkCharacter.Race = await TtkContext.RaceDefinitions.GetByCode("Elf");
+        ttkCharacter.Age = ttkCharacter.Race.GetAdventureStartingAge() ?? 1;
         ttkCharacter.Class = await TtkContext.CharacterClassDefinitions.GetByCode("Tolvaj");
+        ttkCharacter.Origin = (await TtkContext.OriginDefinitions.All()).FirstOrDefault();
+        ttkCharacter.Upbringing = null;
+        ttkCharacter.Level = 10;
+        ttkCharacter.ChangeNotificationManager = new DictionaryBasedChangeNotificationManager();
+
         foreach (var kvp in ttkCharacter.Class.Abilities)
         {
             var def = await TtkContext.AbilityDefinitions.GetByCode(kvp.Key);
-            ttkCharacter.Abilities.Add(kvp.Key, new AbilityValue() { Definition = def, Value = kvp.Value });
+            var acv = new AbilityCompoundValue() { Definition = def };
+            acv.Init();
+            if (ttkCharacter.Race.AbilityModifiers.TryGetValue(def.Code, out var raceAbilityModifier))
+                acv.SetComponentValue(AbilityValueComponentTypeEnum.Race, raceAbilityModifier);
+            acv.SetComponentValue(AbilityValueComponentTypeEnum.Class, ttkCharacter.Class.Abilities[def.Code]);
+            acv.SetComponentValue(AbilityValueComponentTypeEnum.LevelUp, 1);
+            acv.SetComponentValue(AbilityValueComponentTypeEnum.BoughtFromSP, 2);
+            ttkCharacter.Abilities.Add(kvp.Key, acv);
         }
+    }
+
+    private Task OnModelChanged(string changedField, object prevValue, object newValue)
+    {
+        System.Console.WriteLine($"{this.GetType().Name}.OnModelChanged({changedField}, {prevValue}, {newValue})");
+
+        this.StateHasChanged();
+
+        return Task.CompletedTask;
+    }
+
+    void OnClassChanged(MagusTtkCharacterClassDefinition newClass)
+    {
+        System.Console.WriteLine($"{this.GetType().Name}: Class set to {newClass}.");
+
+        if (this.ttkCharacter != null)
+            this.ttkCharacter.Class = newClass;
+    }
+
+    void OnRaceChanged(MagusTtkRaceDefinition newRace)
+    {
+        System.Console.WriteLine($"{this.GetType().Name}: Race set to {newRace}.");
+
+        if (this.ttkCharacter != null)
+            this.ttkCharacter.Race = newRace;
     }
 }
