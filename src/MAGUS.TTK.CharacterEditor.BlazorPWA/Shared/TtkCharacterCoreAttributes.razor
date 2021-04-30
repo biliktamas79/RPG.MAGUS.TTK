@@ -24,7 +24,13 @@
                                             Data=@raceDefinitions
                                             TextProperty="Code"
                                             Value="@ttkCharacter.Race"
-                                            ValueChanged="OnCharacterRaceChangedCallback"/>
+                                            ValueChanged="OnCharacterRaceChangedCallback" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle">Szint:</td>
+                        <td class="align-middle">
+                            <RadzenNumeric Style="width:80px;" TValue="int" Min=1 Max=99 Step="1" @bind-Value=@ttkCharacter.Level />
                         </td>
                     </tr>
                     <tr>
