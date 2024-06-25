@@ -13,7 +13,7 @@ namespace MAGUS.TTK.Data.Repositories.Json
         internal readonly static System.Text.Json.JsonSerializerOptions JsonSerializerOptions = new System.Text.Json.JsonSerializerOptions()
         {
             AllowTrailingCommas = true,
-            IgnoreNullValues = true,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
             ReadCommentHandling = System.Text.Json.JsonCommentHandling.Skip,
             WriteIndented = true,
             IncludeFields = true,

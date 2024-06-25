@@ -29,16 +29,16 @@ namespace MAGUS.TTK.Domain.Test.Unit
 
             await dataInitializer.InitializeData(ctx, CancellationToken.None);
 
-            Assert.AreNotEqual(0, ctx.AbilityDefinitions.Count());
-            Assert.AreNotEqual(0, ctx.OriginDefinitions.Count());
-            Assert.AreNotEqual(0, ctx.SkillCategoryDefinitions.Count());
-            Assert.AreNotEqual(0, ctx.SkillClassDefinitions.Count());
-            Assert.AreNotEqual(0, ctx.SkillDefinitions.Count());
-            Assert.AreNotEqual(0, ctx.TraitDefinitions.Count());
-            Assert.AreNotEqual(0, ctx.WeaponCategoryDefinitions.Count());
-            Assert.AreNotEqual(0, ctx.CharacterClassDefinitions.Count());
-            Assert.AreNotEqual(0, ctx.WeaponDefinitions.Count());
-            Assert.AreNotEqual(0, ctx.RaceDefinitions.Count());
+            Assert.AreNotEqual(0, await ctx.AbilityDefinitions.Count());
+            Assert.AreNotEqual(0, await ctx.OriginDefinitions.Count());
+            Assert.AreNotEqual(0, await ctx.SkillCategoryDefinitions.Count());
+            Assert.AreNotEqual(0, await ctx.SkillClassDefinitions.Count());
+            Assert.AreNotEqual(0, await ctx.SkillDefinitions.Count());
+            Assert.AreNotEqual(0, await ctx.TraitDefinitions.Count());
+            Assert.AreNotEqual(0, await ctx.WeaponCategoryDefinitions.Count());
+            Assert.AreNotEqual(0, await ctx.CharacterClassDefinitions.Count());
+            Assert.AreNotEqual(0, await ctx.WeaponDefinitions.Count());
+            Assert.AreNotEqual(0, await ctx.RaceDefinitions.Count());
 
             foreach (var charClassDef in await ctx.CharacterClassDefinitions.All(null, CancellationToken.None))
             {
