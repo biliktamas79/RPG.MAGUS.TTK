@@ -9,7 +9,7 @@ namespace RPG.Domain
     /// <summary>
     /// Static class containing extensions for interfaces
     /// </summary>
-    public static class Extensions
+    public static partial class Extensions
     {
         /// <summary>
         /// Gets the entity with the given code. If not found then either null is returned or a <see cref="KeyNotFoundException"/> gets thrown, based on <paramref name="throwIfNotFound"/>.

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29215.179
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPG.Domain", "RPG.Domain\RPG.Domain.csproj", "{36DD6FEF-2AF6-40AD-83AA-DBDB70ED23FC}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGUS.TTK.Data.Test.Unit", "MAGUS.TTK.Data.Test.Unit\MAGUS.TTK.Data.Test.Unit.csproj", "{E14F4A6B-D785-4934-BAD9-EC1405D62B45}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAGUS.TTK.CharacterEditor.BlazorPWA", "MAGUS.TTK.CharacterEditor.BlazorPWA\MAGUS.TTK.CharacterEditor.BlazorPWA.csproj", "{B48D2B02-49F2-43E6-A598-D5A86C5CCF5F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPG.Domain.Tests.Unit", "RPG.Domain.Tests.Unit\RPG.Domain.Tests.Unit.csproj", "{18278168-CEF7-4F11-A9EA-3D05BD3A474A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{B48D2B02-49F2-43E6-A598-D5A86C5CCF5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B48D2B02-49F2-43E6-A598-D5A86C5CCF5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B48D2B02-49F2-43E6-A598-D5A86C5CCF5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18278168-CEF7-4F11-A9EA-3D05BD3A474A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18278168-CEF7-4F11-A9EA-3D05BD3A474A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18278168-CEF7-4F11-A9EA-3D05BD3A474A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18278168-CEF7-4F11-A9EA-3D05BD3A474A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{845D9641-7814-44E8-BCBA-5275A7325876} = {F770FE12-2BA5-43C1-84AE-291210AB79B4}
 		{E14F4A6B-D785-4934-BAD9-EC1405D62B45} = {F770FE12-2BA5-43C1-84AE-291210AB79B4}
+		{18278168-CEF7-4F11-A9EA-3D05BD3A474A} = {F770FE12-2BA5-43C1-84AE-291210AB79B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9F14DFCD-1180-4335-B84B-623AC3C28A07}
